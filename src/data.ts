@@ -30,6 +30,7 @@ import deepikaRanveer from './photos/deepika_ranveer.jpg';
 import ambani from './photos/ambani.jpg';
 import srk_gauri from './photos/srk_gauri.jpg';
 import amitabh_jaya from './photos/amitabh_jaya.jpg';
+import sachin from './photos/sachin.jpg';
 import upi from './photos/upi.svg';
 import flipkart from './photos/flipkart.png';
 import trio from './photos/trio.jpg';
@@ -38,7 +39,7 @@ import modi from './photos/modi.jpg';
 export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, vikrant,
-    ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya,
+    ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin,
 };
 
 export type Mode = 'blur' | 'zoom' | 'reveal' | 'clear';
@@ -68,7 +69,7 @@ export const rounds: Round[] = [
   { p: 'India won javelin gold at the Olympics. Which city hosted those Games?', a: 'Tokyo (Neeraj Chopra, Tokyo 2020 held in 2021)', img: 'neeraj', mode: 'reveal', note: 'He added a silver at Paris 2024.' },
   { p: 'PV Sindhu has two Olympic medals. What colours, in order?', a: 'Silver (Rio 2016), then bronze (Tokyo 2020)', img: 'sindhu', mode: 'clear' },
   { p: 'How many Olympic gold medals has the Indian men\'s hockey team won?', a: 'Eight', note: 'Six in a row from 1928 to 1956, then 1964 and 1980.' },
-  { p: 'February 2010, Gwalior, against South Africa. Who scored the first ever double century in men\'s ODI cricket, and how many?', a: 'Sachin Tendulkar, 200 not out' },
+  { p: 'February 2010, Gwalior, against South Africa. Who scored the first ever double century in men\'s ODI cricket, and how many?', a: 'Sachin Tendulkar, 200 not out', img: 'sachin', mode: 'reveal' },
 ]},
 { id: 'chatpata', name: 'Chatpata Chaupal', tag: 'Street food, sweets and spices', emoji: '🍛', hue: 48, qs: [
   { p: 'Golgappa in Delhi, puchka in Kolkata. What is it called in Mumbai?', a: 'Pani puri', img: 'panipuri', mode: 'clear' },

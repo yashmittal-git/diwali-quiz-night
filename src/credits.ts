@@ -161,6 +161,12 @@ export default {
   "author": "Bollywood Hungama",
   "page": "https://commons.wikimedia.org/wiki/File:Deepika_Padukone_and_Ranveer_Singh_reception.jpg"
  },
+ "sachin": {
+  "title": "Sachin Tendulkar raising his bat and helmet for India (photo supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
  "dhoni": {
   "title": "MS Dhoni 2016.jpg",
   "license": "CC BY-SA 4.0",

@@ -17,6 +17,7 @@ const HB_DESCS: Record<string, string> = {
     charminar: 'Charminar and its four minarets above the old bazaar.',
     ranikivav: 'The carved stepwell terraces of Rani ki Vav.',
     kapil: 'Answer-reveal photo of Kapil Dev lifting the 1983 World Cup trophy on the Lord\'s balcony.',
+    sachin: 'Answer-reveal photo of Sachin Tendulkar raising his bat and helmet in India colours.',
     dhoni: 'MS Dhoni in India colours.',
     neeraj: 'Answer-reveal photo of Neeraj Chopra throwing the javelin for India.',
     sindhu: 'Question photo of PV Sindhu playing a forehand on court.',
