@@ -100,7 +100,7 @@ export const rounds: Round[] = [
 ]},
 { id: 'filmy', name: 'Filmy Fatafat', tag: 'Twisty Bollywood trivia', emoji: '🎬', hue: 275, qs: [
   { p: 'This Polo Sport tee became a college fashion craze after which movie?', a: 'Kuch Kuch Hota Hai', img: 'filmy_kkhh_tee', imgReveal: 'filmy_kkhh_reveal', mode: 'clear', note: 'Rahul\'s tee. The reveal photo shows SRK wearing it with Rani Mukerji and Kajol.' },
-  { p: 'Identify the movie from this iconic prop.', a: '3 Idiots', img: 'filmy_helmet', imgReveal: 'filmy_helmet_reveal', mode: 'clear', note: 'Pia\'s scooter helmet - the reveal photo shows Kareena Kapoor riding through Ladakh with it.' },
+  { p: 'This bright scooter helmet starred in the Ladakh scenes of a 2009 blockbuster. Name the movie.', a: '3 Idiots', img: 'filmy_helmet', imgReveal: 'filmy_helmet_reveal', mode: 'clear', note: 'Pia\'s scooter helmet - the reveal photo shows Kareena Kapoor riding through Ladakh with it.' },
   { p: 'Which actor directed Rocketry: The Nambi Effect?', a: 'R. Madhavan', img: 'filmy_rocketry', mode: 'reveal', note: 'He also played the lead, scientist Nambi Narayanan. The film released in July 2022.' },
   { p: 'Which production house created the horror-comedy universe of Stree, Bhediya and Munjya, with one of its films grossing over 800 crore?', a: 'Maddock Films', img: 'filmy_maddock', mode: 'reveal', note: 'Stree 2 (2024) crossed 800 crore worldwide.' },
   { p: 'The three college students in Mohabbatein were Uday Chopra, Jimmy Sheirgill and...?', a: 'Jugal Hansraj', img: 'filmy_jugal', mode: 'reveal', note: 'Mohabbatein (2000) was his best-known role.' },
