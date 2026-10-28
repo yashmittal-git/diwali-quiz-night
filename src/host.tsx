@@ -19,7 +19,7 @@ const HB_DESCS: Record<string, string> = {
     kapil: 'Answer-reveal photo of Kapil Dev lifting the 1983 World Cup trophy on the Lord\'s balcony.',
     dhoni: 'MS Dhoni in India colours.',
     neeraj: 'Neeraj Chopra with his javelin.',
-    sindhu: 'PV Sindhu on court.',
+    sindhu: 'Question photo of PV Sindhu playing a forehand on court.',
     panipuri: 'A plate of pani puri.',
     mysorepak: 'Ghee-rich slabs of Mysore Pak.',
     sadya: 'A full sadya spread on a banana leaf.',

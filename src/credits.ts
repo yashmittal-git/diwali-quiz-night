@@ -168,10 +168,10 @@ export default {
   "page": "https://commons.wikimedia.org/wiki/File:MS_Dhoni_2016.jpg"
  },
  "sindhu": {
-  "title": "PV Sindhu headshot.jpg",
-  "license": "GODL-India",
-  "author": "Prime Minister's Office",
-  "page": "https://commons.wikimedia.org/wiki/File:PV_Sindhu_headshot.jpg"
+  "title": "PV Sindhu playing a forehand (photo supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
  },
  "chandrayaan": {
   "title": "Chandrayaan 3 Vikram lander stereo (53167467822) crop.png",
