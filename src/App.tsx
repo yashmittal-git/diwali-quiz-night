@@ -350,7 +350,7 @@ export function App() {
                 <button className="tile" onClick={() => setView('patakha')}>
                     <span className="em">💪</span>
                     <span className="nm">Grid Gains</span>
-                    <span className="tg">45 cells. Two nipples. Call it.</span>
+                    <span className="tg">40 cells. Two nipples. Call it.</span>
                     <span className="st">{(s.aq || {})['patakha:grid'] ? '✓ ' + (s.aq || {})['patakha:grid'] : 'Open'}</span>
                 </button>
             </div>

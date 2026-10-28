@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-/* ---- Patakha: Grid Gains - real photo, lower chest plus a bit below is covered (45 opaque square cells, I4-P8); the rest of the photo stays visible ---- */
+/* ---- Patakha: Grid Gains - real photo, lower chest plus a bit below is covered (40 opaque square cells, I4-P8); the rest of the photo stays visible ---- */
 const GCOLS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T'];
 const GROWS = [1,2,3,4,5,6,7,8,9,10,11,12,13,14];
-/* covered band: columns I-P, rows 4-8 - lower chest plus a little below, 45 cells */
+/* covered band: columns I-P, rows 4-8 - lower chest plus a little below, 40 cells */
 const COVERED = new Set(['I','J','K','L','M','N','O','P'].flatMap(c => [4, 5, 6, 7, 8].map(r => c + r)));
 export const PATAKHA_POINTS = 20;
 /* measured against the full-resolution photo: nipples at (938,515) and (1508,520) land inside I4 and N4 comfortably */
@@ -15,7 +15,7 @@ export function GridGains({ photo, onAward, onNobody, onUndo, awarded, names }: 
     const pick = (cell: string) => { if (!picked.includes(cell)) setPicked([...picked, cell]); };
     return <div className="pk-stage">
         <h2>Grid Gains 💪</h2>
-        <p className="pk-line">Open floor - shout a cell, host taps it. Only the lower chest is covered: 45 cells, I4 to P8. Two of them are hiding nipples. First correct call wins {PATAKHA_POINTS} points. Real photo. Zero shame.</p>
+        <p className="pk-line">Open floor - shout a cell, host taps it. Only the lower chest is covered: 40 cells, I4 to P8. Two of them are hiding nipples. First correct call wins {PATAKHA_POINTS} points. Real photo. Zero shame.</p>
         <div className="pk-photo-wrap grid70">
             <img src={photo} className="pk-photo" alt="Shirtless bodybuilder torso hidden under a labelled grid" />
             <div className="pk-grid g70">
