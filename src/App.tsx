@@ -370,7 +370,7 @@ export function App() {
         {view === 'credits' && <main className="credits">
             <h1>Photo credits</h1>
             <p className="sub">Images from Wikimedia Commons and Pexels, used under the licences shown. Tap a title for the original page.</p>
-            <ul>{Object.entries(credits as Record<string, { title: string; license: string; author: string; page: string }>).map(([k, c]) => <li key={k}><a href={c.page} target="_blank" rel="noreferrer">{c.title.replace(/\.[a-z]+$/i, '')}</a><span>{c.author} · {c.license}</span></li>)}</ul>
+            <ul>{Object.entries(credits as Record<string, { title: string; license: string; author: string; page: string }>).map(([k, c]) => <li key={k}>{c.page ? <a href={c.page} target="_blank" rel="noreferrer">{c.title.replace(/\.[a-z]+$/i, '')}</a> : <span>{c.title}</span>}<span>{c.author} · {c.license}</span></li>)}</ul>
             <button className="cta" onClick={() => setView('board')}>Back</button>
         </main>}
         {confirmReset && <div className="modal" role="dialog" aria-modal="true"><div className="box"><h2>Restart the whole quiz?</h2><p>This clears all scores, round picks and progress, and resets names to Player 1-4.</p><div className="row"><button className="btn danger" onClick={restart}>Yes, start over</button><button className="btn" onClick={() => setConfirmReset(false)}>Keep playing</button></div></div></div>}

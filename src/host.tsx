@@ -16,7 +16,7 @@ const HB_DESCS: Record<string, string> = {
     hampi: 'The stone chariot at Vittala Temple.',
     charminar: 'Charminar and its four minarets above the old bazaar.',
     ranikivav: 'The carved stepwell terraces of Rani ki Vav.',
-    kapil: 'The 1983 World Cup team being received by President Giani Zail Singh.',
+    kapil: 'Answer-reveal photo of Kapil Dev lifting the 1983 World Cup trophy on the Lord\'s balcony.',
     dhoni: 'MS Dhoni in India colours.',
     neeraj: 'Neeraj Chopra with his javelin.',
     sindhu: 'PV Sindhu on court.',

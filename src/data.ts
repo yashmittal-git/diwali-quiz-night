@@ -63,7 +63,7 @@ export const rounds: Round[] = [
   { p: 'This 11th century stepwell, a UNESCO World Heritage Site since 2014, is on the back of the 100 rupee note. Name it and its state.', a: 'Rani ki Vav, Patan, Gujarat', img: 'ranikivav', mode: 'zoom', origin: '30% 60%' },
 ]},
 { id: 'khel', name: 'Khel Khel Mein', tag: 'Cricket, Olympics and more', emoji: '🏏', hue: 200, qs: [
-  { p: 'Lord\'s balcony. Kapil Dev\'s Devils lift India\'s first cricket World Cup. Which year?', a: '1983', img: 'kapil', mode: 'reveal', note: 'India beat the West Indies in the final. The photo shows the team being received by President Giani Zail Singh.' },
+  { p: 'Lord\'s balcony. Kapil Dev\'s Devils lift India\'s first cricket World Cup. Which year?', a: '1983', img: 'kapil', mode: 'reveal', note: 'India beat the West Indies in the final. The photo shows Kapil Dev lifting the trophy on the Lord\'s balcony.' },
   { p: 'Which Indian captain is famous on the field as "Captain Cool"?', a: 'MS Dhoni', img: 'dhoni', mode: 'reveal' },
   { p: 'Javelin gold at the Olympics. Which city hosted those Games?', a: 'Tokyo (Neeraj Chopra, Tokyo 2020 held in 2021)', img: 'neeraj', mode: 'reveal', note: 'He added a silver at Paris 2024.' },
   { p: 'PV Sindhu has two Olympic medals. What colours, in order?', a: 'Silver (Rio 2016), then bronze (Tokyo 2020)', img: 'sindhu', mode: 'reveal' },

@@ -66,10 +66,10 @@ export default {
   "page": "https://commons.wikimedia.org/wiki/File:Charminar_Hyderabad_1.jpg"
  },
  "kapil": {
-  "title": "President Giani Zail Singh receiving the Indian cricket team after the World Cup victory.jpg",
-  "license": "GODL-India",
-  "author": "Institution:President's Sectretariat",
-  "page": "https://commons.wikimedia.org/wiki/File:President_Giani_Zail_Singh_receiving_the_Indian_cricket_team_after_the_World_Cup_victory.jpg"
+  "title": "Kapil Dev lifting the 1983 World Cup trophy on the Lord's balcony (photo supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
  },
  "neeraj": {
   "title": "Neeraj Chopra Of India(Javelin).jpg",
