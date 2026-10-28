@@ -72,10 +72,10 @@ export default {
   "page": ""
  },
  "neeraj": {
-  "title": "Neeraj Chopra Of India(Javelin).jpg",
-  "license": "CC BY-SA 4.0",
-  "author": "Athletics Federation of India",
-  "page": "https://commons.wikimedia.org/wiki/File:Neeraj_Chopra_Of_India(Javelin).jpg"
+  "title": "Neeraj Chopra throwing the javelin for India (photo supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
  },
  "panipuri": {
   "title": "Golgappa Pani Puri India.jpg",
