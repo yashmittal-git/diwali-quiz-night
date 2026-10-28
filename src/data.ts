@@ -104,8 +104,8 @@ export const rounds: Round[] = [
   { p: 'UPI, the payment system everyone uses, stands for what?', a: 'Unified Payments Interface', img: 'upi', logo: true },
   { p: 'In August 2023, India became the first country to land near the Moon\'s south polar region. Which mission?', a: 'Chandrayaan-3', img: 'chandrayaan', mode: 'reveal', note: 'Landed on 23 August 2023.' },
   { p: 'Flipkart started in Bengaluru in 2007. What did it first sell online?', a: 'Books', img: 'flipkart', logo: true },
-  { p: 'The Cockroach Janta Party (yes, really) holds a press conference. Name all three leaders, left to right.', a: 'Saurav Das, Abhijeet Dipke and Ashutosh Ranka (cockroaches)', img: 'trio', note: 'Dipke is the CJP convener; Das and Ranka are co-conveners. And yes, this party genuinely exists - it made national news in 2026.' },
+  { p: 'Two of these three young leaders were recently arrested at a Delhi protest and spent about a week in jail. Name all three, left to right.', a: 'Saurav Das, Abhijeet Dipke and Ashutosh Ranka (cockroaches)', img: 'trio', note: 'They lead the Cockroach Janta Party (yes, really - founded May 2026, grew out of NEET-UG protests). Das and Ranka were arrested on 13 October 2026 after entering the denotified Jantar Mantar protest site and released about a week later; the party campaigns for the Chief Election Commissioner\'s resignation.' },
   { p: 'Which Indian Navy ship, commissioned in September 2022, is India\'s first home-built aircraft carrier?', a: 'INS Vikrant', img: 'vikrant', mode: 'reveal', note: 'Built at Cochin Shipyard.' },
-  { p: 'Which Indian motorcycle brand, maker of the Bullet, is famous for its dug-dug thump?', a: 'Royal Enfield', note: 'Built in India since 1955 - the oldest motorcycle brand in continuous production.' },
+  { p: 'This Indian motorcycle brand sells an adventure bike named after the world\'s highest mountain range. Which brand?', a: 'Royal Enfield', note: 'The bike is the Himalayan. Royal Enfield has been built in India since 1955 - the oldest motorcycle brand in continuous production.' },
 ]},
 ];
