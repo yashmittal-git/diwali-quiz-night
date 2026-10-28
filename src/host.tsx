@@ -4,10 +4,12 @@ import { rounds } from './data';
 /* One-line visual descriptions so the host knows what each photo shows without
    loading the whole photo bank on a phone. Grounded in the actual photo files. */
 const HB_DESCS: Record<string, string> = {
-    ranbir_alia: 'Wedding photo of the couple in matching ivory outfits.',
-    ambani: 'Photo of Mukesh and Nita Ambani together.',
-    virat_anushka: 'Wedding photo of the couple in pastel outfits.',
-    deepika_ranveer: 'Wedding photo of the couple.',
+    ranbir_alia: 'Answer-reveal photo of the couple in matching ivory outfits (not shown with the clue).',
+    ambani: 'Answer-reveal photo of Mukesh and Nita Ambani at a wedding reception (not shown with the clue).',
+    virat_anushka: 'Answer-reveal photo of the couple at their Mumbai wedding reception (not shown with the clue).',
+    deepika_ranveer: 'Answer-reveal photo of the couple at their reception (not shown with the clue).',
+    srk_gauri: 'Answer-reveal photo of Shah Rukh and Gauri Khan at an event (not shown with the clue).',
+    amitabh_jaya: 'Answer-reveal photo of Amitabh and Jaya Bachchan (not shown with the clue).',
     hawa: 'The pink facade of Hawa Mahal with its rows of tiny windows.',
     root: 'The double-decker living root bridge over a jungle stream.',
     meenakshi: 'A colourful gopuram tower packed with painted figures.',

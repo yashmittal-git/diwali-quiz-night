@@ -28,6 +28,8 @@ import ranbirAlia from './photos/ranbir_alia.jpg';
 import viratAnushka from './photos/virat_anushka.jpg';
 import deepikaRanveer from './photos/deepika_ranveer.jpg';
 import ambani from './photos/ambani.jpg';
+import srk_gauri from './photos/srk_gauri.jpg';
+import amitabh_jaya from './photos/amitabh_jaya.jpg';
 import upi from './photos/upi.svg';
 import flipkart from './photos/flipkart.png';
 import trio from './photos/trio.jpg';
@@ -36,7 +38,7 @@ import modi from './photos/modi.jpg';
 export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, vikrant,
-    ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer,
+    ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya,
 };
 
 export type Mode = 'blur' | 'zoom' | 'reveal' | 'clear';
@@ -45,16 +47,16 @@ export type Round = { id: string; name: string; tag: string; emoji: string; hue:
 
 export const rounds: Round[] = [
 { id: 'jodi', name: 'Jodi No. 1', tag: 'Power couples, filmy and otherwise', emoji: '💞', hue: 335, qs: [
-  { p: 'Wedding at his Bandra home in April 2022. She played Gangubai Kathiawadi. Name the couple.', a: 'Ranbir Kapoor and Alia Bhatt', img: 'ranbir_alia', mode: 'blur', note: 'They also shared the screen as Shiva and Isha in Brahmastra (2022).' },
-  { p: 'Their son\'s pre-wedding celebrations were held in Jamnagar in March 2024, home to a giant refinery. Which power couple are the hosts?', a: 'Mukesh Ambani and Nita Ambani', note: 'Jamnagar is home to Reliance\'s refinery complex.', img: 'ambani', mode: 'reveal' },
-  { p: 'Tuscany, Italy, December 2017. A cricketer marries the actor of Rab Ne Bana Di Jodi and Sultan. Name the couple.', a: 'Virat Kohli and Anushka Sharma', img: 'virat_anushka', mode: 'blur' },
-  { p: 'Lake Como, November 2018. She grew up in Bengaluru, he played Bajirao. Name the couple.', a: 'Deepika Padukone and Ranveer Singh', img: 'deepika_ranveer', mode: 'blur', note: 'Deepika was born in Copenhagen but grew up in Bengaluru.' },
-  { p: 'He is called the "King". She is an interior designer and co-chairperson of Red Chillies Entertainment. They married in 1991. Name the couple.', a: 'Shah Rukh Khan and Gauri Khan' },
-  { p: 'In Sholay (1975), which real-life married couple played Jai and Radha?', a: 'Amitabh Bachchan and Jaya Bachchan', note: 'They had married in June 1973, two years before the film released.' },
+  { p: 'Wedding at his Bandra home in April 2022. She played Gangubai Kathiawadi. Name the couple.', a: 'Ranbir Kapoor and Alia Bhatt', img: 'ranbir_alia', mode: 'reveal', note: 'They also shared the screen as Shiva and Isha in Brahmastra (2022).' },
+  { p: 'Jamnagar is famous because of this power couple.', a: 'Mukesh Ambani and Nita Ambani', note: 'Jamnagar is home to Reliance\'s refinery complex, and hosted their son\'s pre-wedding celebrations in March 2024.', img: 'ambani', mode: 'reveal' },
+  { p: 'A famous cricketer and a Bollywood actress got married in December 2017. Guess the couple.', a: 'Virat Kohli and Anushka Sharma', img: 'virat_anushka', mode: 'reveal', note: 'They married in Tuscany, Italy, on 11 December 2017.' },
+  { p: 'Lake Como, November 2018. She grew up in Bengaluru, he is famous for his energy and bold fashion. Name the couple.', a: 'Deepika Padukone and Ranveer Singh', img: 'deepika_ranveer', mode: 'reveal', note: 'Deepika was born in Copenhagen but grew up in Bengaluru.' },
+  { p: 'They met in Delhi in 1984 and married in 1991, before he became one of Bollywood\'s biggest stars. She is an interior designer and co-chairperson of Red Chillies Entertainment. Name the couple.', a: 'Shah Rukh Khan and Gauri Khan', img: 'srk_gauri', mode: 'reveal' },
+  { p: 'In Sholay (1975), which real-life married couple played Jai and Radha?', a: 'Amitabh Bachchan and Jaya Bachchan', img: 'amitabh_jaya', mode: 'reveal', note: 'They had married in June 1973, two years before the film released.' },
 ]},
 { id: 'bharat', name: 'Bharat Darshan', tag: 'Spot the place, crack the clue', emoji: '🧭', hue: 28, qs: [
-  { p: 'Palace of Winds, with 953 tiny windows so royal ladies could watch the street unseen. Which city?', a: 'Jaipur (Hawa Mahal, built 1799)', img: 'hawa', mode: 'zoom', origin: '70% 30%' },
-  { p: 'Which state is famous for bridges that are grown, not built, from living tree roots? This is a double-decker one.', a: 'Meghalaya (Nongriat village, near Cherrapunji)', img: 'root', mode: 'clear' },
+  { p: 'This palace has 953 tiny windows so royal ladies could watch the street unseen. Which city?', a: 'Jaipur (Hawa Mahal, built 1799)', img: 'hawa', mode: 'zoom', origin: '70% 30%' },
+  { p: 'Which Indian state is famous for its living root bridges?', a: 'Meghalaya (Nongriat village, near Cherrapunji)', img: 'root', mode: 'clear' },
   { p: 'This temple\'s colourful gopurams (gateway towers) are packed with thousands of painted figures. Which city?', a: 'Madurai, Tamil Nadu (Meenakshi Amman Temple)', img: 'meenakshi', mode: 'zoom', origin: '50% 25%', note: 'Not a UNESCO World Heritage Site, but one of India\'s great temples.' },
   { p: 'This stone chariot is printed on the back of which Indian banknote?', a: 'The 50 rupee note (Vittala Temple, Hampi, Karnataka)', img: 'hampi', mode: 'clear', note: 'RBI\'s Mahatma Gandhi (New) Series 50 rupee note shows Hampi with its chariot.' },
   { p: 'Built in 1591 with four minarets, this monument stands in the middle of an old bazaar. Which city?', a: 'Hyderabad (Charminar)', img: 'charminar', mode: 'zoom', origin: '50% 20%' },

@@ -24,10 +24,10 @@ export default {
   "page": "https://commons.wikimedia.org/wiki/File:Flipkart_Logo_as_of_2025.png"
  },
  "ambani": {
-  "title": "Mukesh Ambani and Nita Ambani felicitating Shobhana Ranade with Life Time Achievement Award.jpg",
-  "license": "CC0 1.0",
-  "author": "Mananshah15 (own work)",
-  "page": "https://commons.wikimedia.org/wiki/File:Mukesh_Ambani_and_Nita_ambani_Felicitating_Shobhana_Ranade_with_Life_Time_Achievement_Award.jpg"
+  "title": "Ambani Family at reception of Deepika and Ranveer 2018.jpg (cropped to Mukesh and Nita Ambani)",
+  "license": "CC BY 3.0",
+  "author": "Bollywood Hungama",
+  "page": "https://commons.wikimedia.org/wiki/File:Ambani_Family_at_reception_of_Deepika_and_Ranveer_2018.jpg"
  },
  "hawa": {
   "title": "East facade Hawa Mahal Jaipur from ground level (July 2022) - img 01.jpg",
@@ -138,10 +138,22 @@ export default {
   "page": "https://commons.wikimedia.org/wiki/File:Ranbir_Kapoor_and_Alia_Bhatt.jpg"
  },
  "virat_anushka": {
-  "title": "The Captain of the Indian Cricket Team, Virat Kohli and noted actor Anushka Sharma calls on the Prime Minister, Shri Narendra Modi, in New Delhi on December 20, 2017.jpg",
-  "license": "GODL-India",
-  "author": "Prime Minister's Office",
-  "page": "https://commons.wikimedia.org/wiki/File:The_Captain_of_the_Indian_Cricket_Team,_Virat_Kohli_and_noted_actor_Anushka_Sharma_calls_on_the_Prime_Minister,_Shri_Narendra_Modi,_in_New_Delhi_on_December_20,_2017.jpg"
+  "title": "Virat Kohli and Anushka Sharma at Mumbai reception.jpg",
+  "license": "CC BY 3.0",
+  "author": "Bollywood Hungama",
+  "page": "https://commons.wikimedia.org/wiki/File:Virat_Kohli_and_Anushka_Sharma_at_Mumbai_reception.jpg"
+ },
+ "srk_gauri": {
+  "title": "Shahrukh Khan and Gauri at 'The Outsider' launch party.jpg",
+  "license": "CC BY 3.0",
+  "author": "Bollywood Hungama",
+  "page": "https://commons.wikimedia.org/wiki/File:Shahrukh_Khan_and_Gauri_at_%27The_Outsider%27_launch_party.jpg"
+ },
+ "amitabh_jaya": {
+  "title": "Amitabh and Jaya Bachchan still15.jpg",
+  "license": "CC BY 3.0",
+  "author": "Bollywood Hungama",
+  "page": "https://commons.wikimedia.org/wiki/File:Amitabh_and_Jaya_Bachchan_still15.jpg"
  },
  "deepika_ranveer": {
   "title": "Deepika Padukone and Ranveer Singh reception.jpg",
