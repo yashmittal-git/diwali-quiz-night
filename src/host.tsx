@@ -55,7 +55,7 @@ export function HostHandbook() {
             <h2>🎤 Patakha - Godiji</h2>
             <p className="hb-tag">Open floor, no timer, first faithful completion wins 20</p>
             <div className="hb-q">
-                <p className="hb-p"><span className="hb-n">🎤</span> One evening at 8 PM, TVs across India suddenly flicked on - this personality had a surprise address for the nation. Clue stem (his actual opening words): "बहनों भाइयों, देश को भ्रष्टाचार और काले धन रूपी दीमक से मुक्त कराने के लिए…" - they complete the announcement.</p>
+                <p className="hb-p"><span className="hb-n">🎤</span> One evening at 8 PM, TVs across India suddenly flicked on - this personality had a surprise address for the nation. Clue stem (his actual opening words, one greeting sentence trimmed): "मेरे प्यारे देशवासियों, आज आप सभी से कुछ विशेष निवेदन करना चाहता हूँ। इस वार्ता में कुछ गंभीर विषय, कुछ महत्वपूर्ण निर्णय आप से साझा करूंगा…" - they complete the announcement.</p>
                 <p className="hb-a">✅ "आज मध्य रात्रि यानि 8 नवम्बर 2016 की रात्रि 12 बजे से वर्तमान में जारी 500 रुपये और 1,000 रुपये के करेंसी नोट लीगल टेंडर नहीं रहेंगे, यानि ये मुद्राएँ कानूनन अमान्य होंगी।" Accept any faithful rendering in Hindi or English.</p>
                 <p className="hb-note">💡 The address was 8 November 2016 - keep the date out of the clue, it is part of the answer. Official PIB English: "…the five hundred rupee and thousand rupee currency notes presently in use will no longer be legal tender from midnight tonight, that is 8th November 2016." The other "famous line" is from a dubbed parody video, not his real voice. Award via "Who guessed it right?", or "Nobody got it" to close with no points.</p>
             </div>

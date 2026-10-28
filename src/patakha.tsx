@@ -54,7 +54,7 @@ export function Godiji({ photo, onAward, onNobody, onUndo, awarded, names }: { p
         <h2>Godiji 🎤</h2>
         <p className="pk-line">One evening at 8 PM, TVs across India suddenly flicked on - this personality had a surprise address for the nation. Open floor, no timer: complete the announcement. First faithful completion wins {PATAKHA_POINTS} points.</p>
         <div className="pk-photo-wrap modi"><img src={photo} className="pk-photo" alt="Godiji addressing the nation" /></div>
-        <p className="pk-quote deva">"बहनों भाइयों, देश को भ्रष्टाचार और काले धन रूपी दीमक से मुक्त कराने के लिए…"</p>
+        <p className="pk-quote deva">"मेरे प्यारे देशवासियों, आज आप सभी से कुछ विशेष निवेदन करना चाहता हूँ। इस वार्ता में कुछ गंभीर विषय, कुछ महत्वपूर्ण निर्णय आप से साझा करूंगा…"</p>
         {!revealed && <button className="cta" onClick={() => setRevealed(true)}>Reveal the line</button>}
         {revealed && <>
             <p className="pk-answer deva">"आज मध्य रात्रि यानि 8 नवम्बर 2016 की रात्रि 12 बजे से वर्तमान में जारी 500 रुपये और 1,000 रुपये के करेंसी नोट लीगल टेंडर नहीं रहेंगे, यानि ये मुद्राएँ कानूनन अमान्य होंगी।"</p>
