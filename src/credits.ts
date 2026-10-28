@@ -250,27 +250,26 @@ export default {
   "license": "Supplied by the host (Yash) - original source and license unverified; artistic crop",
   "author": "Unknown",
   "page": "https://pib.gov.in/newsite/PrintRelease.aspx?relid=153404"
- },
- "filmy_kkhh_tee": {
-  "title": "Polo Sport t-shirt photo (question visual from a friend's quiz PDF, supplied by host)",
+ }, "filmy_sweater": {
+  "title": "Striped sweater close-up (question visual from a friend's quiz PDF, supplied by host)",
   "license": "Unverified - supplied by host",
   "author": "Unknown",
   "page": ""
  },
- "filmy_kkhh_reveal": {
-  "title": "Kuch Kuch Hota Hai cast photo (answer reveal from a friend's quiz PDF, supplied by host)",
+ "filmy_sweater_reveal": {
+  "title": "Shah Rukh Khan in the striped sweater, Main Hoon Na (answer reveal from a friend's quiz PDF, supplied by host)",
   "license": "Unverified - supplied by host",
   "author": "Unknown",
   "page": ""
  },
- "filmy_helmet": {
-  "title": "Scooter helmet close-up (question visual from a friend's quiz PDF, supplied by host)",
+ "filmy_glass": {
+  "title": "Steel glass close-up (question visual from a friend's quiz PDF, supplied by host)",
   "license": "Unverified - supplied by host",
   "author": "Unknown",
   "page": ""
  },
- "filmy_helmet_reveal": {
-  "title": "Kareena Kapoor on a scooter in Ladakh, 3 Idiots (answer reveal from a friend's quiz PDF, supplied by host)",
+ "filmy_glass_reveal": {
+  "title": "Amrita Rao as Poonam holding the steel glass, Vivah (answer reveal from a friend's quiz PDF, supplied by host)",
   "license": "Unverified - supplied by host",
   "author": "Unknown",
   "page": ""

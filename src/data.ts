@@ -43,10 +43,10 @@ import upi from './photos/upi.svg';
 import flipkart from './photos/flipkart.png';
 import trio from './photos/trio.jpg';
 import modi from './photos/modi.jpg';
-import filmy_helmet from './photos/filmy_helmet.jpg';
-import filmy_helmet_reveal from './photos/filmy_helmet_reveal.jpg';
-import filmy_kkhh_tee from './photos/filmy_kkhh_tee.jpg';
-import filmy_kkhh_reveal from './photos/filmy_kkhh_reveal.jpg';
+import filmy_sweater from './photos/filmy_sweater.jpg';
+import filmy_sweater_reveal from './photos/filmy_sweater_reveal.jpg';
+import filmy_glass from './photos/filmy_glass.jpg';
+import filmy_glass_reveal from './photos/filmy_glass_reveal.jpg';
 import filmy_rocketry from './photos/filmy_rocketry.jpg';
 import filmy_maddock from './photos/filmy_maddock.jpg';
 import filmy_jugal from './photos/filmy_jugal.jpg';
@@ -57,7 +57,7 @@ import filmy_neelam from './photos/filmy_neelam.jpg';
 export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, vikrant,
-    filmy_helmet, filmy_helmet_reveal, filmy_kkhh_tee, filmy_kkhh_reveal, filmy_rocketry, filmy_maddock, filmy_jugal, filmy_blackbuck, filmy_neelam,
+    filmy_sweater, filmy_sweater_reveal, filmy_glass, filmy_glass_reveal, filmy_rocketry, filmy_maddock, filmy_jugal, filmy_blackbuck, filmy_neelam,
     ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtrlogo, rama, dhanteras, durgapuja,
 };
 
@@ -99,8 +99,8 @@ export const rounds: Round[] = [
   { p: 'Cardamom is the "Queen of Spices". Which Kerala-grown spice is called the "King"?', a: 'Black pepper', img: 'pepper', mode: 'reveal', note: 'Only black pepper counts. Cardamom is the Queen.' },
 ]},
 { id: 'filmy', name: 'Filmy Fatafat', tag: 'Twisty Bollywood trivia', emoji: '🎬', hue: 275, qs: [
-  { p: 'This Polo Sport tee became a college fashion craze after which movie?', a: 'Kuch Kuch Hota Hai', img: 'filmy_kkhh_tee', imgReveal: 'filmy_kkhh_reveal', mode: 'clear', note: 'Rahul\'s tee. The reveal photo shows SRK wearing it with Rani Mukerji and Kajol.' },
-  { p: 'This bright scooter helmet starred in the Ladakh scenes of a 2009 blockbuster. Name the movie.', a: '3 Idiots', img: 'filmy_helmet', imgReveal: 'filmy_helmet_reveal', mode: 'clear', note: 'Pia\'s scooter helmet - the reveal photo shows Kareena Kapoor riding through Ladakh with it.' },
+  { p: 'Guess the movie from this iconic striped sweater.', a: 'Main Hoon Na!', img: 'filmy_sweater', imgReveal: 'filmy_sweater_reveal', mode: 'clear', note: 'SRK\'s professor look as Ram. The reveal photo shows him in the full outfit.' },
+  { p: 'This humble steel glass had a starring moment in which family drama?', a: 'Vivah', img: 'filmy_glass', imgReveal: 'filmy_glass_reveal', mode: 'clear', note: 'The scene where Prem drinks from Poonam\'s glass. The reveal photo shows Amrita Rao as Poonam.' },
   { p: 'Which actor directed Rocketry: The Nambi Effect?', a: 'R. Madhavan', img: 'filmy_rocketry', mode: 'reveal', note: 'He also played the lead, scientist Nambi Narayanan. The film released in July 2022.' },
   { p: 'Which production house created the horror-comedy universe of Stree, Bhediya and Munjya, with one of its films grossing over 800 crore?', a: 'Maddock Films', img: 'filmy_maddock', mode: 'reveal', note: 'Stree 2 (2024) crossed 800 crore worldwide.' },
   { p: 'The three college students in Mohabbatein were Uday Chopra, Jimmy Sheirgill and...?', a: 'Jugal Hansraj', img: 'filmy_jugal', mode: 'reveal', note: 'Mohabbatein (2000) was his best-known role.' },
