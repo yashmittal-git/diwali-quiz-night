@@ -49,7 +49,7 @@ import filmy_glass from './photos/filmy_glass.jpg';
 import filmy_glass_reveal from './photos/filmy_glass_reveal.jpg';
 import filmy_rocketry from './photos/filmy_rocketry.jpg';
 import filmy_maddock from './photos/filmy_maddock.jpg';
-import filmy_jugal from './photos/filmy_jugal.jpg';
+import filmy_alone from './photos/filmy_alone.jpg';
 import filmy_blackbuck from './photos/filmy_blackbuck.jpg';
 import filmy_neelam from './photos/filmy_neelam.jpg';
 
@@ -57,7 +57,7 @@ import filmy_neelam from './photos/filmy_neelam.jpg';
 export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, vikrant,
-    filmy_sweater, filmy_sweater_reveal, filmy_glass, filmy_glass_reveal, filmy_rocketry, filmy_maddock, filmy_jugal, filmy_blackbuck, filmy_neelam,
+    filmy_sweater, filmy_sweater_reveal, filmy_glass, filmy_glass_reveal, filmy_rocketry, filmy_maddock, filmy_alone, filmy_blackbuck, filmy_neelam,
     ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtrlogo, rama, dhanteras, durgapuja,
 };
 
@@ -103,7 +103,7 @@ export const rounds: Round[] = [
   { p: 'This humble steel glass had a starring moment in which family drama?', a: 'Vivah', img: 'filmy_glass', imgReveal: 'filmy_glass_reveal', mode: 'clear', note: 'The scene where Prem drinks from Poonam\'s glass. The reveal photo shows Amrita Rao as Poonam.' },
   { p: 'Which actor directed Rocketry: The Nambi Effect?', a: 'R. Madhavan', img: 'filmy_rocketry', mode: 'reveal', note: 'He also played the lead, scientist Nambi Narayanan. The film released in July 2022.' },
   { p: 'Which production house created the horror-comedy universe of Stree, Bhediya and Munjya, with one of its films grossing over 800 crore?', a: 'Maddock Films', img: 'filmy_maddock', mode: 'reveal', note: 'Stree 2 (2024) crossed 800 crore worldwide.' },
-  { p: 'The three college students in Mohabbatein were Uday Chopra, Jimmy Sheirgill and...?', a: 'Jugal Hansraj', img: 'filmy_jugal', mode: 'reveal', note: 'Mohabbatein (2000) was his best-known role.' },
+  { p: 'Name the Bollywood film where Bipasha Basu played twin sisters, one of whom was a ghost.', a: 'Alone', img: 'filmy_alone', mode: 'reveal', note: 'The 2015 horror film paired her with Karan Singh Grover.' },
   { p: 'In the 1998 blackbuck case, a complaint named Salman Khan, Saif Ali Khan, Sonali Bendre, Tabu and one more actress from the Hum Saath-Saath Hain cast. Name her.', a: 'Neelam Kothari', img: 'filmy_blackbuck', imgReveal: 'filmy_neelam', mode: 'clear', note: 'The cast was accused of hunting blackbuck near Jodhpur during the shoot. In 2018 a Jodhpur court convicted Salman Khan and acquitted the other four.' },
 ]},
 { id: 'namma', name: 'Namma Bengaluru', tag: 'The Garden City, up close', emoji: '🌳', hue: 145, qs: [

@@ -286,8 +286,8 @@ export default {
   "author": "Unknown",
   "page": ""
  },
- "filmy_jugal": {
-  "title": "Jugal Hansraj photo (answer reveal from a friend's quiz PDF, supplied by host)",
+ "filmy_alone": {
+  "title": "Alone movie poster (answer reveal from a friend's quiz PDF, supplied by host)",
   "license": "Unverified - supplied by host",
   "author": "Unknown",
   "page": ""

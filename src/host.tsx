@@ -34,7 +34,7 @@ const HB_DESCS: Record<string, string> = {
     filmy_glass_reveal: 'Answer-reveal photo of Amrita Rao as Poonam in a purple sari holding the steel glass (Vivah).',
     filmy_rocketry: 'Answer-reveal poster of Rocketry: The Nambi Effect with R. Madhavan\'s face and a rocket launch (not shown with the clue).',
     filmy_maddock: 'Answer-reveal poster collage of the Maddock Supernatural Universe films - Munjya, Roohi, Stree, Bhediya (not shown with the clue).',
-    filmy_jugal: 'Answer-reveal photo of Jugal Hansraj in Mohabbatein (not shown with the clue).',
+    filmy_alone: 'Answer-reveal poster of Alone (2015) - Bipasha Basu as the ghost twin behind Karan Singh Grover (not shown with the clue).',
     filmy_blackbuck: 'Question photo of Saif Ali Khan, Salman Khan, Sonali Bendre and Tabu arriving at court with a blackbuck cutout in front; reveal swaps in a photo of Neelam Kothari.',
     filmy_neelam: 'Answer-reveal photo of Neelam Kothari at a jewellery store event.',
 
