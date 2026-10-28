@@ -100,7 +100,7 @@ export const rounds: Round[] = [
 ]},
 { id: 'filmy', name: 'Filmy Fatafat', tag: 'Twisty Bollywood trivia', emoji: '🎬', hue: 275, qs: [
   { p: 'Guess the movie from this iconic striped sweater.', a: 'Main Hoon Na!', img: 'filmy_sweater', imgReveal: 'filmy_sweater_reveal', mode: 'clear', note: 'SRK\'s professor look as Ram. The reveal photo shows him in the full outfit.' },
-  { p: 'This humble steel glass had a starring moment in which family drama?', a: 'Vivah', img: 'filmy_glass', imgReveal: 'filmy_glass_reveal', mode: 'clear', note: 'The scene where Prem drinks from Poonam\'s glass. The reveal photo shows Amrita Rao as Poonam.' },
+  { p: 'This humble steel glass had a starring moment in which family drama?', a: 'Vivah', img: 'filmy_glass', imgReveal: 'filmy_glass_reveal', mode: 'clear', fit: 'contain', note: 'The scene where Prem drinks from Poonam\'s glass. The reveal photo shows Amrita Rao as Poonam.' },
   { p: 'Which actor directed Rocketry: The Nambi Effect?', a: 'R. Madhavan', img: 'filmy_rocketry', mode: 'reveal', note: 'He also played the lead, scientist Nambi Narayanan. The film released in July 2022.' },
   { p: 'Which production house created the horror-comedy universe of Stree, Bhediya and Munjya, with one of its films grossing over 800 crore?', a: 'Maddock Films', img: 'filmy_maddock', mode: 'reveal', note: 'Stree 2 (2024) crossed 800 crore worldwide.' },
   { p: 'Name the Bollywood film where Bipasha Basu played twin sisters, one of whom was a ghost.', a: 'Alone', img: 'filmy_alone', mode: 'reveal', note: 'The 2015 horror film paired her with Karan Singh Grover.' },

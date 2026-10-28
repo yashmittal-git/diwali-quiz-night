@@ -37,7 +37,7 @@ function Pic({ q, revealed, onReady }: { q: Q; revealed: boolean; onReady?: () =
     const src = photos[imgKey];
     const mode = q.mode || 'clear';
     if (mode === 'reveal' && !revealed) return null;
-    const cls = 'pic pic-' + mode + (revealed ? ' is-revealed' : '') + (q.logo ? ' pic-logo' : '');
+    const cls = 'pic pic-' + mode + (revealed ? ' is-revealed' : '') + (q.logo ? ' pic-logo' : '') + ((q as any).fit === 'contain' ? ' pic-contain' : '');
     return <div className={cls + (mode === 'reveal' ? ' pic-pop' : '')}><PicImg key={imgKey} src={src} alt={revealed ? q.a : 'Mystery picture'} zoom={mode === 'zoom'} origin={q.origin} onReady={onReady} /></div>;
 }
 

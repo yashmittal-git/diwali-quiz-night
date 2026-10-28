@@ -167,6 +167,7 @@ main{padding-top:0}
 .qbody.has-pic{grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);align-items:center}
 .qbody .pic{aspect-ratio:auto;height:46vh;max-height:none;width:100%}
 .qbody .pic img{object-fit:cover}
+.qbody .pic.pic-contain img{object-fit:contain;background:#000}
 .pic-clear img,.pic.is-revealed img,.pic-pop img,.qbody .pic-blur img{object-fit:contain;background:#000}
 .pic-blur img{filter:blur(5.5px) brightness(.95);transform:none;object-fit:contain;background:#000}
 .pic-pop{animation:popin .7s cubic-bezier(.2,1.3,.4,1)}
