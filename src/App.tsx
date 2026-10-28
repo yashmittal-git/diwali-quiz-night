@@ -54,7 +54,7 @@ export function App() {
     const s: Saved = { ...INITIAL, ...saved };
     const rawNames: string[] = [0, 1, 2, 3].map(i => (saved.names || [])[i] ?? INITIAL.names[i]);
     const nm = (i: number) => (rawNames[i] || '').trim() || 'Player ' + (i + 1);
-    const [view, setView] = useState<'home' | 'setup' | 'board' | 'round' | 'credits' | 'end' | 'patakhamenu' | 'patakha' | 'modi' | 'handbook'>('home');
+    const [view, setView] = useState<'home' | 'setup' | 'board' | 'round' | 'credits' | 'end' | 'patakhamenu' | 'patakha' | 'modi' | 'handbook'>(() => window.location.hash === '#host' ? 'handbook' : 'home');
     const [gateOk, setGateOk] = useState(false);
     const [gateCode, setGateCode] = useState('');
     const [gateErr, setGateErr] = useState(false);
@@ -237,14 +237,13 @@ export function App() {
             <div className="diya" aria-hidden="true"><RoundIcon id="diwali" size={110} /></div>
             <h1 className="wobble deva">रुकिए!</h1>
             <p className="latintitle">Secret party code, please</p>
-            <p className="sub">Yash ke mehmaan hi aage badh sakte hain. Code maango, seedha chalo. 🪔</p>
+            <p className="sub">Yash se code maango - no code, no khel. 🪔</p>
             <div className="gate-form">
                 <input className="gate-input" type={gateShow ? 'text' : 'password'} value={gateCode} onChange={e => setGateCode(e.target.value.replace(/\D/g, '').slice(0, 4))} onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); tryGate(); } }} inputMode="numeric" autoComplete="off" placeholder="••••" aria-label="Party code" autoFocus />
                 <button className="gate-eye" type="button" onClick={() => setGateShow(v => !v)} aria-label={gateShow ? 'Hide the code' : 'Show the code'} title={gateShow ? 'Hide' : 'Show'}>{gateShow ? '🙈' : '👁️'}</button>
                 <button className="cta" type="button" onClick={tryGate}>Kholo! 🎇</button>
             </div>
             {gateErr && <p className="gate-err">Galat code! Nakhre baad mein, sahi code pehle. 😜</p>}
-            <p className="hint">Guests: Yash se code maango. No code, no khel.</p>
         </main>}
         {view === 'setup' && <main className="setup">
             <h1 className="wobble">Rules of the Evening</h1>
