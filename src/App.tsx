@@ -70,9 +70,8 @@ export function App() {
     const [confirmReset, setConfirmReset] = useState(false);
 
     useEffect(() => {
-        if (view !== 'round') return;
-        rounds[ri].qs.forEach(qq => { if (qq.img && photos[qq.img]) { const im = new Image(); im.src = photos[qq.img]; } });
-    }, [view, ri]);
+        rounds.forEach(r => r.qs.forEach(qq => { [qq.img, (qq as any).imgReveal].forEach(k => { if (k && photos[k]) { const im = new Image(); im.src = photos[k]; } }); }));
+    }, []);
     const timer = useRef<number | null>(null);
     const migratedNames = useRef(false);
     const pendingT = useRef<number | null>(null);

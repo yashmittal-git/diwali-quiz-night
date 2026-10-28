@@ -79,7 +79,7 @@ export const rounds: Round[] = [
   { p: 'Which Indian state is famous for its living root bridges?', a: 'Meghalaya (Nongriat village, near Cherrapunji)', img: 'root', mode: 'clear' },
   { p: 'This temple\'s colourful gopurams (gateway towers) are packed with thousands of painted figures. Which city?', a: 'Madurai, Tamil Nadu (Meenakshi Amman Temple)', img: 'meenakshi', mode: 'zoom', origin: '50% 25%', note: 'Not a UNESCO World Heritage Site, but one of India\'s great temples.' },
   { p: 'This stone chariot is printed on the back of which Indian banknote?', a: 'The 50 rupee note (Vittala Temple, Hampi, Karnataka)', img: 'hampi', mode: 'clear', note: 'RBI\'s Mahatma Gandhi (New) Series 50 rupee note shows Hampi with its chariot.' },
-  { p: 'Built in 1591 with four minarets, this monument stands in the middle of an old bazaar. Which city?', a: 'Hyderabad (Charminar)', img: 'charminar', mode: 'zoom', origin: '50% 20%' },
+  { p: 'Built in 1591 with four minarets, this monument stands in the middle of an old bazaar. Which city?', a: 'Hyderabad (Charminar)', img: 'charminar', mode: 'zoom', origin: '50% 40%' },
   { p: 'This 11th century stepwell, a UNESCO World Heritage Site since 2014, is on the back of the 100 rupee note. Name it and its state.', a: 'Rani ki Vav, Patan, Gujarat', img: 'ranikivav', mode: 'zoom', origin: '30% 60%' },
 ]},
 { id: 'khel', name: 'Khel Khel Mein', tag: 'Cricket, Olympics and more', emoji: '🏏', hue: 200, qs: [
@@ -87,7 +87,7 @@ export const rounds: Round[] = [
   { p: 'Which Indian captain is famous on the field as "Captain Cool"?', a: 'MS Dhoni', img: 'dhoni', mode: 'reveal' },
   { p: 'India won javelin gold at the Olympics. Which city hosted those Games?', a: 'Tokyo (Neeraj Chopra, Tokyo 2020 held in 2021)', img: 'neeraj', mode: 'reveal', note: 'He added a silver at Paris 2024.' },
   { p: 'PV Sindhu has two Olympic medals. What colours, in order?', a: 'Silver (Rio 2016), then bronze (Tokyo 2020)', img: 'sindhu', mode: 'clear' },
-  { p: 'In December 2025, this music composer\'s wedding to one of India\'s biggest women cricketers was called off. Name the cricketer.', a: 'Smriti Mandhana', img: 'palash', imgReveal: 'mandhana_palash', mode: 'clear', note: 'Both Smriti Mandhana and Palash Muchhal confirmed the wedding was called off. Theories about why are unverified gossip - do not present them as fact.' },
+  { p: 'In December 2025, this music composer\'s wedding to one of India\'s biggest women cricketers was called off. Name the cricketer.', a: 'Smriti Mandhana', img: 'palash', imgReveal: 'mandhana_palash', mode: 'clear', fit: 'contain', note: 'Both Smriti Mandhana and Palash Muchhal confirmed the wedding was called off. Theories about why are unverified gossip - do not present them as fact.' },
   { p: 'February 2010, Gwalior, against South Africa. Who scored the first ever double century in men\'s ODI cricket, and how many?', a: 'Sachin Tendulkar, 200 not out', img: 'sachin', mode: 'reveal' },
 ]},
 { id: 'chatpata', name: 'Chatpata Chaupal', tag: 'Street food, sweets and spices', emoji: '🍛', hue: 48, qs: [
@@ -123,7 +123,7 @@ export const rounds: Round[] = [
   { p: 'Not Diwali, but Bengal\'s biggest festival. Which Kolkata festival was added to UNESCO\'s intangible heritage list in 2021?', a: 'Durga Puja', img: 'durgapuja', mode: 'reveal', note: 'Durga Puja in Kolkata, inscribed in December 2021. The photo shows Sindoor Khela on Bijoya Dashami.' },
 ]},
 { id: 'madein', name: 'Made in India', tag: 'Space, startups and big firsts', emoji: '🚀', hue: 215, qs: [
-  { p: 'UPI, the payment system everyone uses, stands for what?', a: 'Unified Payments Interface', img: 'upi', logo: true },
+  { p: 'UPI, the payment system everyone uses, stands for what?', a: 'Unified Payments Interface', img: 'upi', logo: true, mode: 'reveal' },
   { p: 'In August 2023, India became the first country to land near the Moon\'s south polar region. Which mission?', a: 'Chandrayaan-3', img: 'chandrayaan', mode: 'reveal', note: 'Landed on 23 August 2023.' },
   { p: 'Flipkart started in Bengaluru in 2007. What did it first sell online?', a: 'Books', img: 'flipkart', logo: true },
   { p: 'Two of these three young leaders were recently arrested at a Delhi protest and spent about a week in jail. Name all three, left to right.', a: 'Saurav Das, Abhijeet Dipke and Ashutosh Ranka (cockroaches)', img: 'trio', note: 'They lead the Cockroach Janta Party (yes, really - founded May 2026, grew out of NEET-UG protests). Das and Ranka were arrested on 13 October 2026 after entering the denotified Jantar Mantar protest site and released about a week later; the party campaigns for the Chief Election Commissioner\'s resignation.' },
