@@ -75,6 +75,7 @@ export function App() {
     const timer = useRef<number | null>(null);
     const migratedNames = useRef(false);
     const pendingT = useRef<number | null>(null);
+    const awardLock = useRef(false);
     const autoWaitPic = useRef(false);
     const muteRef = useRef(s.mute);
     muteRef.current = s.mute;
@@ -116,9 +117,12 @@ export function App() {
     const openQ = (r: number, i: number) => {
         stopTimer(); setRi(r); setQi(i); setRevealed(false); setLeft(null);
         const label = (s.aq || {})[`${rounds[r].id}:${i}`] || null;
+        awardLock.current = label !== null;
         setAwarded(label); setView('round'); autoStart(r, i, label);
     };
     const award = (p: number, d: number, label: string) => {
+        if (awarded !== null || awardLock.current) return;
+        awardLock.current = true;
         if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; }
         const scores = s.scores.slice(); scores[p] += d;
         const labelTxt = `${nm(p)} +${d}`;
@@ -126,16 +130,24 @@ export function App() {
         setAwarded(labelTxt); setBurst(b => b + 1); stopTimer(); if (!s.mute) playCheer();
     };
     const wrong = () => {
+        if (awarded !== null || awardLock.current) return;
         if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; }
         if (!s.mute) playOops();
         setAwarded(null); stopTimer(); if (!q.paced) setLeft(0); setOops(o => o + 1);
     };
+    const nobody = () => {
+        if (awarded !== null || awardLock.current) return;
+        awardLock.current = true;
+        if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; }
+        update({ aq: { ...(s.aq || {}), [`${round.id}:${qi}`]: 'No points' } });
+        setAwarded('No points'); stopTimer();
+    };
     const undo = () => {
         const aq = { ...(s.aq || {}) }; delete aq[`${round.id}:${qi}`];
-        if (awarded === 'No points') { update({ aq }); setAwarded(null); return; }
+        if (awarded === 'No points') { update({ aq }); setAwarded(null); awardLock.current = false; return; }
         const last = s.log[s.log.length - 1]; if (!last) return;
         const scores = s.scores.slice(); scores[last.p] -= last.d;
-        update({ scores, log: s.log.slice(0, -1), aq }); setAwarded(null);
+        update({ scores, log: s.log.slice(0, -1), aq }); setAwarded(null); awardLock.current = false;
     };
     const nudge = (p: number, d: number) => { const scores = s.scores.slice(); scores[p] += d; update({ scores, log: [...s.log, { p, d, label: 'manual' }].slice(-60) }); };
     const next = () => {
@@ -317,7 +329,7 @@ export function App() {
                 <button className="btn good" disabled={awarded !== null} onClick={() => award(picker, direct, 'direct')}>✓ {nm(picker)} correct +{direct}</button>
                 {s.names.map((n, i) => i === picker ? null : <button key={i} className="btn steal" disabled={awarded !== null} onClick={() => award(i, steal, 'steal')}>Steal: {n} +{steal}</button>)}
                 <button className="btn wrongbtn" disabled={awarded !== null} onClick={wrong}>✗ Wrong, up for grabs</button>
-                <button className="btn" disabled={awarded !== null} onClick={() => { if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; } update({ aq: { ...(s.aq || {}), [`${round.id}:${qi}`]: 'No points' } }); setAwarded('No points'); stopTimer(); }}>Nobody</button>
+                <button className="btn" disabled={awarded !== null} onClick={nobody}>Nobody</button>
                 <button className="btn" onClick={undo} disabled={!s.log.length && awarded === null}>Undo</button>
             </div>
             {awarded && <p className="awarded">{awarded}</p>}
