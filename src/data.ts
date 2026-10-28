@@ -43,10 +43,21 @@ import upi from './photos/upi.svg';
 import flipkart from './photos/flipkart.png';
 import trio from './photos/trio.jpg';
 import modi from './photos/modi.jpg';
+import filmy_helmet from './photos/filmy_helmet.jpg';
+import filmy_helmet_reveal from './photos/filmy_helmet_reveal.jpg';
+import filmy_kkhh_tee from './photos/filmy_kkhh_tee.jpg';
+import filmy_kkhh_reveal from './photos/filmy_kkhh_reveal.jpg';
+import filmy_rocketry from './photos/filmy_rocketry.jpg';
+import filmy_maddock from './photos/filmy_maddock.jpg';
+import filmy_jugal from './photos/filmy_jugal.jpg';
+import filmy_blackbuck from './photos/filmy_blackbuck.jpg';
+import filmy_neelam from './photos/filmy_neelam.jpg';
+
 
 export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, vikrant,
+    filmy_helmet, filmy_helmet_reveal, filmy_kkhh_tee, filmy_kkhh_reveal, filmy_rocketry, filmy_maddock, filmy_jugal, filmy_blackbuck, filmy_neelam,
     ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtrlogo, rama, dhanteras, durgapuja,
 };
 
@@ -88,12 +99,12 @@ export const rounds: Round[] = [
   { p: 'Cardamom is the "Queen of Spices". Which Kerala-grown spice is called the "King"?', a: 'Black pepper', img: 'pepper', mode: 'reveal', note: 'Only black pepper counts. Cardamom is the Queen.' },
 ]},
 { id: 'filmy', name: 'Filmy Fatafat', tag: 'Twisty Bollywood trivia', emoji: '🎬', hue: 275, qs: [
-  { p: 'Which Bollywood actress starred opposite Vin Diesel in xXx: Return of Xander Cage?', a: 'Deepika Padukone', note: 'She played Serena Unger in the 2017 film.' },
-  { p: 'Which Bollywood actor appeared in Furious 7 as Safar, a friend who helps Ramsey?', a: 'Ali Fazal', note: 'Widely described as his big Hollywood break, in 2015.' },
-  { p: 'Irrfan Khan appeared in which Marvel film, as Dr. Rajit Ratha?', a: 'The Amazing Spider-Man (2012)', note: 'He played an Oscorp scientist who gets attacked by the Lizard.' },
-  { p: 'The three college students in Mohabbatein were Uday Chopra, Jimmy Sheirgill and...?', a: 'Jugal Hansraj', note: 'Mohabbatein (2000) was his best-known role.' },
-  { p: 'In which 2005 film does Shah Rukh Khan play a ghost who takes the form of a woman\'s absent husband?', a: 'Paheli', note: 'The ghost falls in love with the new bride, played by Rani Mukerji.' },
-  { p: 'Which production house created the horror-comedy universe of Stree, Bhediya and Munjya, with one film grossing over 800 crore?', a: 'Maddock Films', note: 'Stree 2 (2024) crossed 800 crore worldwide.' },
+  { p: 'This Polo Sport tee became a college fashion craze after which movie?', a: 'Kuch Kuch Hota Hai', img: 'filmy_kkhh_tee', imgReveal: 'filmy_kkhh_reveal', mode: 'clear', note: 'Rahul\'s tee. The reveal photo shows SRK wearing it with Rani Mukerji and Kajol.' },
+  { p: 'Identify the movie from this iconic prop.', a: '3 Idiots', img: 'filmy_helmet', imgReveal: 'filmy_helmet_reveal', mode: 'clear', note: 'Pia\'s scooter helmet - the reveal photo shows Kareena Kapoor riding through Ladakh with it.' },
+  { p: 'Which actor directed Rocketry: The Nambi Effect?', a: 'R. Madhavan', img: 'filmy_rocketry', mode: 'reveal', note: 'He also played the lead, scientist Nambi Narayanan. The film released in July 2022.' },
+  { p: 'Which production house created the horror-comedy universe of Stree, Bhediya and Munjya, with one of its films grossing over 800 crore?', a: 'Maddock Films', img: 'filmy_maddock', mode: 'reveal', note: 'Stree 2 (2024) crossed 800 crore worldwide.' },
+  { p: 'The three college students in Mohabbatein were Uday Chopra, Jimmy Sheirgill and...?', a: 'Jugal Hansraj', img: 'filmy_jugal', mode: 'reveal', note: 'Mohabbatein (2000) was his best-known role.' },
+  { p: 'In the 1998 blackbuck case, a complaint named Salman Khan, Saif Ali Khan, Sonali Bendre, Tabu and one more actress from the Hum Saath-Saath Hain cast. Name her.', a: 'Neelam Kothari', img: 'filmy_blackbuck', imgReveal: 'filmy_neelam', mode: 'clear', note: 'The cast was accused of hunting blackbuck near Jodhpur during the shoot. In 2018 a Jodhpur court convicted Salman Khan and acquitted the other four.' },
 ]},
 { id: 'namma', name: 'Namma Bengaluru', tag: 'The Garden City, up close', emoji: '🌳', hue: 145, qs: [
   { p: 'This granite building, built in the 1950s, holds enormous importance in the state\'s functioning and is a major tourist attraction. Name it.', a: 'Vidhana Soudha', img: 'vidhana', mode: 'zoom', origin: '50% 30%' },

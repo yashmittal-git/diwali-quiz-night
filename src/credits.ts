@@ -250,5 +250,59 @@ export default {
   "license": "Supplied by the host (Yash) - original source and license unverified; artistic crop",
   "author": "Unknown",
   "page": "https://pib.gov.in/newsite/PrintRelease.aspx?relid=153404"
+ },
+ "filmy_kkhh_tee": {
+  "title": "Polo Sport t-shirt photo (question visual from a friend's quiz PDF, supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "filmy_kkhh_reveal": {
+  "title": "Kuch Kuch Hota Hai cast photo (answer reveal from a friend's quiz PDF, supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "filmy_helmet": {
+  "title": "Scooter helmet close-up (question visual from a friend's quiz PDF, supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "filmy_helmet_reveal": {
+  "title": "Kareena Kapoor on a scooter in Ladakh, 3 Idiots (answer reveal from a friend's quiz PDF, supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "filmy_rocketry": {
+  "title": "Rocketry: The Nambi Effect poster (answer reveal from a friend's quiz PDF, supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "filmy_maddock": {
+  "title": "Maddock Supernatural Universe poster (answer reveal from a friend's quiz PDF, supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "filmy_jugal": {
+  "title": "Jugal Hansraj photo (answer reveal from a friend's quiz PDF, supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "filmy_blackbuck": {
+  "title": "Hum Saath-Saath Hain cast court-visit photo with blackbuck cutout (question visual from a friend's quiz PDF, supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "filmy_neelam": {
+  "title": "Neelam Kothari photo (answer reveal from a friend's quiz PDF, supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
  }
 };
