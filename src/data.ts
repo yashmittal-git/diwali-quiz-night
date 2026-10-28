@@ -35,6 +35,10 @@ import palash from './photos/palash.jpg';
 import mandhana_palash from './photos/mandhana_palash.jpg';
 import mango from './photos/mango.jpg';
 import pepper from './photos/pepper.jpg';
+import mtr from './photos/mtr.jpg';
+import rama from './photos/rama.jpg';
+import dhanteras from './photos/dhanteras.jpg';
+import durgapuja from './photos/durgapuja.jpg';
 import upi from './photos/upi.svg';
 import flipkart from './photos/flipkart.png';
 import trio from './photos/trio.jpg';
@@ -43,7 +47,7 @@ import modi from './photos/modi.jpg';
 export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, vikrant,
-    ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper,
+    ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtr, rama, dhanteras, durgapuja,
 };
 
 export type Mode = 'blur' | 'zoom' | 'reveal' | 'clear';
@@ -54,9 +58,9 @@ export const rounds: Round[] = [
 { id: 'jodi', name: 'Jodi No. 1', tag: 'Power couples, filmy and otherwise', emoji: '💞', hue: 335, qs: [
   { p: 'Wedding at his Bandra home in April 2022. She played Gangubai Kathiawadi. Name the couple.', a: 'Ranbir Kapoor and Alia Bhatt', img: 'ranbir_alia', mode: 'reveal', note: 'They also shared the screen as Shiva and Isha in Brahmastra (2022).' },
   { p: 'Jamnagar is famous because of this power couple.', a: 'Mukesh Ambani and Nita Ambani', note: 'Jamnagar is home to Reliance\'s refinery complex, and hosted their son\'s pre-wedding celebrations in March 2024.', img: 'ambani', mode: 'reveal' },
-  { p: 'A famous cricketer and a Bollywood actress got married in December 2017. Guess the couple.', a: 'Virat Kohli and Anushka Sharma', img: 'virat_anushka', mode: 'reveal', note: 'They married in Tuscany, Italy, on 11 December 2017.' },
+  { p: 'A famous cricketer and a Bollywood actress got married in Italy in December 2017. Guess the couple.', a: 'Virat Kohli and Anushka Sharma', img: 'virat_anushka', mode: 'reveal', note: 'They married in Tuscany, Italy, on 11 December 2017.' },
   { p: 'Lake Como, November 2018. She grew up in Bengaluru, he is famous for his energy and bold fashion. Name the couple.', a: 'Deepika Padukone and Ranveer Singh', img: 'deepika_ranveer', mode: 'reveal', note: 'Deepika was born in Copenhagen but grew up in Bengaluru.' },
-  { p: 'They met in Delhi in 1984 and married in 1991, before he became one of Bollywood\'s biggest stars. She is an interior designer and co-chairperson of Red Chillies Entertainment. Name the couple.', a: 'Shah Rukh Khan and Gauri Khan', img: 'srk_gauri', mode: 'reveal' },
+  { p: 'They married in 1991, before he became one of Bollywood\'s biggest stars. She is an interior designer and co-chairperson of Red Chillies Entertainment. Name the couple.', a: 'Shah Rukh Khan and Gauri Khan', img: 'srk_gauri', mode: 'reveal' },
   { p: 'In Sholay (1975), which real-life married couple played Jai and Radha?', a: 'Amitabh Bachchan and Jaya Bachchan', img: 'amitabh_jaya', mode: 'reveal', note: 'They had married in June 1973, two years before the film released.' },
 ]},
 { id: 'bharat', name: 'Bharat Darshan', tag: 'Spot the place, crack the clue', emoji: '🧭', hue: 28, qs: [
@@ -96,16 +100,16 @@ export const rounds: Round[] = [
   { p: 'Bengaluru is a city of lakes. Name any five lakes in Bengaluru.', a: 'Any five of the lakes below count', lakes: ['Ulsoor (Halasuru)', 'Sankey Tank', 'Hebbal', 'Bellandur', 'Varthur', 'Agara', 'Madiwala', 'Jakkur', 'Yelahanka', 'Puttenahalli', 'Sarakki', 'Kaikondrahalli', 'Nagavara', 'Kempambudhi', 'Dharmambudhi', 'Hulimavu', 'Arekere', 'Rachenahalli', 'Lalbagh Lake', 'Hesaraghatta', 'Munnekollala', 'Harlur Lake', 'Kasavanahalli'] },
   { p: 'Lalbagh\'s Glass House hosts big flower shows around which two national days?', a: 'Republic Day (January) and Independence Day (August)', img: 'lalbagh', mode: 'clear', note: 'Name both for full points. One alone is half right.' },
   { p: 'Before the airport at Devanahalli opened in May 2008, Bengaluru\'s passenger flights used an older airport. Name that airport?', a: 'HAL Airport', img: 'halairport', mode: 'reveal', note: 'It began in 1941 as the home of India\'s first aircraft factory, and passenger flights moved to Kempegowda International Airport on 24 May 2008. It still handles charter and VIP flights.' },
-  { p: 'Which Bengaluru eatery, open since 1924, is credited with inventing rava idli during a wartime rice shortage?', a: 'MTR (Mavalli Tiffin Rooms)' },
+  { p: 'Which Bengaluru eatery, open since 1924, is credited with inventing rava idli during a wartime rice shortage?', a: 'MTR (Mavalli Tiffin Rooms)', img: 'mtr', mode: 'reveal', note: 'The Lalbagh Road restaurant still serves the original menu; MTR Foods grew out of it.' },
   { p: 'Cubbon Park is named after which British Commissioner of Mysore?', a: 'Sir Mark Cubbon', img: 'cubbon', mode: 'clear', note: 'Officially it is now Sri Chamarajendra Park.' },
 ]},
 { id: 'diwali', name: 'Diwali Dhamaka', tag: 'Diwali first, then festivals across India', emoji: '🪔', hue: 18, qs: [
   { p: 'Which goddess is worshipped in most homes on Diwali evening?', a: 'Lakshmi' },
-  { p: 'In the Ramayana, to which city did Rama return after 14 years of exile?', a: 'Ayodhya' },
-  { p: 'The five day Diwali festival begins with which day, when many people buy gold or utensils?', a: 'Dhanteras' },
+  { p: 'In the Ramayana, to which city did Rama return after 14 years of exile?', a: 'Ayodhya', img: 'rama', mode: 'clear' },
+  { p: 'The five day Diwali festival begins with which day, when many people buy gold or utensils?', a: 'Dhanteras', img: 'dhanteras', mode: 'clear' },
   { p: 'Not Diwali, but Onam. What is Kerala\'s floral carpet for that festival called?', a: 'Pookalam', img: 'pookalam', mode: 'zoom', origin: '50% 50%' },
-  { p: 'In December 2025, Deepavali was added to which UNESCO list?', a: 'The Representative List of the Intangible Cultural Heritage of Humanity', img: 'diya', mode: 'reveal' },
-  { p: 'Not Diwali, but Bengal\'s biggest festival. Which Kolkata festival was added to UNESCO\'s intangible heritage list in 2021?', a: 'Durga Puja', note: 'Durga Puja in Kolkata, inscribed in December 2021.' },
+  { p: 'Diwali is not only a Hindu festival. Which religion marks Diwali as the day Lord Mahavira attained nirvana?', a: 'Jainism', img: 'diya', mode: 'reveal', note: 'Jains believe Mahavira, the 24th Tirthankara, attained nirvana on this day in 527 BCE.' },
+  { p: 'Not Diwali, but Bengal\'s biggest festival. Which Kolkata festival was added to UNESCO\'s intangible heritage list in 2021?', a: 'Durga Puja', img: 'durgapuja', mode: 'reveal', note: 'Durga Puja in Kolkata, inscribed in December 2021. The photo shows Sindoor Khela on Bijoya Dashami.' },
 ]},
 { id: 'madein', name: 'Made in India', tag: 'Space, startups and big firsts', emoji: '🚀', hue: 215, qs: [
   { p: 'UPI, the payment system everyone uses, stands for what?', a: 'Unified Payments Interface', img: 'upi', logo: true },

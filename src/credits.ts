@@ -179,6 +179,30 @@ export default {
   "author": "Dr. Raju Kasambe",
   "page": "https://commons.wikimedia.org/wiki/File:Badami_Indian_Mango_variety_IMG_20230603_(1).jpg"
  },
+ "mtr": {
+  "title": "Mavalli Tiffin Room (6), Lalbagh Road, Bengaluru.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Gpkp",
+  "page": "https://commons.wikimedia.org/wiki/File:Mavalli_Tiffin_Room_(6),_Lalbagh_Road,_Bengaluru.jpg"
+ },
+ "rama": {
+  "title": "Lord Rama with arrows.jpg",
+  "license": "Public domain",
+  "author": "Unknown author",
+  "page": "https://commons.wikimedia.org/wiki/File:Lord_Rama_with_arrows.jpg"
+ },
+ "dhanteras": {
+  "title": "Self made Utensil Shop in Thathera market of Jandiala Guru.jpg",
+  "license": "CC BY 4.0",
+  "author": "Harvinder Chandigarh",
+  "page": "https://commons.wikimedia.org/wiki/File:Self_made_Utensil_Shop_in_Thathera_market_of_Jandiala_Guru.jpg"
+ },
+ "durgapuja": {
+  "title": "Bijoya Dashami.jpg",
+  "license": "CC BY 4.0",
+  "author": "Diganta Talukdar",
+  "page": "https://commons.wikimedia.org/wiki/File:Bijoya_Dashami.jpg"
+ },
  "pepper": {
   "title": "Tellicherry Black Peppercorns.jpg",
   "license": "CC0 1.0",
