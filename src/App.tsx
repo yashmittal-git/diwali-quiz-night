@@ -182,7 +182,7 @@ export function App() {
         const id = rounds[r].id;
         const who = s.picks[id] ?? s.chooser;
         update({ picks: { ...s.picks, [id]: who }, chooser: s.picks[id] === undefined ? (s.chooser + 1) % 4 : s.chooser });
-        const q0 = s.progress[id] && s.progress[id] < 6 ? s.progress[id] : 0; stopTimer(); setRi(r); setQi(q0); setView('round'); setRevealed(false); setLeft(null); const lb = (s.aq || {})[`${id}:${q0}`] || null; setAwarded(lb); autoStart(r, q0, lb);
+        const q0 = s.progress[id] && s.progress[id] < 6 ? s.progress[id] : 0; stopTimer(); setRi(r); setQi(q0); setView('round'); setRevealed(false); setLeft(null); const lb = (s.aq || {})[`${id}:${q0}`] || null; awardLock.current = lb !== null; setAwarded(lb); autoStart(r, q0, lb);
     };
 
     useEffect(() => {
