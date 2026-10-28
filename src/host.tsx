@@ -6,7 +6,7 @@ import { rounds } from './data';
 const HB_DESCS: Record<string, string> = {
     ranbir_alia: 'Answer-reveal photo of the couple in matching ivory outfits (not shown with the clue).',
     ambani: 'Answer-reveal photo of Mukesh and Nita Ambani at a wedding reception (not shown with the clue).',
-    virat_anushka: 'Answer-reveal photo of the couple at their Mumbai wedding reception (not shown with the clue).',
+    virat_anushka: 'Answer-reveal photo of the couple at their wedding pheras by the sacred fire (not shown with the clue).',
     deepika_ranveer: 'Answer-reveal photo of the couple at their reception (not shown with the clue).',
     srk_gauri: 'Answer-reveal photo of Shah Rukh and Gauri Khan at an event (not shown with the clue).',
     amitabh_jaya: 'Answer-reveal photo of Amitabh and Jaya Bachchan (not shown with the clue).',

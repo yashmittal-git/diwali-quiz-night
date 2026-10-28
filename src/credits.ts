@@ -138,10 +138,10 @@ export default {
   "page": "https://commons.wikimedia.org/wiki/File:Ranbir_Kapoor_and_Alia_Bhatt.jpg"
  },
  "virat_anushka": {
-  "title": "Virat Kohli and Anushka Sharma at Mumbai reception.jpg",
-  "license": "CC BY 3.0",
-  "author": "Bollywood Hungama",
-  "page": "https://commons.wikimedia.org/wiki/File:Virat_Kohli_and_Anushka_Sharma_at_Mumbai_reception.jpg"
+  "title": "Virat Kohli and Anushka Sharma wedding pheras photo (supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
  },
  "srk_gauri": {
   "title": "Shahrukh Khan and Gauri at 'The Outsider' launch party.jpg",
