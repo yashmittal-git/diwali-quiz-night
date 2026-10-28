@@ -64,9 +64,9 @@ export function HostHandbook() {
             <h2>🧨 Patakha - Grid Gains</h2>
             <p className="hb-tag">Open floor, no timer, first correct call wins 20</p>
             <div className="hb-q">
-                <p className="hb-p"><span className="hb-n">🧨</span> 70 labelled cells (columns A-J, rows 1-7) hide the whole torso. Players shout cells, you tap them. A wrong cell shows a red cross and opens a patch; the right ones show 🎯.</p>
+                <p className="hb-p"><span className="hb-n">🧨</span> Only the chest is covered: 18 labelled cells, D2 to I4 (the rest of the photo stays visible). Players shout cells, you tap them. A wrong cell shows a red cross and opens a patch; the right ones show 🎯.</p>
                 <p className="hb-a">✅ The two nipple cells are E3 and H3. First player to call a correct cell wins 20 points - tap their name under "Who guessed it right?", or "Nobody got it" to close it with no points.</p>
-                <p className="hb-note">💡 Opened cells reveal the photo underneath, so the torso slowly un-censors as the game goes on.</p>
+                <p className="hb-note">💡 Opened cells reveal the chest photo underneath, so it slowly un-censors as the game goes on.</p>
             </div>
         </section>
     </div>;

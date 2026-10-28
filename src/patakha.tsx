@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
-/* ---- Patakha: Grid Gains - real photo, 70 opaque square cells over the whole torso, call your cells ---- */
+/* ---- Patakha: Grid Gains - real photo, only the chest is covered (18 opaque square cells, D2-I4); the rest of the photo stays visible ---- */
 const GCOLS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
 const GROWS = [1, 2, 3, 4, 5, 6, 7];
+/* covered band: columns D-I, rows 2-4 - nipples plus adjacent chest only */
+const COVERED = new Set(['D', 'E', 'F', 'G', 'H', 'I'].flatMap(c => [2, 3, 4].map(r => c + r)));
 export const PATAKHA_POINTS = 20;
 /* measured against the actual displayed image: E3 and H3 hold the nipples, comfortably inside their cells */
 const NIPPLES = ['E3', 'H3'];
@@ -13,12 +15,13 @@ export function GridGains({ photo, onAward, onNobody, onUndo, awarded, names }: 
     const pick = (cell: string) => { if (!picked.includes(cell)) setPicked([...picked, cell]); };
     return <div className="pk-stage">
         <h2>Grid Gains 💪</h2>
-        <p className="pk-line">Open floor - shout a cell, host taps it. Two of these 70 cells are hiding nipples. First correct call wins {PATAKHA_POINTS} points. Real photo. Zero shame.</p>
+        <p className="pk-line">Open floor - shout a cell, host taps it. Only the chest is covered: 18 cells, D2 to I4. Two of them are hiding nipples. First correct call wins {PATAKHA_POINTS} points. Real photo. Zero shame.</p>
         <div className="pk-photo-wrap grid70">
             <img src={photo} className="pk-photo" alt="Shirtless bodybuilder torso hidden under a labelled grid" />
             <div className="pk-grid g70">
                 {GROWS.map(r => GCOLS.map((c, ci) => {
                     const cell = c + r;
+                    if (!COVERED.has(cell)) return <div key={cell} className="pk-cell free" aria-hidden="true" />;
                     const isOpen = picked.includes(cell);
                     const isNip = NIPPLES.includes(cell);
                     const alt = (ci + r) % 2 === 0;

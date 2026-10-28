@@ -349,3 +349,4 @@ main.qscreen .awarded{font-size:13px}
 .gate-eye:hover{border-color:#ffd27a}
 .pk-who{display:flex;flex-direction:column;align-items:center;gap:6px}
 .hb-desc { font-size: .85rem; color: #d8b98a; margin: .1rem 0 .25rem; font-style: italic; }
+.pk-cell.free { background: transparent; border: none; box-shadow: none; pointer-events: none; }
