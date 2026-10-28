@@ -179,11 +179,11 @@ export default {
   "author": "Dr. Raju Kasambe",
   "page": "https://commons.wikimedia.org/wiki/File:Badami_Indian_Mango_variety_IMG_20230603_(1).jpg"
  },
- "mtr": {
-  "title": "Mavalli Tiffin Room (6), Lalbagh Road, Bengaluru.jpg",
-  "license": "CC BY-SA 4.0",
-  "author": "Gpkp",
-  "page": "https://commons.wikimedia.org/wiki/File:Mavalli_Tiffin_Room_(6),_Lalbagh_Road,_Bengaluru.jpg"
+ "mtrlogo": {
+  "title": "MTR logo (from mtrfoods.com)",
+  "license": "Brand asset - MTR Foods",
+  "author": "MTR Foods",
+  "page": "https://www.mtrfoods.com/"
  },
  "rama": {
   "title": "Lord Rama with arrows.jpg",

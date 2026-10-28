@@ -35,7 +35,7 @@ import palash from './photos/palash.jpg';
 import mandhana_palash from './photos/mandhana_palash.jpg';
 import mango from './photos/mango.jpg';
 import pepper from './photos/pepper.jpg';
-import mtr from './photos/mtr.jpg';
+import mtrlogo from './photos/mtrlogo.png';
 import rama from './photos/rama.jpg';
 import dhanteras from './photos/dhanteras.jpg';
 import durgapuja from './photos/durgapuja.jpg';
@@ -47,7 +47,7 @@ import modi from './photos/modi.jpg';
 export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, vikrant,
-    ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtr, rama, dhanteras, durgapuja,
+    ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtrlogo, rama, dhanteras, durgapuja,
 };
 
 export type Mode = 'blur' | 'zoom' | 'reveal' | 'clear';
@@ -100,7 +100,7 @@ export const rounds: Round[] = [
   { p: 'Bengaluru is a city of lakes. Name any five lakes in Bengaluru.', a: 'Any five of the lakes below count', lakes: ['Ulsoor (Halasuru)', 'Sankey Tank', 'Hebbal', 'Bellandur', 'Varthur', 'Agara', 'Madiwala', 'Jakkur', 'Yelahanka', 'Puttenahalli', 'Sarakki', 'Kaikondrahalli', 'Nagavara', 'Kempambudhi', 'Dharmambudhi', 'Hulimavu', 'Arekere', 'Rachenahalli', 'Lalbagh Lake', 'Hesaraghatta', 'Munnekollala', 'Harlur Lake', 'Kasavanahalli'] },
   { p: 'Lalbagh\'s Glass House hosts big flower shows around which two national days?', a: 'Republic Day (January) and Independence Day (August)', img: 'lalbagh', mode: 'clear', note: 'Name both for full points. One alone is half right.' },
   { p: 'Before the airport at Devanahalli opened in May 2008, Bengaluru\'s passenger flights used an older airport. Name that airport?', a: 'HAL Airport', img: 'halairport', mode: 'reveal', note: 'It began in 1941 as the home of India\'s first aircraft factory, and passenger flights moved to Kempegowda International Airport on 24 May 2008. It still handles charter and VIP flights.' },
-  { p: 'Which Bengaluru eatery, open since 1924, is credited with inventing rava idli during a wartime rice shortage?', a: 'MTR (Mavalli Tiffin Rooms)', img: 'mtr', mode: 'reveal', note: 'The Lalbagh Road restaurant still serves the original menu; MTR Foods grew out of it.' },
+  { p: 'Which Bengaluru eatery, open since 1924, is credited with inventing rava idli during a wartime rice shortage?', a: 'MTR (Mavalli Tiffin Rooms)', img: 'mtrlogo', mode: 'reveal', logo: true, note: 'The Lalbagh Road restaurant still serves the original menu; MTR Foods grew out of it.' },
   { p: 'Cubbon Park is named after which British Commissioner of Mysore?', a: 'Sir Mark Cubbon', img: 'cubbon', mode: 'clear', note: 'Officially it is now Sri Chamarajendra Park.' },
 ]},
 { id: 'diwali', name: 'Diwali Dhamaka', tag: 'Diwali first, then festivals across India', emoji: '🪔', hue: 18, qs: [
