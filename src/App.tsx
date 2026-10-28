@@ -33,11 +33,12 @@ function Embers({ calm }: { calm: boolean }) {
 
 function Pic({ q, revealed, onReady }: { q: Q; revealed: boolean; onReady?: () => void }) {
     if (!q.img) return null;
-    const src = photos[q.img];
+    const imgKey = (revealed && q.imgReveal) ? q.imgReveal : q.img;
+    const src = photos[imgKey];
     const mode = q.mode || 'clear';
     if (mode === 'reveal' && !revealed) return null;
     const cls = 'pic pic-' + mode + (revealed ? ' is-revealed' : '') + (q.logo ? ' pic-logo' : '');
-    return <div className={cls + (mode === 'reveal' ? ' pic-pop' : '')}><PicImg key={q.img} src={src} alt={revealed ? q.a : 'Mystery picture'} zoom={mode === 'zoom'} origin={q.origin} onReady={onReady} /></div>;
+    return <div className={cls + (mode === 'reveal' ? ' pic-pop' : '')}><PicImg key={imgKey} src={src} alt={revealed ? q.a : 'Mystery picture'} zoom={mode === 'zoom'} origin={q.origin} onReady={onReady} /></div>;
 }
 
 function PicImg({ src, alt, zoom, origin, onReady }: { src: string; alt: string; zoom: boolean; origin?: string; onReady?: () => void }) {

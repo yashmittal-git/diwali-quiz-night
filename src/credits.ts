@@ -161,6 +161,30 @@ export default {
   "author": "Bollywood Hungama",
   "page": "https://commons.wikimedia.org/wiki/File:Deepika_Padukone_and_Ranveer_Singh_reception.jpg"
  },
+ "palash": {
+  "title": "Palash Muchhal (photo supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "mandhana_palash": {
+  "title": "Smriti Mandhana and Palash Muchhal together (photo supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "mango": {
+  "title": "Badami Indian Mango variety IMG 20230603 (1).jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Dr. Raju Kasambe",
+  "page": "https://commons.wikimedia.org/wiki/File:Badami_Indian_Mango_variety_IMG_20230603_(1).jpg"
+ },
+ "pepper": {
+  "title": "Tellicherry Black Peppercorns.jpg",
+  "license": "CC0 1.0",
+  "author": "Misterneedlemouse",
+  "page": "https://commons.wikimedia.org/wiki/File:Tellicherry_Black_Peppercorns.jpg"
+ },
  "sachin": {
   "title": "Sachin Tendulkar raising his bat and helmet for India (photo supplied by host)",
   "license": "Unverified - supplied by host",

@@ -31,6 +31,10 @@ import ambani from './photos/ambani.jpg';
 import srk_gauri from './photos/srk_gauri.jpg';
 import amitabh_jaya from './photos/amitabh_jaya.jpg';
 import sachin from './photos/sachin.jpg';
+import palash from './photos/palash.jpg';
+import mandhana_palash from './photos/mandhana_palash.jpg';
+import mango from './photos/mango.jpg';
+import pepper from './photos/pepper.jpg';
 import upi from './photos/upi.svg';
 import flipkart from './photos/flipkart.png';
 import trio from './photos/trio.jpg';
@@ -39,11 +43,11 @@ import modi from './photos/modi.jpg';
 export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, vikrant,
-    ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin,
+    ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper,
 };
 
 export type Mode = 'blur' | 'zoom' | 'reveal' | 'clear';
-export type Q = { p: string; a: string; note?: string; img?: string; mode?: Mode; logo?: boolean; origin?: string; clue?: string; lakes?: string[]; paced?: boolean };
+export type Q = { p: string; a: string; note?: string; img?: string; imgReveal?: string; mode?: Mode; logo?: boolean; origin?: string; clue?: string; lakes?: string[]; paced?: boolean };
 export type Round = { id: string; name: string; tag: string; emoji: string; hue: number; qs: Q[] };
 
 export const rounds: Round[] = [
@@ -68,16 +72,16 @@ export const rounds: Round[] = [
   { p: 'Which Indian captain is famous on the field as "Captain Cool"?', a: 'MS Dhoni', img: 'dhoni', mode: 'reveal' },
   { p: 'India won javelin gold at the Olympics. Which city hosted those Games?', a: 'Tokyo (Neeraj Chopra, Tokyo 2020 held in 2021)', img: 'neeraj', mode: 'reveal', note: 'He added a silver at Paris 2024.' },
   { p: 'PV Sindhu has two Olympic medals. What colours, in order?', a: 'Silver (Rio 2016), then bronze (Tokyo 2020)', img: 'sindhu', mode: 'clear' },
-  { p: 'How many Olympic gold medals has the Indian men\'s hockey team won?', a: 'Eight', note: 'Six in a row from 1928 to 1956, then 1964 and 1980.' },
+  { p: 'In December 2025, this music composer\'s wedding to one of India\'s biggest women cricketers was called off. Name the cricketer.', a: 'Smriti Mandhana', img: 'palash', imgReveal: 'mandhana_palash', mode: 'clear', note: 'Both Smriti Mandhana and Palash Muchhal confirmed the wedding was called off. Theories about why are unverified gossip - do not present them as fact.' },
   { p: 'February 2010, Gwalior, against South Africa. Who scored the first ever double century in men\'s ODI cricket, and how many?', a: 'Sachin Tendulkar, 200 not out', img: 'sachin', mode: 'reveal' },
 ]},
 { id: 'chatpata', name: 'Chatpata Chaupal', tag: 'Street food, sweets and spices', emoji: '🍛', hue: 48, qs: [
   { p: 'Golgappa in Delhi, puchka in Kolkata. What is it called in Mumbai?', a: 'Pani puri', img: 'panipuri', mode: 'clear' },
-  { p: 'Which fruit is India\'s national fruit?', a: 'Mango' },
+  { p: 'Which fruit is India\'s national fruit?', a: 'Mango', img: 'mango', mode: 'reveal' },
   { p: 'This ghee, gram flour and sugar sweet is credited to the palace kitchens of which city?', a: 'Mysuru (Mysore Pak)', img: 'mysorepak', mode: 'zoom', origin: '50% 50%', note: 'Credited to palace cook Kakasura Madappa.' },
   { p: 'Which two states have both claimed the rasgulla as their own?', a: 'West Bengal and Odisha', note: 'Both won: West Bengal holds a GI tag for Banglar Rasogolla (2017), and Odisha has its own GI tag for Odisha Rasagola. Host call: either state alone is half right.' },
   { p: 'A Kerala sadya feast is traditionally served on which leaf?', a: 'Banana leaf', img: 'sadya', mode: 'reveal' },
-  { p: 'Cardamom is the "Queen of Spices". Which Kerala-grown spice is called the "King"?', a: 'Black pepper', note: 'Only black pepper counts. Cardamom is the Queen.' },
+  { p: 'Cardamom is the "Queen of Spices". Which Kerala-grown spice is called the "King"?', a: 'Black pepper', img: 'pepper', mode: 'reveal', note: 'Only black pepper counts. Cardamom is the Queen.' },
 ]},
 { id: 'filmy', name: 'Filmy Fatafat', tag: 'Emoji, dialogues and songs', emoji: '🎬', hue: 275, qs: [
   { p: 'Emoji clue: 3️⃣ 🤪 🎓. Which film?', a: '3 Idiots (2009)', note: 'Aal izz well.' },
