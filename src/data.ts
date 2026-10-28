@@ -86,7 +86,7 @@ export const rounds: Round[] = [
 { id: 'filmy', name: 'Filmy Fatafat', tag: 'Twisty Bollywood trivia', emoji: '🎬', hue: 275, qs: [
   { p: 'Which Bollywood actress starred opposite Vin Diesel in xXx: Return of Xander Cage?', a: 'Deepika Padukone', note: 'She played Serena Unger in the 2017 film.' },
   { p: 'Which Bollywood actor appeared in Furious 7 as Safar, a friend who helps Ramsey?', a: 'Ali Fazal', note: 'Widely described as his big Hollywood break, in 2015.' },
-  { p: 'Irrfan Khan appeared in which Marvel film, as Dr. Rajit Ratha?', a: 'The Amazing Spider-Man (2012)', note: 'He played a Oscorp scientist who gets attacked by the Lizard.' },
+  { p: 'Irrfan Khan appeared in which Marvel film, as Dr. Rajit Ratha?', a: 'The Amazing Spider-Man (2012)', note: 'He played an Oscorp scientist who gets attacked by the Lizard.' },
   { p: 'The three college students in Mohabbatein were Uday Chopra, Jimmy Sheirgill and...?', a: 'Jugal Hansraj', note: 'Mohabbatein (2000) was his best-known role.' },
   { p: 'In which 2005 film does Shah Rukh Khan play a ghost who takes the form of a woman\'s absent husband?', a: 'Paheli', note: 'The ghost falls in love with the new bride, played by Rani Mukerji.' },
   { p: 'Which production house created the horror-comedy universe of Stree, Bhediya and Munjya, with one film grossing over 800 crore?', a: 'Maddock Films', note: 'Stree 2 (2024) crossed 800 crore worldwide.' },
