@@ -1,9 +1,9 @@
 export default {
  "cadbury": {
-  "title": "Cadburys Chocolate in Coimbatore, INDIA (store display; stands in for the Celebrations gift box, which has no freely licensed photo)",
-  "license": "CC BY-SA 4.0",
-  "author": "SnapMeUp",
-  "page": "https://commons.wikimedia.org/wiki/File:Cadburys_Chocolate_in_Coimbatore,INDIA.jpg"
+  "title": "Cadbury Celebrations gift pack (product image)",
+  "license": "All rights reserved - Cadbury/Mondelez product image used for a private party quiz",
+  "author": "Cadbury / Mondelez International",
+  "page": "https://pushmycart.com/products/cadbury-celebrations-assorted-chocolate-gift-pack"
  },
  "modi": {
   "title": "Illustration of the PM's national address (supplied by host)",

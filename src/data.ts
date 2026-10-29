@@ -120,7 +120,7 @@ export const rounds: Round[] = [
   { p: 'In the Ramayana, to which city did Rama return after 14 years of exile?', a: 'Ayodhya', img: 'rama', mode: 'clear' },
   { p: 'The five day Diwali festival begins with which day, when many people buy gold or utensils?', a: 'Dhanteras', img: 'dhanteras', mode: 'clear' },
   { p: 'Not Diwali, but Onam. What is Kerala\'s floral carpet for that festival called?', a: 'Pookalam', img: 'pookalam', mode: 'zoom', origin: '50% 50%' },
-  { p: 'Which famous TV commercial for Diwali had this tagline: "Is Diwali, kuch achha ho jaye, kuch meetha ho jaye"?', a: 'Cadbury Celebrations', img: 'cadbury', mode: 'reveal', note: 'Mondelez\u2019s 2018 Diwali film by Ogilvy lit up Surchand, a Rajasthan village of diya makers, with solar panels. Photo shows a Cadbury counter display in Coimbatore - no freely licensed photo of the Celebrations gift box exists.' },
+  { p: 'Which famous TV commercial for Diwali had this tagline: "Is Diwali, kuch achha ho jaye, kuch meetha ho jaye"?', a: 'Cadbury Celebrations', img: 'cadbury', mode: 'reveal', note: 'Cadbury\u2019s Diwali ads made the Celebrations gift box the modern mithai box - Kuch Meetha Ho Jaaye has been the brand\u2019s festive signature line for years.' },
   { p: 'Not Diwali, but Bengal\'s biggest festival. Which Kolkata festival was added to UNESCO\'s intangible heritage list in 2021?', a: 'Durga Puja', img: 'durgapuja', mode: 'reveal', note: 'Durga Puja in Kolkata, inscribed in December 2021. The photo shows Sindoor Khela on Bijoya Dashami.' },
 ]},
 { id: 'madein', name: 'Made in India', tag: 'Space, startups and big firsts', emoji: '🚀', hue: 215, qs: [
