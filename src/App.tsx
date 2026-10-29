@@ -55,7 +55,7 @@ export function App() {
     const s: Saved = { ...INITIAL, ...saved };
     const rawNames: string[] = [0, 1, 2, 3].map(i => (saved.names || [])[i] ?? INITIAL.names[i]);
     const nm = (i: number) => (rawNames[i] || '').trim() || 'Player ' + (i + 1);
-    const [view, setView] = useState<'home' | 'setup' | 'board' | 'round' | 'credits' | 'end' | 'patakhamenu' | 'patakha' | 'modi' | 'handbook'>(() => window.location.hash === '#host' ? 'handbook' : 'home');
+    const [view, setView] = useState<'home' | 'setup' | 'board' | 'round' | 'credits' | 'end' | 'patakhamenu' | 'patakha' | 'modi' | 'handbook'>(() => window.location.pathname.replace(/\/+$/, '').endsWith('/h') ? 'handbook' : 'home');
     const [gateOk, setGateOk] = useState(false);
     const [gateCode, setGateCode] = useState('');
     const [gateErr, setGateErr] = useState(false);
@@ -172,13 +172,6 @@ export function App() {
     };
 
     useEffect(() => {
-        if (view !== 'home') return;
-        const onH = (e: KeyboardEvent) => { if (e.key === 'h' || e.key === 'H') setView('handbook'); };
-        window.addEventListener('keydown', onH);
-        return () => window.removeEventListener('keydown', onH);
-    }, [view]);
-
-    useEffect(() => {
         if (view !== 'round') return;
         const onKey = (e: KeyboardEvent) => {
             const t = e.target as HTMLElement;
@@ -226,7 +219,6 @@ export function App() {
             <button className="cta" onClick={() => setView('setup')}>Let's play!</button>
             {(total > 0 || s.scores.some(x => x !== 0)) && <button className="ghost small" onClick={() => setView('board')}>Continue where we left off</button>}
             <button className="ghost small" onClick={() => setView('credits')}>Photo credits</button>
-            <button className="ghost small" onClick={() => setView('handbook')}>🎤 Host handbook (all answers - keep private)</button>
             {(total > 0 || s.scores.some(x => x !== 0)) && <button className="ghost small danger" onClick={() => setConfirmReset(true)}>↻ Start over (clear scores)</button>}
             <p className="hint">Host keys: <kbd>T</kbd> timer · <kbd>R</kbd> or <kbd>Space</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> previous / next</p>
         </main>}
@@ -285,7 +277,6 @@ export function App() {
             </div>
             <div className="row">
                 <button className="ghost small" onClick={undo} disabled={!s.log.length}>Undo last score</button>
-                <button className="ghost small" onClick={() => setView('handbook')}>🎤 Handbook</button>
                 <button className="ghost small" onClick={() => setView('credits')}>Photo credits</button>
                 <button className="ghost small danger" onClick={() => setConfirmReset(true)}>↻ Restart whole quiz</button>
             </div>

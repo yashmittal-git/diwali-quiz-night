@@ -77,6 +77,12 @@ export default {
   "author": "Unknown",
   "page": ""
  },
+ "enfield": {
+  "title": "Royal Enfield Himalayan.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Tritinum",
+  "page": "https://commons.wikimedia.org/wiki/File:Royal_Enfield_Himalayan.jpg"
+ },
  "neeraj": {
   "title": "Neeraj Chopra throwing the javelin for India (photo supplied by host)",
   "license": "Unverified - supplied by host",

@@ -56,11 +56,12 @@ import filmy_alone from './photos/filmy_alone.jpg';
 import filmy_blackbuck from './photos/filmy_blackbuck.jpg';
 import filmy_neelam from './photos/filmy_neelam.jpg';
 import cadbury from './photos/cadbury.jpg';
+import enfield from './photos/enfield.jpg';
 
 
 export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
-    hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, cadbury, vikrant,
+    hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, cadbury, vikrant, enfield,
     filmy_sweater, filmy_sweater_reveal, filmy_glass, filmy_glass_reveal, filmy_rocketry, filmy_maddock, filmy_alone, filmy_blackbuck, filmy_neelam,
     ranbir_alia: ranbirAlia, ranbir_alia_blur: ranbirAliaBlur, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtrlogo, rama, dhanteras, dhanteras_reveal, durgapuja, durgapuja_reveal,
 };
@@ -71,7 +72,7 @@ export type Round = { id: string; name: string; tag: string; emoji: string; hue:
 
 export const rounds: Round[] = [
 { id: 'jodi', name: 'Jodi No. 1', tag: 'Power couples, filmy and otherwise', emoji: '💞', hue: 335, qs: [
-  { p: 'Guess the couple from this picture.', a: 'Ranbir Kapoor and Alia Bhatt', img: 'ranbir_alia_blur', imgReveal: 'ranbir_alia', mode: 'clear', note: 'They also shared the screen as Shiva and Isha in Brahmastra (2022).' },
+  { p: 'Guess the couple from this picture.', a: 'Ranbir Kapoor and Alia Bhatt', img: 'ranbir_alia_blur', imgReveal: 'ranbir_alia', mode: 'clear', fit: 'contain', note: 'They also shared the screen as Shiva and Isha in Brahmastra (2022).' },
   { p: 'Jamnagar is famous because of this power couple.', a: 'Mukesh Ambani and Nita Ambani', note: 'Jamnagar is home to Reliance\'s refinery complex, and hosted their son\'s pre-wedding celebrations in March 2024.', img: 'ambani', mode: 'reveal' },
   { p: 'A famous cricketer and a Bollywood actress got married in Tuscany, Italy in December 2017. Guess the couple.', a: 'Virat Kohli and Anushka Sharma', img: 'virat_anushka', mode: 'reveal', note: 'They married in Tuscany, Italy, on 11 December 2017.' },
   { p: 'Lake Como, November 2018. She grew up in Bengaluru, he is famous for his energy and bold fashion. Name the couple.', a: 'Deepika Padukone and Ranveer Singh', img: 'deepika_ranveer', mode: 'reveal', note: 'Deepika was born in Copenhagen but grew up in Bengaluru.' },
@@ -87,7 +88,7 @@ export const rounds: Round[] = [
   { p: 'This 11th century stepwell, a UNESCO World Heritage Site since 2014, is on the back of the 100 rupee note. Name it and its state.', a: 'Rani ki Vav, Patan, Gujarat', img: 'ranikivav', mode: 'zoom', origin: '30% 60%' },
 ]},
 { id: 'khel', name: 'Khel Khel Mein', tag: 'Cricket, Olympics and more', emoji: '🏏', hue: 200, qs: [
-  { p: 'Guess the year when this iconic moment happened at Lord\u2019s balcony.', a: '1983', img: 'kapil', mode: 'clear', note: 'India beat the West Indies in the final. The photo shows Kapil Dev lifting the trophy on the Lord\'s balcony.' },
+  { p: 'Guess the year when this iconic moment happened at Lord\u2019s balcony.', a: '1983', img: 'kapil', mode: 'clear', fit: 'contain', note: 'India beat the West Indies in the final. The photo shows Kapil Dev lifting the trophy on the Lord\'s balcony.' },
   { p: 'Which Indian captain is famous on the field as "Captain Cool"?', a: 'MS Dhoni', img: 'dhoni', mode: 'reveal' },
   { p: 'India won javelin gold at the Olympics. Which city hosted those Games?', a: 'Tokyo (Neeraj Chopra, Tokyo 2020 held in 2021)', img: 'neeraj', mode: 'reveal', note: 'He added a silver at Paris 2024.' },
   { p: 'PV Sindhu has two Olympic medals. What colours, in order?', a: 'Silver (Rio 2016), then bronze (Tokyo 2020)', img: 'sindhu', mode: 'clear' },
@@ -132,6 +133,6 @@ export const rounds: Round[] = [
   { p: 'Flipkart started in Bengaluru in 2007. What did it first sell online?', a: 'Books', img: 'flipkart', logo: true },
   { p: 'Two of these three young leaders were recently arrested at a Delhi protest and spent about a week in jail. Name all three, left to right.', a: 'Saurav Das, Abhijeet Dipke and Ashutosh Ranka (cockroaches)', img: 'trio', note: 'They lead the Cockroach Janta Party (yes, really - founded May 2026, grew out of NEET-UG protests). Das and Ranka were arrested on 13 October 2026 after entering the denotified Jantar Mantar protest site and released about a week later; the party campaigns for the Chief Election Commissioner\'s resignation.' },
   { p: 'Which Indian Navy ship, commissioned in September 2022, is India\'s first home-built aircraft carrier?', a: 'INS Vikrant', img: 'vikrant', mode: 'reveal', note: 'Built at Cochin Shipyard.' },
-  { p: 'This Indian motorcycle brand sells an adventure bike named after the world\'s highest mountain range. Which brand?', a: 'Royal Enfield', note: 'The bike is the Himalayan. Royal Enfield has been built in India since 1955 - the oldest motorcycle brand in continuous production.' },
+  { p: 'This Indian motorcycle brand sells an adventure bike named after the world\'s highest mountain range. Which brand?', a: 'Royal Enfield', img: 'enfield', mode: 'reveal', note: 'The bike is the Himalayan. Royal Enfield has been built in India since 1955 - the oldest motorcycle brand in continuous production.' },
 ]},
 ];

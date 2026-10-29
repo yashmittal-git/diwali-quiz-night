@@ -1,4 +1,4 @@
-/* ---- Host handbook: phone-friendly answer key, separate from player screens (open with #host) ---- */
+/* ---- Host handbook: phone-friendly answer key, separate from player screens (open at the /h path) ---- */
 import { rounds } from './data';
 
 /* One-line visual descriptions so the host knows what each photo shows without
