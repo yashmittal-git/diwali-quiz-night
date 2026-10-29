@@ -119,7 +119,7 @@ export const rounds: Round[] = [
   { p: 'In the Ramayana, to which city did Rama return after 14 years of exile?', a: 'Ayodhya', img: 'rama', mode: 'clear' },
   { p: 'The five day Diwali festival begins with which day, when many people buy gold or utensils?', a: 'Dhanteras', img: 'dhanteras', mode: 'clear' },
   { p: 'Not Diwali, but Onam. What is Kerala\'s floral carpet for that festival called?', a: 'Pookalam', img: 'pookalam', mode: 'zoom', origin: '50% 50%' },
-  { p: 'Diwali is not only a Hindu festival. Which religion marks Diwali as the day Lord Mahavira attained nirvana?', a: 'Jainism', img: 'diya', mode: 'reveal', note: 'Jains believe Mahavira, the 24th Tirthankara, attained nirvana on this day in 527 BCE.' },
+  { p: 'Diwali is not only a Hindu festival. Which religion marks Diwali as the day Lord Mahavira attained nirvana?', a: 'Jainism', img: 'diya', mode: 'reveal', note: 'Jains believe Mahavira, the 24th Tirthankara, attained nirvana on this day; traditional Jain chronology dates it to 527 BCE.' },
   { p: 'Not Diwali, but Bengal\'s biggest festival. Which Kolkata festival was added to UNESCO\'s intangible heritage list in 2021?', a: 'Durga Puja', img: 'durgapuja', mode: 'reveal', note: 'Durga Puja in Kolkata, inscribed in December 2021. The photo shows Sindoor Khela on Bijoya Dashami.' },
 ]},
 { id: 'madein', name: 'Made in India', tag: 'Space, startups and big firsts', emoji: '🚀', hue: 215, qs: [

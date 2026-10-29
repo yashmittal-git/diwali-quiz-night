@@ -31,7 +31,7 @@ function Embers({ calm }: { calm: boolean }) {
     </div>;
 }
 
-function Pic({ q, revealed, onReady }: { q: Q; revealed: boolean; onReady?: () => void }) {
+function Pic({ q, revealed, onReady }: { q: Q; revealed: boolean; onReady?: (ok: boolean) => void }) {
     if (!q.img) return null;
     const imgKey = (revealed && q.imgReveal) ? q.imgReveal : q.img;
     const src = photos[imgKey];
@@ -41,11 +41,11 @@ function Pic({ q, revealed, onReady }: { q: Q; revealed: boolean; onReady?: () =
     return <div className={cls + (mode === 'reveal' ? ' pic-pop' : '')}><PicImg key={imgKey} src={src} alt={revealed ? q.a : 'Mystery picture'} zoom={mode === 'zoom'} origin={q.origin} onReady={onReady} /></div>;
 }
 
-function PicImg({ src, alt, zoom, origin, onReady }: { src: string; alt: string; zoom: boolean; origin?: string; onReady?: () => void }) {
+function PicImg({ src, alt, zoom, origin, onReady }: { src: string; alt: string; zoom: boolean; origin?: string; onReady?: (ok: boolean) => void }) {
     const [ld, setLd] = useState(false);
     const [err, setErr] = useState(false);
     if (err) return <div className="pic-error">📷<br />Photo did not load.<br /><small>Host: describe it or skip - your call!</small></div>;
-    return <img src={src} alt={alt} className={ld ? 'ld' : ''} onLoad={() => { setLd(true); onReady && onReady(); }} onError={() => { setErr(true); onReady && onReady(); }} style={zoom ? ({ ['--origin' as string]: origin || '50% 50%' } as React.CSSProperties) : undefined} />;
+    return <img src={src} alt={alt} className={ld ? 'ld' : ''} onLoad={() => { setLd(true); onReady && onReady(true); }} onError={() => { setErr(true); onReady && onReady(false); }} style={zoom ? ({ ['--origin' as string]: origin || '50% 50%' } as React.CSSProperties) : undefined} />;
 }
 
 const cleanNames = (arr: string[] | undefined): string[] => [0, 1, 2, 3].map(i => (((arr || [])[i] || '').trim().slice(0, 14)) || 'Player ' + (i + 1));
@@ -64,6 +64,7 @@ export function App() {
     const [qi, setQi] = useState(0);
     const [revealed, setRevealed] = useState(false);
     const [left, setLeft] = useState<number | null>(null);
+    const [picState, setPicState] = useState<'none' | 'loading' | 'ready' | 'error'>('none');
     const [burst, setBurst] = useState(0);
     const [awarded, setAwarded] = useState<string | null>(null);
     const [oops, setOops] = useState(0);
@@ -76,7 +77,6 @@ export function App() {
     const migratedNames = useRef(false);
     const pendingT = useRef<number | null>(null);
     const awardLock = useRef(false);
-    const autoWaitPic = useRef(false);
     const muteRef = useRef(s.mute);
     muteRef.current = s.mute;
 
@@ -84,6 +84,7 @@ export function App() {
     useEffect(() => { if (!status.ready || migratedNames.current) return; migratedNames.current = true; if ((saved.names || []).some(n => !(n || '').trim())) setSaved({ ...s, names: cleanNames(saved.names) }); }, [status.ready]);
     const round = rounds[ri];
     const q = round.qs[qi];
+    const needsPic = !!(q.img && (q.mode || 'clear') !== 'reveal' && photos[q.img]);
     const isBonus = qi === 5;
     const picker = s.picks[round.id] ?? 0;
     const direct = isBonus ? 20 : 10;
@@ -92,33 +93,18 @@ export function App() {
     const stopTimer = () => { if (timer.current) { window.clearInterval(timer.current); timer.current = null; } };
     useEffect(() => stopTimer, []);
     const startTimer = () => {
-        stopTimer(); if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; } autoWaitPic.current = false; setLeft(5);
+        stopTimer(); if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; } setLeft(5);
         timer.current = window.setInterval(() => setLeft(v => { if (v === null) return null; if (v <= 1) { stopTimer(); if (!s.mute) playBuzz(); return 0; } return v - 1; }), 1000);
     };
 
-    const autoStart = (r: number, i: number, awardedLabel: string | null) => {
-        if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; }
-        autoWaitPic.current = false;
-        if (rounds[r].qs[i].paced || awardedLabel) return;
-        const q = rounds[r].qs[i];
-        const waitsForPic = !!(q.img && (q.mode || 'clear') !== 'reveal');
-        const kick = () => { pendingT.current = window.setTimeout(() => { pendingT.current = null; startTimer(); }, 1000); };
-        if (waitsForPic) {
-            autoWaitPic.current = true;
-            pendingT.current = window.setTimeout(() => { if (autoWaitPic.current) { autoWaitPic.current = false; kick(); } }, 6000);
-        } else kick();
-    };
-    const onPicReady = () => {
-        if (!autoWaitPic.current || awarded || left !== null) return;
-        autoWaitPic.current = false;
-        if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; }
-        pendingT.current = window.setTimeout(() => { pendingT.current = null; startTimer(); }, 1000);
-    };
+    const onPicSettled = (ok: boolean) => setPicState(ok ? 'ready' : 'error');
     const openQ = (r: number, i: number) => {
         stopTimer(); setRi(r); setQi(i); setRevealed(false); setLeft(null);
         const label = (s.aq || {})[`${rounds[r].id}:${i}`] || null;
         awardLock.current = label !== null;
-        setAwarded(label); setView('round'); autoStart(r, i, label);
+        setAwarded(label); setView('round');
+        const qq = rounds[r].qs[i];
+        setPicState(qq.img && (qq.mode || 'clear') !== 'reveal' && photos[qq.img] ? 'loading' : 'none');
     };
     const award = (p: number, d: number, label: string) => {
         if (awarded !== null || awardLock.current) return;
@@ -182,7 +168,7 @@ export function App() {
         const id = rounds[r].id;
         const who = s.picks[id] ?? s.chooser;
         update({ picks: { ...s.picks, [id]: who }, chooser: s.picks[id] === undefined ? (s.chooser + 1) % 4 : s.chooser });
-        const q0 = s.progress[id] && s.progress[id] < 6 ? s.progress[id] : 0; stopTimer(); setRi(r); setQi(q0); setView('round'); setRevealed(false); setLeft(null); const lb = (s.aq || {})[`${id}:${q0}`] || null; awardLock.current = lb !== null; setAwarded(lb); autoStart(r, q0, lb);
+        const q0 = s.progress[id] && s.progress[id] < 6 ? s.progress[id] : 0; stopTimer(); setRi(r); setQi(q0); setView('round'); setRevealed(false); setLeft(null); const lb = (s.aq || {})[`${id}:${q0}`] || null; awardLock.current = lb !== null; setAwarded(lb); const qz = rounds[r].qs[q0]; setPicState(qz.img && (qz.mode || 'clear') !== 'reveal' && photos[qz.img] ? 'loading' : 'none');
     };
 
     useEffect(() => {
@@ -197,7 +183,7 @@ export function App() {
         const onKey = (e: KeyboardEvent) => {
             const t = e.target as HTMLElement;
             if (t && (t.tagName === 'INPUT' || t.tagName === 'SELECT')) return;
-            if (e.key === 't' || e.key === 'T') startTimer();
+            if (e.key === 't' || e.key === 'T') { if (!needsPic || picState === 'ready') startTimer(); }
             else if (e.key === 'r' || e.key === 'R' || e.key === ' ') { e.preventDefault(); setRevealed(v => !v); stopTimer(); }
             else if (e.key === 'ArrowRight' || e.key === 'n') next();
             else if (e.key === 'ArrowLeft' || e.key === 'p') prev();
@@ -261,9 +247,9 @@ export function App() {
             <h1 className="wobble">Rules of the Evening</h1>
             <div className="rulecards">
                 <div className="rc"><b>1</b><span>Each player picks <em>two rounds</em>, without peeking inside.</span></div>
-                <div className="rc"><b>2</b><span>You get <em>5 seconds</em> to answer. The clock starts on its own.</span></div>
+                <div className="rc"><b>2</b><span>You get <em>5 seconds</em> to answer. The host starts the clock.</span></div>
                 <div className="rc"><b>3</b><span>Right answer <em>+10</em>. Wrong or silent? Up for grabs. Steal <em>+5</em>.</span></div>
-                <div className="rc"><b>4</b><span>Last question of every round is the <em>20 point BONUS</em>.</span></div>
+                <div className="rc"><b>4</b><span>Last question of every round is the <em>20 point BONUS</em>. Bonus steals earn <em>+10</em> unless the host declares otherwise.</span></div>
                 <div className="rc"><b>5</b><span>The winner owes Yash <em>round-trip flights to the Philippines</em>. ✈️</span></div>
                 <div className="rc"><b>6</b><span><em>Yash ka faisla antim hai.</em> Appeals may be submitted with a dabba of Mysore Pak.</span></div>
                 <div className="rc"><b>7</b><span><em>No phones, please.</em> Caught finding your brain in ChatGPT? <em>-20 points</em>. 📵</span></div>
@@ -316,12 +302,14 @@ export function App() {
                     <p className="prompt">{q.p}</p>
                     {revealed && <div className="answer"><span>Answer</span><strong>{q.a}</strong>{q.lakes && <ul className="lakes">{q.lakes.map(l => <li key={l}>{l}</li>)}</ul>}{q.note && <em>{q.note}</em>}</div>}
                 </div>
-                <Pic q={q} revealed={revealed} onReady={onPicReady} />
+                <Pic q={q} revealed={revealed} onReady={onPicSettled} />
             </div>
             <div className="controls">
                 <button className="btn" onClick={prev} disabled={qi === 0}>← Previous</button>
                 {q.paced ? <div className="clock paced">Take your time</div> : <div className={'clock' + (left === 0 ? ' is-up' : '')} aria-live="polite">{left === null ? '5' : left === 0 ? 'Steal!' : left}</div>}
-                {!q.paced && <button className="btn" onClick={startTimer}>Start 5s</button>}
+                {!q.paced && (!needsPic || picState === 'ready') && <button className="btn" onClick={startTimer}>Start 5s</button>}
+                {!q.paced && needsPic && picState === 'loading' && <button className="btn" disabled title="Waiting for the clue photo">Loading photo…</button>}
+                {!q.paced && needsPic && picState === 'error' && <button className="btn" onClick={startTimer}>Start 5s anyway (photo failed)</button>}
                 <button className="btn primary" onClick={() => { setRevealed(v => !v); stopTimer(); }}>{revealed ? 'Hide answer' : 'Reveal answer'}</button>
                 <button className="btn" onClick={next}>{qi < 5 ? 'Next question →' : 'Finish round →'}</button>
             </div>
