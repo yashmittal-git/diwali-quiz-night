@@ -1,4 +1,10 @@
 export default {
+ "cadbury": {
+  "title": "Cadburys Chocolate in Coimbatore, INDIA (store display; stands in for the Celebrations gift box, which has no freely licensed photo)",
+  "license": "CC BY-SA 4.0",
+  "author": "SnapMeUp",
+  "page": "https://commons.wikimedia.org/wiki/File:Cadburys_Chocolate_in_Coimbatore,INDIA.jpg"
+ },
  "modi": {
   "title": "Illustration of the PM's national address (supplied by host)",
   "license": "Supplied by the host (Yash) - original source and license unverified; speech quote from the official PIB transcript, 8 Nov 2016",

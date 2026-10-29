@@ -52,11 +52,12 @@ import filmy_maddock from './photos/filmy_maddock.jpg';
 import filmy_alone from './photos/filmy_alone.jpg';
 import filmy_blackbuck from './photos/filmy_blackbuck.jpg';
 import filmy_neelam from './photos/filmy_neelam.jpg';
+import cadbury from './photos/cadbury.jpg';
 
 
 export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
-    hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, vikrant,
+    hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, cadbury, vikrant,
     filmy_sweater, filmy_sweater_reveal, filmy_glass, filmy_glass_reveal, filmy_rocketry, filmy_maddock, filmy_alone, filmy_blackbuck, filmy_neelam,
     ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtrlogo, rama, dhanteras, durgapuja,
 };
@@ -119,7 +120,7 @@ export const rounds: Round[] = [
   { p: 'In the Ramayana, to which city did Rama return after 14 years of exile?', a: 'Ayodhya', img: 'rama', mode: 'clear' },
   { p: 'The five day Diwali festival begins with which day, when many people buy gold or utensils?', a: 'Dhanteras', img: 'dhanteras', mode: 'clear' },
   { p: 'Not Diwali, but Onam. What is Kerala\'s floral carpet for that festival called?', a: 'Pookalam', img: 'pookalam', mode: 'zoom', origin: '50% 50%' },
-  { p: 'Diwali is not only a Hindu festival. Which religion marks Diwali as the day Lord Mahavira attained nirvana?', a: 'Jainism', img: 'diya', mode: 'reveal', note: 'Jains believe Mahavira, the 24th Tirthankara, attained nirvana on this day; traditional Jain chronology dates it to 527 BCE.' },
+  { p: 'Which famous TV commercial for Diwali had this tagline: "Is Diwali, kuch achha ho jaye, kuch meetha ho jaye"?', a: 'Cadbury Celebrations', img: 'cadbury', mode: 'reveal', note: 'Mondelez\u2019s 2018 Diwali film by Ogilvy lit up Surchand, a Rajasthan village of diya makers, with solar panels. Photo shows a Cadbury counter display in Coimbatore - no freely licensed photo of the Celebrations gift box exists.' },
   { p: 'Not Diwali, but Bengal\'s biggest festival. Which Kolkata festival was added to UNESCO\'s intangible heritage list in 2021?', a: 'Durga Puja', img: 'durgapuja', mode: 'reveal', note: 'Durga Puja in Kolkata, inscribed in December 2021. The photo shows Sindoor Khela on Bijoya Dashami.' },
 ]},
 { id: 'madein', name: 'Made in India', tag: 'Space, startups and big firsts', emoji: '🚀', hue: 215, qs: [
