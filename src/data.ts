@@ -123,7 +123,7 @@ export const rounds: Round[] = [
   { p: 'The five day Diwali festival begins with which day, when many people buy gold or utensils?', a: 'Dhanteras', img: 'dhanteras', imgReveal: 'dhanteras_reveal', mode: 'clear' },
   { p: 'Not Diwali, but Onam. What is Kerala\'s floral carpet for that festival called?', a: 'Pookalam', img: 'pookalam', mode: 'zoom', origin: '50% 50%' },
   { p: 'Which famous TV commercial for Diwali had this tagline: "Is Diwali, kuch achha ho jaye, kuch meetha ho jaye"?', a: 'Cadbury Dairy Milk', img: 'cadbury', mode: 'reveal', note: 'For its 70th year in 2018, Dairy Milk extended its long-running Kuch Meetha Ho Jaaye into Kuch Achha Ho Jaaye, Kuch Meetha Ho Jaaye. Photo: Dairy Milk Silk Diwali gift pack.' },
-  { p: 'Not Diwali, but Bengal\'s biggest festival. Which Kolkata festival was added to UNESCO\'s intangible heritage list in 2021?', a: 'Durga Puja', img: 'durgapuja', imgReveal: 'durgapuja_reveal', mode: 'reveal', note: 'Durga Puja in Kolkata, inscribed in December 2021. Question photo: Sindoor Khela on Bijoya Dashami; answer reveal: host-supplied photo of dhunuchi dancers before the idol.' },
+  { p: 'Not Diwali, but Bengal\'s biggest festival. Which Kolkata festival was added to UNESCO\'s intangible heritage list in 2021?', a: 'Durga Puja', img: 'durgapuja', imgReveal: 'durgapuja_reveal', mode: 'reveal', note: 'Durga Puja in Kolkata, inscribed in December 2021. Answer reveal: host-supplied photo of dhunuchi dancers before the idol.' },
 ]},
 { id: 'madein', name: 'Made in India', tag: 'Space, startups and big firsts', emoji: '🚀', hue: 215, qs: [
   { p: 'UPI, the payment system everyone uses, stands for what?', a: 'Unified Payments Interface', img: 'upi', logo: true, mode: 'reveal' },
