@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-/* ---- Patakha: Grid Gains - real photo, host-marked chest strip is covered (64 opaque square cells, A1-P4, 16 cols x 4 rows); the rest of the photo stays visible ---- */
-const GCOLS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P'];
-const GROWS = [1,2,3,4];
-/* covered band on the 2203x1542 photo: x 883-1711, y 430-637, cell 51.75px - the host's marked strip (x 883-1690, y 414-620), widened slightly so cells stay square */
+/* ---- Patakha: Grid Gains - real photo, host-marked chest strip is covered (36 opaque square cells, A1-L3, 12 cols x 3 rows); the rest of the photo stays visible ---- */
+const GCOLS = ['A','B','C','D','E','F','G','H','I','J','K','L'];
+const GROWS = [1,2,3];
+/* covered band on the 2203x1542 photo: x 920-1748, y 402-609, cell 69px - placed on the ORIGINAL photo so both real nipples sit well inside cells (host's white box was only a geometry guide); 3 rows of square cells, 12 columns */
 const COVERED = new Set(GCOLS.flatMap(c => GROWS.map(r => c + r)));
 export const PATAKHA_POINTS = 20;
-/* re-measured on the full-resolution photo: nipples at ~(1006,507) and ~(1593,510) land inside C2 and N2 with 13px+ margins on every side */
-const NIPPLES = ['C2', 'N2'];
+/* re-measured on the full-resolution photo: nipples at ~(1006,505) and ~(1592,503) land inside B2 and J2 with 17px+ margins on every side */
+const NIPPLES = ['B2', 'J2'];
 
 export function GridGains({ photo, onAward, onNobody, onUndo, awarded, names }: { photo: string; onAward: (p: number) => void; onNobody: () => void; onUndo: () => void; awarded: string | null; names: string[] }) {
     const [picked, setPicked] = useState<string[]>([]);
@@ -15,10 +15,10 @@ export function GridGains({ photo, onAward, onNobody, onUndo, awarded, names }: 
     const pick = (cell: string) => { if (!picked.includes(cell)) setPicked([...picked, cell]); };
     return <div className="pk-stage">
         <h2>Grid Gains 💪</h2>
-        <p className="pk-line">Open floor - shout a cell, host taps it. Only the chest strip is covered: 64 square cells, A1 to P4. Two of them are hiding nipples. First correct call wins {PATAKHA_POINTS} points. Real photo. Zero shame.</p>
+        <p className="pk-line">Open floor - shout a cell, host taps it. Only the chest strip is covered: 36 square cells, A1 to L3. Two of them are hiding nipples. First correct call wins {PATAKHA_POINTS} points. Real photo. Zero shame.</p>
         <div className="pk-photo-wrap grid70">
             <img src={photo} className="pk-photo" alt="Shirtless bodybuilder torso hidden under a labelled grid" />
-            <div className="pk-grid band64">
+            <div className="pk-grid band36">
                 {GROWS.map(r => GCOLS.map((c, ci) => {
                     const cell = c + r;
                     if (!COVERED.has(cell)) return <div key={cell} className="pk-cell free" aria-hidden="true" />;

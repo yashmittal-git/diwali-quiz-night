@@ -296,7 +296,7 @@ main.qscreen .awarded{font-size:13px}
 .pk-cell:hover{outline:3px solid #ffd27a;outline-offset:-3px}
 .pk-cell.open{background:transparent;color:transparent;border-color:rgba(255,215,150,.12)}
 .pk-cell.open{position:relative}
-.pk-cell.open .mark{position:absolute;top:2px;left:4px;color:#fff;text-shadow:0 1px 4px #000;font-size:clamp(11px,1.6vh,16px);line-height:1}
+.pk-cell.open .mark{position:absolute;bottom:1px;right:3px;color:#fff;text-shadow:0 1px 4px #000;font-size:clamp(8px,1vh,12px);line-height:1;opacity:.85;pointer-events:none}
 .pk-cell.open.hit-no .mark{color:#ff5b4d}
 .pk-cell.open.hit-yes{outline:4px solid #37d67a;outline-offset:-4px}
 .pk-cell.open.hit-yes .mark{filter:drop-shadow(0 0 10px #37d67a)}
@@ -341,8 +341,8 @@ main.qscreen .awarded{font-size:13px}
 /* ---- Grid Gains 70-cell landscape + Godiji avatar + gate eye ---- */
 .pk-photo-wrap.grid70{aspect-ratio:10/7;height:auto;width:min(94vw,980px)}
 @media (max-height:850px){ .pk-photo-wrap.grid70{height:auto;width:min(94vw,880px)} }
-.pk-grid.band64{left:40.082%;top:27.886%;width:37.585%;height:13.424%;grid-template-columns:repeat(16,1fr);grid-template-rows:repeat(4,1fr)}
-.band64 .pk-cell{font-size:clamp(6px,1vh,10px)}
+.pk-grid.band36{left:41.761%;top:26.070%;width:37.585%;height:13.424%;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(3,1fr)}
+.band36 .pk-cell{font-size:clamp(9px,1.4vh,14px)}
 .pk-menu{max-width:820px;margin:0 auto}
 .pk-menu .tile{min-height:190px}
 .godiji-avatar{width:92px;height:92px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,206,130,.55)}
