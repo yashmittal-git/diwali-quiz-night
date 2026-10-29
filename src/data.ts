@@ -25,6 +25,7 @@ import pookalam from './photos/pookalam.jpg';
 import mom from './photos/mom.jpg';
 import vikrant from './photos/vikrant.jpg';
 import ranbirAlia from './photos/ranbir_alia.jpg';
+import ranbirAliaBlur from './photos/ranbir_alia_blur.jpg';
 import viratAnushka from './photos/virat_anushka.jpg';
 import deepikaRanveer from './photos/deepika_ranveer.jpg';
 import ambani from './photos/ambani.jpg';
@@ -61,7 +62,7 @@ export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, cadbury, vikrant,
     filmy_sweater, filmy_sweater_reveal, filmy_glass, filmy_glass_reveal, filmy_rocketry, filmy_maddock, filmy_alone, filmy_blackbuck, filmy_neelam,
-    ranbir_alia: ranbirAlia, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtrlogo, rama, dhanteras, dhanteras_reveal, durgapuja, durgapuja_reveal,
+    ranbir_alia: ranbirAlia, ranbir_alia_blur: ranbirAliaBlur, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtrlogo, rama, dhanteras, dhanteras_reveal, durgapuja, durgapuja_reveal,
 };
 
 export type Mode = 'blur' | 'zoom' | 'reveal' | 'clear';
@@ -70,7 +71,7 @@ export type Round = { id: string; name: string; tag: string; emoji: string; hue:
 
 export const rounds: Round[] = [
 { id: 'jodi', name: 'Jodi No. 1', tag: 'Power couples, filmy and otherwise', emoji: '💞', hue: 335, qs: [
-  { p: 'Wedding at his Bandra home in April 2022. She played Gangubai Kathiawadi. Name the couple.', a: 'Ranbir Kapoor and Alia Bhatt', img: 'ranbir_alia', mode: 'reveal', note: 'They also shared the screen as Shiva and Isha in Brahmastra (2022).' },
+  { p: 'Guess the couple from this picture.', a: 'Ranbir Kapoor and Alia Bhatt', img: 'ranbir_alia_blur', imgReveal: 'ranbir_alia', mode: 'clear', note: 'They also shared the screen as Shiva and Isha in Brahmastra (2022).' },
   { p: 'Jamnagar is famous because of this power couple.', a: 'Mukesh Ambani and Nita Ambani', note: 'Jamnagar is home to Reliance\'s refinery complex, and hosted their son\'s pre-wedding celebrations in March 2024.', img: 'ambani', mode: 'reveal' },
   { p: 'A famous cricketer and a Bollywood actress got married in Tuscany, Italy in December 2017. Guess the couple.', a: 'Virat Kohli and Anushka Sharma', img: 'virat_anushka', mode: 'reveal', note: 'They married in Tuscany, Italy, on 11 December 2017.' },
   { p: 'Lake Como, November 2018. She grew up in Bengaluru, he is famous for his energy and bold fashion. Name the couple.', a: 'Deepika Padukone and Ranveer Singh', img: 'deepika_ranveer', mode: 'reveal', note: 'Deepika was born in Copenhagen but grew up in Bengaluru.' },
@@ -86,7 +87,7 @@ export const rounds: Round[] = [
   { p: 'This 11th century stepwell, a UNESCO World Heritage Site since 2014, is on the back of the 100 rupee note. Name it and its state.', a: 'Rani ki Vav, Patan, Gujarat', img: 'ranikivav', mode: 'zoom', origin: '30% 60%' },
 ]},
 { id: 'khel', name: 'Khel Khel Mein', tag: 'Cricket, Olympics and more', emoji: '🏏', hue: 200, qs: [
-  { p: 'Lord\'s balcony. Kapil Dev\'s Devils lift India\'s first cricket World Cup. Which year?', a: '1983', img: 'kapil', mode: 'reveal', note: 'India beat the West Indies in the final. The photo shows Kapil Dev lifting the trophy on the Lord\'s balcony.' },
+  { p: 'Guess the year when this iconic moment happened at Lord\u2019s balcony.', a: '1983', img: 'kapil', mode: 'clear', note: 'India beat the West Indies in the final. The photo shows Kapil Dev lifting the trophy on the Lord\'s balcony.' },
   { p: 'Which Indian captain is famous on the field as "Captain Cool"?', a: 'MS Dhoni', img: 'dhoni', mode: 'reveal' },
   { p: 'India won javelin gold at the Olympics. Which city hosted those Games?', a: 'Tokyo (Neeraj Chopra, Tokyo 2020 held in 2021)', img: 'neeraj', mode: 'reveal', note: 'He added a silver at Paris 2024.' },
   { p: 'PV Sindhu has two Olympic medals. What colours, in order?', a: 'Silver (Rio 2016), then bronze (Tokyo 2020)', img: 'sindhu', mode: 'clear' },

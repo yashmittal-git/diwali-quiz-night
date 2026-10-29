@@ -138,10 +138,16 @@ export default {
   "page": "https://commons.wikimedia.org/wiki/File:INS_Vikrant_(R11)_and_INS_Vikramaditya_(R33)_with_the_carrier_battle_group.jpg"
  },
  "ranbir_alia": {
-  "title": "Ranbir Kapoor and Alia Bhatt.jpg",
-  "license": "CC BY 3.0",
-  "author": "Bollywood Hungama",
-  "page": "https://commons.wikimedia.org/wiki/File:Ranbir_Kapoor_and_Alia_Bhatt.jpg"
+  "title": "Ranbir Kapoor and Alia Bhatt wedding photo (supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "ranbir_alia_blur": {
+  "title": "Ranbir Kapoor and Alia Bhatt wedding photo, faces blurred for the question (edit of host-supplied photo)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
  },
  "virat_anushka": {
   "title": "Virat Kohli and Anushka Sharma wedding pheras photo (supplied by host)",
