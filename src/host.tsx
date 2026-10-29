@@ -21,8 +21,10 @@ const HB_DESCS: Record<string, string> = {
     palash: 'Question photo of Palash Muchhal; answer reveal swaps in a couple photo of Smriti Mandhana and Palash together.',
     mango: 'Answer-reveal photo of Badami mangoes.',
     rama: 'Question illustration of Lord Rama holding his bow (Kalighat-style folk painting).',
-    dhanteras: 'Question photo of a brass and steel utensil shop in Punjab.',
-    durgapuja: 'Answer-reveal photo of Sindoor Khela on Bijoya Dashami - women in red-and-white saris smearing vermilion (not shown with the clue).',
+    dhanteras: 'Question photo of a brass and steel utensil shop in Punjab; answer reveal swaps in a host-supplied photo of mithai on a Rs 10 note.',
+    dhanteras_reveal: 'Answer-reveal photo of a piece of mithai on a Rs 10 note in a steel plate (supplied by host).',
+    durgapuja: 'Answer reveal swaps in a host-supplied photo of dhunuchi dancers in red-and-white saris before a Durga idol (the earlier Sindoor Khela photo is retained in the bundle but no longer shown).',
+    durgapuja_reveal: 'Answer-reveal photo of women performing dhunuchi naach with incense pots before a Durga idol (supplied by host).',
     pepper: 'Answer-reveal photo of Tellicherry black peppercorns.',
     dhoni: 'MS Dhoni in India colours.',
     neeraj: 'Answer-reveal photo of Neeraj Chopra throwing the javelin for India.',
@@ -51,7 +53,7 @@ const HB_DESCS: Record<string, string> = {
     flipkart: 'The Flipkart logo.',
     trio: 'Three young men at a press conference, mics in front.',
     vikrant: 'The aircraft carrier INS Vikrant at sea.',
-    modi: 'A cartoon illustration (stand-in for the real 2016 address frame, still awaited).',
+    modi: 'TV frame from the PM\u2019s 8 Nov 2016 national address (NDTV LIVE, courtesy DD News), supplied by the host.',
 };
 
 export function HostHandbook() {

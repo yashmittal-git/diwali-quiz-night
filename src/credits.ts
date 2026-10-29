@@ -1,14 +1,14 @@
 export default {
  "cadbury": {
-  "title": "Cadbury Celebrations gift pack (product image)",
+  "title": "Cadbury Dairy Milk Silk Pralines Diwali gift pack (product image)",
   "license": "All rights reserved - Cadbury/Mondelez product image used for a private party quiz",
   "author": "Cadbury / Mondelez International",
-  "page": "https://pushmycart.com/products/cadbury-celebrations-assorted-chocolate-gift-pack"
+  "page": "https://www.zeptonow.com/pn/cadbury-dairy-milk-silk-pralines-chocolate-rakhi-gift-pack/pvid/dffdcb60-d99c-4665-afad-0751a33eaa8f"
  },
  "modi": {
-  "title": "Illustration of the PM's national address (supplied by host)",
+  "title": "TV frame from the PM's 8 Nov 2016 national address - NDTV LIVE, courtesy DD News (supplied by host)",
   "license": "Supplied by the host (Yash) - original source and license unverified; speech quote from the official PIB transcript, 8 Nov 2016",
-  "author": "Unknown",
+  "author": "NDTV / DD News broadcast",
   "page": "https://pib.gov.in/newsite/PrintRelease.aspx?relid=153404"
  },
  "trio": {
@@ -203,6 +203,18 @@ export default {
   "author": "Harvinder Chandigarh",
   "page": "https://commons.wikimedia.org/wiki/File:Self_made_Utensil_Shop_in_Thathera_market_of_Jandiala_Guru.jpg"
  },
+ "dhanteras_reveal": {
+  "title": "A piece of mithai on a Rs 10 note in a steel plate (Dhanteras answer reveal, supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
+ "durgapuja_reveal": {
+  "title": "Dhunuchi dancers before a Durga idol (answer reveal, supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
+ },
  "durgapuja": {
   "title": "Bijoya Dashami.jpg",
   "license": "CC BY 4.0",
@@ -252,9 +264,9 @@ export default {
   "page": "https://commons.wikimedia.org/wiki/File:Big_winner_(7452193628).jpg"
  },
  "godiji_avatar": {
-  "title": "Godiji tile avatar - face crop derived from the host-supplied address illustration",
-  "license": "Supplied by the host (Yash) - original source and license unverified; artistic crop",
-  "author": "Unknown",
+  "title": "Godiji tile avatar - face crop from the host-supplied 8 Nov 2016 address TV frame (NDTV/DD News)",
+  "license": "Supplied by the host (Yash) - original source and license unverified",
+  "author": "NDTV / DD News broadcast",
   "page": "https://pib.gov.in/newsite/PrintRelease.aspx?relid=153404"
  }, "filmy_sweater": {
   "title": "Striped sweater close-up (question visual from a friend's quiz PDF, supplied by host)",
