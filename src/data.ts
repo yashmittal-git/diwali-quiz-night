@@ -75,7 +75,7 @@ export const rounds: Round[] = [
   { p: 'A famous cricketer and a Bollywood actress got married in Tuscany, Italy in December 2017. Guess the couple.', a: 'Virat Kohli and Anushka Sharma', img: 'virat_anushka', mode: 'reveal', note: 'They married in Tuscany, Italy, on 11 December 2017.' },
   { p: 'Lake Como, November 2018. She grew up in Bengaluru, he is famous for his energy and bold fashion. Name the couple.', a: 'Deepika Padukone and Ranveer Singh', img: 'deepika_ranveer', mode: 'reveal', note: 'Deepika was born in Copenhagen but grew up in Bengaluru.' },
   { p: 'They married in 1991, before he became one of Bollywood\'s biggest stars. She is an interior designer and co-chairperson of Red Chillies Entertainment. Name the couple.', a: 'Shah Rukh Khan and Gauri Khan', img: 'srk_gauri', mode: 'reveal' },
-  { p: 'In Sholay (1975), which real-life married couple played Jai and Radha?', a: 'Amitabh Bachchan and Jaya Bachchan', img: 'amitabh_jaya', mode: 'reveal', note: 'They had married in June 1973, two years before the film released.' },
+  { p: 'Guess a famous real-life married couple who acted together in the iconic movie Sholay - and were already married to each other when it released.', a: 'Amitabh Bachchan and Jaya Bachchan', img: 'amitabh_jaya', mode: 'reveal', note: 'Married in June 1973, two years before Sholay released. Dharmendra and Hema Malini also starred in Sholay, but married only in 1980 - "already married" is the lock.' },
 ]},
 { id: 'bharat', name: 'Bharat Darshan', tag: 'Spot the place, crack the clue', emoji: '🧭', hue: 28, qs: [
   { p: 'This palace has 953 tiny windows so royal ladies could watch the street unseen. Which city?', a: 'Jaipur (Hawa Mahal, built 1799)', img: 'hawa', mode: 'zoom', origin: '70% 30%' },
