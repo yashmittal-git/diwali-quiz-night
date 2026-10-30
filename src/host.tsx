@@ -58,7 +58,7 @@ const HB_DESCS: Record<string, string> = {
     tulsi: 'Answer-reveal title card of Kyunki Saas Bhi Kabhi Bahu Thi with Smriti Irani as Tulsi.',
     shinchan: 'Question image of Shinchan (Crayon Shin-chan volume 1 cover art).',
     mogambo: 'Question photo of Amrish Puri as Mogambo in the golden coat (Mr India, 1987).',
-    amitabh_kbc: 'Question photo of Amitabh Bachchan.',
+    amitabh_kbc: 'Question photo of Amitabh Bachchan on the KBC set (full frame).',
     dance: 'Question photo of a Bharatanatyam performance.',
     indiaflag: 'The Indian flag, shown with the question and the answer.',
     papad: 'Question photo of a stack of papadums.',
@@ -71,7 +71,7 @@ const HB_DESCS: Record<string, string> = {
 /* Host-only notes that stay out of the player-facing reveal, keyed round:questionIndex */
 const HB_NOTES: Record<string, string> = {
     'tv:0': 'The title is sung long and drawn out in the title track - a flat reading is the fun argument to have, your call.',
-    'tv:2': 'Shivaji Satam played ACP Pradyuman; CID ran on Sony from 1998.',
+    'tv:2': 'Shivaji Satam played ACP Pradyuman; CID ran on Sony from 1998. The ACP Pradyuman photo appears only on the answer reveal, not with the clue.',
     'tv:5': 'All three coined by KBC writer RD Tailang: Ghadiyal Babu (season 1), his "wife" Shrimati Tiktiki (accept "Tiki Tiki ji"), and their "child" Sui Mui. All three for the full bonus; two is your call.',
     'bol:0': 'The list on the reveal is a bank, not a checklist - accept any genuine named dance form.',
     'bol:1': 'Neither exists officially. Hindi in Devanagari is the official language of the Union (Article 343) with English continuing; the Sports Ministry confirmed via RTI that no game is declared the national game. Hindi / hockey / cricket are the traps.',

@@ -61,6 +61,7 @@ import tulsi from './photos/tulsi.jpg';
 import shinchan from './photos/shinchan.jpg';
 import mogambo from './photos/mogambo.jpg';
 import amitabh_kbc from './photos/amitabh_kbc.jpg';
+import acp_pradyuman from './photos/acp_pradyuman.jpg';
 import dance from './photos/dance.jpg';
 import indiaflag from './photos/indiaflag.png';
 import papad from './photos/papad.jpg';
@@ -75,7 +76,7 @@ export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, cadbury, vikrant, enfield,
     filmy_sweater, filmy_sweater_reveal, filmy_glass, filmy_glass_reveal, filmy_rocketry, filmy_maddock, filmy_alone, filmy_blackbuck, filmy_neelam,
-    smriti, tulsi, shinchan, mogambo, amitabh_kbc, dance, indiaflag, papad, doordarshan, ramayan, malgudi, raftaar,
+    smriti, tulsi, shinchan, mogambo, amitabh_kbc, acp_pradyuman, dance, indiaflag, papad, doordarshan, ramayan, malgudi, raftaar,
     ranbir_alia: ranbirAlia, ranbir_alia_blur: ranbirAliaBlur, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtrlogo, rama, dhanteras, dhanteras_reveal, durgapuja, durgapuja_reveal,
 };
 
@@ -151,13 +152,13 @@ export const rounds: Round[] = [
 { id: 'tv', name: 'TV Tamasha', tag: 'From Doordarshan to daily soaps', emoji: '📺', hue: 285, qs: [
   { p: 'Name the famous TV show she starred in - and say the title the way it used to be spoken.', a: 'Kyunki Saas Bhi Kabhi Bahu Thi', img: 'smriti', imgReveal: 'tulsi', mode: 'clear', fit: 'contain' },
   { p: 'Identify this famous kid and name its whole family.', a: 'Shinchan, Mitsy, Harry, Himawari and Shiro', img: 'shinchan', fit: 'contain', mode: 'clear', time: 20 },
-  { p: '"Daya, darwaza todo!" Name the TV character giving this order, and the show.', a: 'ACP Pradyuman, CID' },
+  { p: '"Daya, darwaza todo!" Name the TV character giving this order, and the show.', a: 'ACP Pradyuman, CID', img: 'acp_pradyuman', imgReveal: 'acp_pradyuman', mode: 'reveal' },
   { p: 'Which Karnataka village became the main filming location for Malgudi Days?', a: 'Agumbe', img: 'malgudi', mode: 'clear' },
   { p: 'Which show returned to Doordarshan in 2020 and drew 7.7 crore viewers on 16 April?', a: 'Ramayan', img: 'doordarshan', imgReveal: 'ramayan', mode: 'clear', fit: 'contain' },
-  { p: 'Over the KBC seasons, Amitabh Bachchan has given the clock its own pet names. Name any three.', a: 'Ghadiyal Babu, Shrimati Tiktiki, Sui Mui', img: 'amitabh_kbc', mode: 'clear', time: 20 },
+  { p: 'Over the KBC seasons, Amitabh Bachchan has given the clock its own pet names. Name any three.', a: 'Ghadiyal Babu, Shrimati Tiktiki, Sui Mui', img: 'amitabh_kbc', mode: 'clear', fit: 'contain', time: 20 },
 ]},
 { id: 'bol', name: 'Bol Ke Dikhao', tag: 'Name it, say it, perform it', emoji: '🎤', hue: 160, qs: [
-  { p: 'Name any five Indian dance forms.', a: 'Any five Indian dance forms count', img: 'dance', mode: 'clear', time: 20, lakes: ['Bharatanatyam', 'Kathak', 'Kathakali', 'Kuchipudi', 'Odissi', 'Manipuri', 'Mohiniyattam', 'Sattriya', 'Ghoomar', 'Kalbelia', 'Garba', 'Dandiya Raas', 'Bhangra', 'Giddha', 'Lavani', 'Bihu', 'Chhau', 'Yakshagana', 'Garhwali', 'Rouf'] },
+  { p: 'Name any five Indian dance forms.', a: 'Any five Indian dance forms count', img: 'dance', mode: 'clear', fit: 'contain', time: 20, lakes: ['Bharatanatyam', 'Kathak', 'Kathakali', 'Kuchipudi', 'Odissi', 'Manipuri', 'Mohiniyattam', 'Sattriya', 'Ghoomar', 'Kalbelia', 'Garba', 'Dandiya Raas', 'Bhangra', 'Giddha', 'Lavani', 'Bihu', 'Chhau', 'Yakshagana', 'Garhwali', 'Rouf'] },
   { p: 'Name the national language and the national game of India.', a: 'None, none', img: 'indiaflag', mode: 'clear', fit: 'contain' },
   { p: 'Say "kaccha papad, pakka papad" three times - fast, with no slips!', a: 'Kaccha papad, pakka papad - three times, clean!', img: 'papad', mode: 'clear' },
   { p: 'Sing one film-song line that has the word diya, deep or roshni in it.', a: 'Any true film line with diya, deep or roshni in it' },

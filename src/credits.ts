@@ -24,10 +24,16 @@ export default {
   "page": "https://www.rediff.com/movies/special/guess-the-price-of-mogambos-costume/20251118.htm"
  },
  "amitabh_kbc": {
-  "title": "Indian actor Amitabh Bachchan",
-  "license": "CC BY-SA 4.0",
+  "title": "Amitabh Bachchan at the KBC Season 5 press meet on the KBC set",
+  "license": "CC BY 3.0",
   "author": "Bollywood Hungama",
-  "page": "https://commons.wikimedia.org/wiki/File:Indian_actor_Amitabh_Bachchan.jpg"
+  "page": "https://commons.wikimedia.org/wiki/File:Amitabh_Bachchan_KBC5_Press.jpg"
+ },
+ "acp_pradyuman": {
+  "title": "Shivaji Satam (ACP Pradyuman in CID)",
+  "license": "CC BY 3.0",
+  "author": "Bollywood Hungama",
+  "page": "https://commons.wikimedia.org/wiki/File:Shivaji_Satam.jpg"
  },
  "dance": {
   "title": "Bharata Natyam Performance DS",
