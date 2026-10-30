@@ -16,7 +16,7 @@ type Saved = {
     chooser: number;
     picks: Record<string, number>;
     progress: Record<string, number>;
-    log: { p: number; d: number; label: string }[];
+    log: { p: number; d: number; label: string; t?: number }[];
     aq: Record<string, string>;
     calm: boolean;
     mute: boolean;
@@ -130,7 +130,7 @@ export function App() {
         if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; }
         const scores = s.scores.slice(); scores[p] += d;
         const labelTxt = `${nm(p)} +${d}`;
-        update({ scores, log: [...s.log, { p, d, label }].slice(-60), aq: { ...(s.aq || {}), [`${round.id}:${qi}`]: labelTxt } });
+        update({ scores, log: [...s.log, { p, d, label, t: Date.now() }].slice(-60), aq: { ...(s.aq || {}), [`${round.id}:${qi}`]: labelTxt } });
         setAwarded(labelTxt); setBurst(b => b + 1); stopTimer(); if (!s.mute) playCheer();
     };
     const wrong = () => {
@@ -143,17 +143,27 @@ export function App() {
         if (awarded !== null || awardLock.current) return;
         awardLock.current = true;
         if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; }
-        update({ aq: { ...(s.aq || {}), [`${round.id}:${qi}`]: 'No points' } });
+        update({ aq: { ...(s.aq || {}), [`${round.id}:${qi}`]: 'No points', [`${round.id}:${qi}:t`]: String(Date.now()) } });
         setAwarded('No points'); stopTimer();
     };
     const undo = () => {
-        const aq = { ...(s.aq || {}) }; delete aq[`${round.id}:${qi}`];
-        if (awarded === 'No points') { update({ aq }); setAwarded(null); awardLock.current = false; return; }
-        const last = s.log[s.log.length - 1]; if (!last) return;
+        // Revert the most recent action: a 'No points' marker or the last score log entry, whichever is newer.
+        const aq = { ...(s.aq || {}) };
+        const markerT = parseInt(aq[`${round.id}:${qi}:t`] || '0', 10);
+        const last = s.log[s.log.length - 1];
+        if (awarded === 'No points' && markerT >= ((last as any)?.t || 0)) {
+            delete aq[`${round.id}:${qi}`]; delete aq[`${round.id}:${qi}:t`];
+            update({ aq }); setAwarded(null); awardLock.current = false; return;
+        }
+        if (!last) {
+            if (awarded === 'No points') { delete aq[`${round.id}:${qi}`]; delete aq[`${round.id}:${qi}:t`]; update({ aq }); setAwarded(null); awardLock.current = false; }
+            return;
+        }
         const scores = s.scores.slice(); scores[last.p] -= last.d;
+        delete aq[`${round.id}:${qi}`]; delete aq[`${round.id}:${qi}:t`];
         update({ scores, log: s.log.slice(0, -1), aq }); setAwarded(null); awardLock.current = false;
     };
-    const nudge = (p: number, d: number) => { const scores = s.scores.slice(); scores[p] += d; update({ scores, log: [...s.log, { p, d, label: 'manual' }].slice(-60) }); };
+    const nudge = (p: number, d: number) => { const scores = s.scores.slice(); scores[p] += d; update({ scores, log: [...s.log, { p, d, label: 'manual', t: Date.now() }].slice(-60) }); };
     const next = () => {
         const progress = { ...s.progress, [round.id]: Math.max(s.progress[round.id] || 0, qi + 1) };
         update({ progress });
