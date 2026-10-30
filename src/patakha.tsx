@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 /* ---- Patakha: Grid Gains - real photo, host-marked chest strip is covered (36 opaque square cells, A1-L3, 12 cols x 3 rows); the rest of the photo stays visible ---- */
 const GCOLS = ['A','B','C','D','E','F','G','H','I','J','K','L'];
 const GROWS = [1,2,3];
-/* covered band on the 2203x1542 photo: x 905.7-1692.3, y 412.2-608.9, cell 65.56px - re-anchored (user feedback 30 Oct) so each real nipple sits at the CENTER of its cell: nipples measured at (1004,510) and (1594,511), exactly 9 cells apart, no rotation needed (dy=1px) */
+/* covered band on the 2203x1542 photo: x 920-1748, y 402-609, cell 69px - placed on the ORIGINAL photo so both real nipples sit well inside cells (host's white box was only a geometry guide); 3 rows of square cells, 12 columns */
 const COVERED = new Set(GCOLS.flatMap(c => GROWS.map(r => c + r)));
 export const PATAKHA_POINTS = 20;
-/* nipple centers (1004,510) and (1594,511) land at the centers of B2 and K2 (user-confirmed right target moves J2 -> K2) */
-const NIPPLES = ['B2', 'K2'];
+/* re-measured on the full-resolution photo: nipples at ~(1006,505) and ~(1592,503) land inside B2 and J2 with 17px+ margins on every side */
+const NIPPLES = ['B2', 'J2'];
 
 export function GridGains({ photo, onAward, onNobody, onUndo, awarded, names }: { photo: string; onAward: (p: number) => void; onNobody: () => void; onUndo: () => void; awarded: string | null; names: string[] }) {
     const [picked, setPicked] = useState<string[]>([]);
