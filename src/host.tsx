@@ -45,7 +45,7 @@ const HB_DESCS: Record<string, string> = {
     vidhana: 'The granite facade and dome of Vidhana Soudha.',
     lalbagh: 'The Glass House at Lalbagh.',
     halairport: 'The old HAL airport.',
-    cubbon: 'Greenery inside Cubbon Park.',
+    cubbon: 'Aerial view of Cubbon Park with the red State Central Library building.',
     pookalam: 'A colourful Onam floral carpet.',
     diya: 'A lit diya.',
     upi: 'The UPI logo.',

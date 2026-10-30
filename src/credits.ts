@@ -198,10 +198,10 @@ export default {
   "page": "https://commons.wikimedia.org/wiki/File:Lalbagh_glass_house,_Bangalore.jpg"
  },
  "cubbon": {
-  "title": "Cubbon Park 3.jpg",
-  "license": "CC BY-SA 4.0",
-  "author": "Quantumtunneling",
-  "page": "https://commons.wikimedia.org/wiki/File:Cubbon_Park_3.jpg"
+  "title": "Aerial view of Cubbon Park and the State Central Library (photo supplied by host)",
+  "license": "Unverified - supplied by host",
+  "author": "Unknown",
+  "page": ""
  },
  "diya": {
   "title": "Diwali Diyas.jpg",

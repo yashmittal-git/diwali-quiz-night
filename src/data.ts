@@ -135,7 +135,7 @@ export const rounds: Round[] = [
   { p: 'Lalbagh\'s Glass House hosts big flower shows around which two national days?', a: 'Republic Day (January) and Independence Day (August)', img: 'lalbagh', mode: 'clear', fit: 'contain', note: 'Name both for full points. One alone is half right.' },
   { p: 'Before the airport at Devanahalli opened in May 2008, Bengaluru\'s passenger flights used an older airport. Name that airport?', a: 'HAL Airport', img: 'halairport', mode: 'reveal', note: 'It began in 1941 as the home of India\'s first aircraft factory, and passenger flights moved to Kempegowda International Airport on 24 May 2008. It still handles charter and VIP flights.' },
   { p: 'Which Bengaluru eatery, open since 1924, is credited with inventing rava idli during a wartime rice shortage?', a: 'MTR (Mavalli Tiffin Rooms)', img: 'mtrlogo', mode: 'reveal', logo: true, note: 'The Lalbagh Road restaurant still serves the original menu; MTR Foods grew out of it.' },
-  { p: 'Cubbon Park is named after which British Commissioner of Mysore?', a: 'Sir Mark Cubbon', img: 'cubbon', mode: 'clear', note: 'Officially it is now Sri Chamarajendra Park.' },
+  { p: 'Cubbon Park is named after which British Commissioner of Mysore?', a: 'Sir Mark Cubbon', img: 'cubbon', mode: 'clear', fit: 'contain', note: 'Officially it is now Sri Chamarajendra Park.' },
 ]},
 { id: 'diwali', name: 'Diwali Dhamaka', tag: 'Diwali first, then festivals across India', emoji: '🪔', hue: 18, qs: [
   { p: 'Which goddess is worshipped in most homes on Diwali evening?', a: 'Lakshmi' },
