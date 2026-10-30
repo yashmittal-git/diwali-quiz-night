@@ -67,7 +67,7 @@ export function App() {
     const [picState, setPicState] = useState<'none' | 'loading' | 'ready' | 'error'>('none');
     const [burst, setBurst] = useState(0);
     const [awarded, setAwarded] = useState<string | null>(null);
-    const [vidSrc, setVidSrc] = useState<'insta' | 'yt'>('yt');
+    const [vidSrc, setVidSrc] = useState<'insta' | 'yt'>('insta');
     const [oops, setOops] = useState(0);
     const [confirmReset, setConfirmReset] = useState(false);
 
@@ -294,7 +294,7 @@ export function App() {
                     <p className="prompt">{q.p}</p>
                     {revealed && <div className="answer"><span>Answer</span><strong>{q.a}</strong>{q.lakes && <ul className="lakes">{q.lakes.map(l => <li key={l}>{l}</li>)}</ul>}{q.note && <em>{q.note}</em>}</div>}
                 </div>
-                {revealed && q.video ? <div className="qvideo-wrap"><iframe key={vidSrc} loading="lazy" className={'qvideo' + (vidSrc === 'insta' ? ' insta' : '')} src={vidSrc === 'insta' ? q.video.insta : q.video.yt} title="Answer video clip" allow="encrypted-media; picture-in-picture" allowFullScreen /><div className="qvideo-btns">{vidSrc === 'yt' ? <button className="ghost small" onClick={() => setVidSrc('insta')}>Watch the original Instagram reel instead</button> : <button className="ghost small" onClick={() => setVidSrc('yt')}>Back to the reliable player</button>}<a className="ghost small" href={q.video.link} target="_blank" rel="noreferrer">Open clip in new tab ↗</a></div></div> : <Pic q={q} revealed={revealed} onReady={onPicSettled} />}
+                {revealed && q.video ? <div className="qvideo-wrap"><iframe key={vidSrc} loading="lazy" className={'qvideo' + (vidSrc === 'insta' ? ' insta' : '')} src={vidSrc === 'insta' ? q.video.insta : q.video.yt} title="Answer video clip" allow="encrypted-media; picture-in-picture" allowFullScreen /><div className="qvideo-btns">{vidSrc === 'insta' ? <button className="ghost small" onClick={() => setVidSrc('yt')}>Reel not loading? Try the YouTube mirror</button> : <button className="ghost small" onClick={() => setVidSrc('insta')}>Back to the Instagram reel</button>}<a className="ghost small" href={q.video.link} target="_blank" rel="noreferrer">Open clip in new tab ↗</a></div></div> : <Pic q={q} revealed={revealed} onReady={onPicSettled} />}
             </div>
             <div className="controls">
                 <button className="btn" onClick={prev} disabled={qi === 0}>← Previous</button>

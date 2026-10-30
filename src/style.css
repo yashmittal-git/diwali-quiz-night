@@ -361,3 +361,4 @@ main.qscreen .awarded{font-size:13px}
 .qbody>.qvideo-wrap{margin-top:0;align-self:center;justify-self:center;max-width:100%}
 .qbody>.qvideo-wrap .qvideo{width:min(100%,520px);max-height:52vh}
 @media (max-width:900px){.qbody>.qvideo-wrap{margin-top:14px}}
+.qbody>.qvideo-wrap .qvideo.insta{width:320px;max-width:100%;height:560px;max-height:62vh;aspect-ratio:auto}
