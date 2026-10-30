@@ -22,7 +22,7 @@ type Saved = {
     stealBonus: number;
 };
 const PARTY_CODE = '2222';
-const INITIAL: Saved = { names: ['Player 1', 'Player 2', 'Player 3', 'Player 4'], scores: [0, 0, 0, 0], chooser: 0, picks: {}, progress: {}, log: [], aq: {}, calm: false, mute: false, stealBonus: 10 };
+const INITIAL: Saved = { names: ['Player 1', 'Player 2', 'Player 3', 'Player 4', 'Player 5'], scores: [0, 0, 0, 0, 0], chooser: 0, picks: {}, progress: {}, log: [], aq: {}, calm: false, mute: false, stealBonus: 10 };
 
 const EMBERS = Array.from({ length: 26 }, (_, i) => ({ left: (i * 37) % 100, delay: (i * 1.3) % 9, dur: 8 + ((i * 7) % 8), size: 3 + (i % 4) * 2 }));
 function Embers({ calm }: { calm: boolean }) {
@@ -48,12 +48,12 @@ function PicImg({ src, alt, zoom, origin, onReady }: { src: string; alt: string;
     return <img src={src} alt={alt} className={ld ? 'ld' : ''} onLoad={() => { setLd(true); onReady && onReady(true); }} onError={() => { setErr(true); onReady && onReady(false); }} style={zoom ? ({ ['--origin' as string]: origin || '50% 50%' } as React.CSSProperties) : undefined} />;
 }
 
-const cleanNames = (arr: string[] | undefined): string[] => [0, 1, 2, 3].map(i => (((arr || [])[i] || '').trim().slice(0, 14)) || 'Player ' + (i + 1));
+const cleanNames = (arr: string[] | undefined): string[] => [0, 1, 2, 3, 4].map(i => (((arr || [])[i] || '').trim().slice(0, 14)) || 'Player ' + (i + 1));
 
 export function App() {
     const [saved, setSaved, status] = useLocalState<Saved>('diwali-quiz.v1', INITIAL);
     const s: Saved = { ...INITIAL, ...saved };
-    const rawNames: string[] = [0, 1, 2, 3].map(i => (saved.names || [])[i] ?? INITIAL.names[i]);
+    const rawNames: string[] = [0, 1, 2, 3, 4].map(i => (saved.names || [])[i] ?? INITIAL.names[i]);
     const nm = (i: number) => (rawNames[i] || '').trim() || 'Player ' + (i + 1);
     const [view, setView] = useState<'home' | 'setup' | 'board' | 'round' | 'credits' | 'end' | 'patakhamenu' | 'patakha' | 'modi' | 'handbook'>(() => window.location.pathname.replace(/\/+$/, '').endsWith('/h') ? 'handbook' : 'home');
     const [gateOk, setGateOk] = useState(false);
@@ -67,6 +67,7 @@ export function App() {
     const [picState, setPicState] = useState<'none' | 'loading' | 'ready' | 'error'>('none');
     const [burst, setBurst] = useState(0);
     const [awarded, setAwarded] = useState<string | null>(null);
+    const [vidSrc, setVidSrc] = useState<'insta' | 'yt'>('insta');
     const [oops, setOops] = useState(0);
     const [confirmReset, setConfirmReset] = useState(false);
 
@@ -93,13 +94,13 @@ export function App() {
     const stopTimer = () => { if (timer.current) { window.clearInterval(timer.current); timer.current = null; } };
     useEffect(() => stopTimer, []);
     const startTimer = () => {
-        stopTimer(); if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; } setLeft(5);
+        stopTimer(); if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; } setLeft(q.time ?? 5);
         timer.current = window.setInterval(() => setLeft(v => { if (v === null) return null; if (v <= 1) { stopTimer(); if (!s.mute) playBuzz(); return 0; } return v - 1; }), 1000);
     };
 
     const onPicSettled = (ok: boolean) => setPicState(ok ? 'ready' : 'error');
     const openQ = (r: number, i: number) => {
-        stopTimer(); setRi(r); setQi(i); setRevealed(false); setLeft(null);
+        stopTimer(); setRi(r); setQi(i); setRevealed(false); setLeft(null); setVidSrc('insta');
         const label = (s.aq || {})[`${rounds[r].id}:${i}`] || null;
         awardLock.current = label !== null;
         setAwarded(label); setView('round');
@@ -158,7 +159,7 @@ export function App() {
     const undoPatakha = (key: string) => {
         const aq = { ...(s.aq || {}) };
         const p = parseInt(aq[`patakha:${key}:p`] || '-1', 10);
-        const scores = s.scores.slice(); if (p >= 0 && p < 4) scores[p] -= PATAKHA_POINTS;
+        const scores = s.scores.slice(); if (p >= 0 && p < 5) scores[p] -= PATAKHA_POINTS;
         delete aq[`patakha:${key}`]; delete aq[`patakha:${key}:p`];
         update({ scores, aq });
     };
@@ -167,8 +168,8 @@ export function App() {
     const pickRound = (r: number) => {
         const id = rounds[r].id;
         const who = s.picks[id] ?? s.chooser;
-        update({ picks: { ...s.picks, [id]: who }, chooser: s.picks[id] === undefined ? (s.chooser + 1) % 4 : s.chooser });
-        const q0 = s.progress[id] && s.progress[id] < 6 ? s.progress[id] : 0; stopTimer(); setRi(r); setQi(q0); setView('round'); setRevealed(false); setLeft(null); const lb = (s.aq || {})[`${id}:${q0}`] || null; awardLock.current = lb !== null; setAwarded(lb); const qz = rounds[r].qs[q0]; setPicState(qz.img && (qz.mode || 'clear') !== 'reveal' && photos[qz.img] ? 'loading' : 'none');
+        update({ picks: { ...s.picks, [id]: who }, chooser: s.picks[id] === undefined ? (s.chooser + 1) % 5 : s.chooser });
+        const q0 = s.progress[id] && s.progress[id] < 6 ? s.progress[id] : 0; stopTimer(); setRi(r); setQi(q0); setView('round'); setRevealed(false); setLeft(null); setVidSrc('insta'); const lb = (s.aq || {})[`${id}:${q0}`] || null; awardLock.current = lb !== null; setAwarded(lb); const qz = rounds[r].qs[q0]; setPicState(qz.img && (qz.mode || 'clear') !== 'reveal' && photos[qz.img] ? 'loading' : 'none');
     };
 
     useEffect(() => {
@@ -207,7 +208,7 @@ export function App() {
         <Sky burstK={burst} calm={s.calm} onPop={() => { if (!muteRef.current) playPop(); }} />
         <header className="bar">
             <button className="ghost" onClick={() => { stopTimer(); if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; } setView(view === 'home' ? 'home' : (view === 'board' || view === 'handbook') ? 'home' : 'board'); }}>{view === 'home' ? '🪔 Diwali Quiz' : (view === 'board' || view === 'handbook') ? '← Home' : '← Rounds'}</button>
-            <span className="prog">{total}/48 asked</span>
+            <span className="prog">{total}/60 asked</span>
             <span className="barR">{view !== 'home' && <button className="ghost" onClick={() => setConfirmReset(true)}>↻ Restart quiz</button>}<button className="ghost" onClick={() => update({ mute: !s.mute })} aria-pressed={s.mute}>{s.mute ? '🔇 Sound off' : '🔊 Sound on'}</button><button className="ghost" onClick={() => update({ calm: !s.calm })} aria-pressed={s.calm}>{s.calm ? 'Calm mode: on' : 'Calm mode: off'}</button></span>
         </header>
 
@@ -215,7 +216,7 @@ export function App() {
             <div className="diya" aria-hidden="true"><RoundIcon id="diwali" size={130} /></div>
             <p className="kicker">Shubh Deepavali</p>
             <h1 className="wobble deva title-line">दिमाग की आतिशबाज़ी <span className="title-en">- Diwali Quiz Night</span></h1>
-            <p className="sub">8 rounds. 48 questions. 4 players. 1 host with the final word.</p>
+            <p className="sub">10 rounds. 60 questions. 5 players. 1 host with the final word.</p>
             <button className="cta" onClick={() => setView('setup')}>Let's play!</button>
             {(total > 0 || s.scores.some(x => x !== 0)) && <button className="ghost small" onClick={() => setView('board')}>Continue where we left off</button>}
             <button className="ghost small" onClick={() => setView('credits')}>Photo credits</button>
@@ -239,7 +240,7 @@ export function App() {
             <h1 className="wobble">Rules of the Evening</h1>
             <div className="rulecards">
                 <div className="rc"><b>1</b><span>Each player picks <em>two rounds</em>, without peeking inside.</span></div>
-                <div className="rc"><b>2</b><span>You get <em>5 seconds</em> to answer. The host starts the clock.</span></div>
+                <div className="rc"><b>2</b><span>You get <em>5 seconds</em> to answer. The host starts the clock - a few list and performance questions get a longer one.</span></div>
                 <div className="rc"><b>3</b><span>Right answer <em>+10</em>. Wrong or silent? Up for grabs. Steal <em>+5</em>.</span></div>
                 <div className="rc"><b>4</b><span>Last question of every round is the <em>20 point BONUS</em>. Bonus steals earn <em>+10</em> unless the host declares otherwise.</span></div>
                 <div className="rc"><b>5</b><span>The winner owes Yash <em>round-trip flights to the Philippines</em>. ✈️</span></div>
@@ -291,16 +292,16 @@ export function App() {
             <div className={'qbody' + (q.img && (q.mode !== 'reveal' || revealed) ? ' has-pic' : '') + (revealed ? ' is-rev' : '')}>
                 <div className="qtext">
                     <p className="prompt">{q.p}</p>
-                    {revealed && <div className="answer"><span>Answer</span><strong>{q.a}</strong>{q.lakes && <ul className="lakes">{q.lakes.map(l => <li key={l}>{l}</li>)}</ul>}{q.note && <em>{q.note}</em>}</div>}
+                    {revealed && <div className="answer"><span>Answer</span><strong>{q.a}</strong>{q.lakes && <ul className="lakes">{q.lakes.map(l => <li key={l}>{l}</li>)}</ul>}{q.note && <em>{q.note}</em>}{q.video && <div className="qvideo-wrap"><iframe key={vidSrc} loading="lazy" className="qvideo" src={vidSrc === 'insta' ? q.video.insta : q.video.yt} title="Answer video clip" allow="encrypted-media; picture-in-picture" allowFullScreen /><div className="qvideo-btns">{vidSrc === 'insta' && <button className="ghost small" onClick={() => setVidSrc('yt')}>Video not loading? Try the backup clip</button>}<a className="ghost small" href={q.video.link} target="_blank" rel="noreferrer">Open clip in new tab ↗</a></div></div>}</div>}
                 </div>
                 <Pic q={q} revealed={revealed} onReady={onPicSettled} />
             </div>
             <div className="controls">
                 <button className="btn" onClick={prev} disabled={qi === 0}>← Previous</button>
-                {q.paced ? <div className="clock paced">Take your time</div> : <div className={'clock' + (left === 0 ? ' is-up' : '')} aria-live="polite">{left === null ? '5' : left === 0 ? 'Steal!' : left}</div>}
-                {!q.paced && (!needsPic || picState === 'ready') && <button className="btn" onClick={startTimer}>Start 5s</button>}
+                {q.paced ? <div className="clock paced">Take your time</div> : <div className={'clock' + (left === 0 ? ' is-up' : '')} aria-live="polite">{left === null ? String(q.time ?? 5) : left === 0 ? 'Steal!' : left}</div>}
+                {!q.paced && (!needsPic || picState === 'ready') && <button className="btn" onClick={startTimer}>Start {q.time ?? 5}s</button>}
                 {!q.paced && needsPic && picState === 'loading' && <button className="btn" disabled title="Waiting for the clue photo">Loading photo…</button>}
-                {!q.paced && needsPic && picState === 'error' && <button className="btn" onClick={startTimer}>Start 5s anyway (photo failed)</button>}
+                {!q.paced && needsPic && picState === 'error' && <button className="btn" onClick={startTimer}>Start {q.time ?? 5}s anyway (photo failed)</button>}
                 <button className="btn primary" onClick={() => { setRevealed(v => !v); stopTimer(); }}>{revealed ? 'Hide answer' : 'Reveal answer'}</button>
                 <button className="btn" onClick={next}>{qi < 5 ? 'Next question →' : 'Finish round →'}</button>
             </div>
@@ -319,7 +320,7 @@ export function App() {
         {gateOk && view === 'end' && <main className="home">
             <div className="diya trophy" aria-hidden="true">🏆</div>
             <h1>Final scores</h1>
-            <p className="sub winner">{leaderMax > 0 ? (() => { const w = [0, 1, 2, 3].filter(i => s.scores[i] === leaderMax).map(nm); return `${w.join(' & ')} won, and ${w.length > 1 ? 'owe' : 'owes'} Yash round-trip flights to the Philippines!`; })() : 'No scores yet.'}</p>
+            <p className="sub winner">{leaderMax > 0 ? (() => { const w = [0, 1, 2, 3, 4].filter(i => s.scores[i] === leaderMax).map(nm); return `${w.join(' & ')} won, and ${w.length > 1 ? 'owe' : 'owes'} Yash round-trip flights to the Philippines!`; })() : 'No scores yet.'}</p>
             <p className="sub">The host's ruling applies to all tie-breaks. Appeals may be submitted with a dabba of Mysore Pak.</p>
             {Scoreboard}
             <button className="cta" onClick={() => setView('board')}>Back to rounds</button>
@@ -347,12 +348,12 @@ export function App() {
             <button className="ghost small" onClick={() => setView('board')}>← Back to rounds</button>
         </main>}
         {gateOk && view === 'patakha' && <main className="patakha">
-            <GridGains photo={photos.patakha_grid} names={[0, 1, 2, 3].map(nm)} awarded={(s.aq || {})['patakha:grid'] || null} onAward={p => awardPatakha('grid', p)} onNobody={() => nobodyPatakha('grid')} onUndo={() => undoPatakha('grid')} />
+            <GridGains photo={photos.patakha_grid} names={[0, 1, 2, 3, 4].map(nm)} awarded={(s.aq || {})['patakha:grid'] || null} onAward={p => awardPatakha('grid', p)} onNobody={() => nobodyPatakha('grid')} onUndo={() => undoPatakha('grid')} />
             {Scoreboard}
             <button className="ghost small" onClick={() => setView('patakhamenu')}>← Patakha Rounds</button>
         </main>}
         {gateOk && view === 'modi' && <main className="patakha">
-            <Godiji photo={photos.modi} names={[0, 1, 2, 3].map(nm)} awarded={(s.aq || {})['patakha:modi'] || null} onAward={p => awardPatakha('modi', p)} onNobody={() => nobodyPatakha('modi')} onUndo={() => undoPatakha('modi')} />
+            <Godiji photo={photos.modi} names={[0, 1, 2, 3, 4].map(nm)} awarded={(s.aq || {})['patakha:modi'] || null} onAward={p => awardPatakha('modi', p)} onNobody={() => nobodyPatakha('modi')} onUndo={() => undoPatakha('modi')} />
             {Scoreboard}
             <button className="ghost small" onClick={() => setView('patakhamenu')}>← Patakha Rounds</button>
         </main>}
@@ -364,7 +365,7 @@ export function App() {
             <ul>{Object.entries(credits as Record<string, { title: string; license: string; author: string; page: string }>).map(([k, c]) => <li key={k}>{c.page ? <a href={c.page} target="_blank" rel="noreferrer">{c.title.replace(/\.[a-z]+$/i, '')}</a> : <span>{c.title}</span>}<span>{c.author} · {c.license}</span></li>)}</ul>
             <button className="cta" onClick={() => setView('board')}>Back</button>
         </main>}
-        {confirmReset && <div className="modal" role="dialog" aria-modal="true"><div className="box"><h2>Restart the whole quiz?</h2><p>This clears all scores, round picks and progress, and resets names to Player 1-4.</p><div className="row"><button className="btn danger" onClick={restart}>Yes, start over</button><button className="btn" onClick={() => setConfirmReset(false)}>Keep playing</button></div></div></div>}
+        {confirmReset && <div className="modal" role="dialog" aria-modal="true"><div className="box"><h2>Restart the whole quiz?</h2><p>This clears all scores, round picks and progress, and resets names to Player 1-5.</p><div className="row"><button className="btn danger" onClick={restart}>Yes, start over</button><button className="btn" onClick={() => setConfirmReset(false)}>Keep playing</button></div></div></div>}
         {!status.ready && <p className="saving">Loading saved scores…</p>}
     </div>;
 }

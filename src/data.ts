@@ -56,6 +56,18 @@ import filmy_alone from './photos/filmy_alone.jpg';
 import filmy_blackbuck from './photos/filmy_blackbuck.jpg';
 import filmy_neelam from './photos/filmy_neelam.jpg';
 import cadbury from './photos/cadbury.jpg';
+import smriti from './photos/smriti.jpg';
+import tulsi from './photos/tulsi.jpg';
+import shinchan from './photos/shinchan.jpg';
+import mogambo from './photos/mogambo.jpg';
+import amitabh_kbc from './photos/amitabh_kbc.jpg';
+import dance from './photos/dance.jpg';
+import indiaflag from './photos/indiaflag.png';
+import papad from './photos/papad.jpg';
+import doordarshan from './photos/doordarshan.png';
+import ramayan from './photos/ramayan.jpg';
+import malgudi from './photos/malgudi.jpg';
+import raftaar from './photos/raftaar.jpg';
 import enfield from './photos/enfield.jpg';
 
 
@@ -63,11 +75,12 @@ export const photos: Record<string, string> = {
  ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, cadbury, vikrant, enfield,
     filmy_sweater, filmy_sweater_reveal, filmy_glass, filmy_glass_reveal, filmy_rocketry, filmy_maddock, filmy_alone, filmy_blackbuck, filmy_neelam,
+    smriti, tulsi, shinchan, mogambo, amitabh_kbc, dance, indiaflag, papad, doordarshan, ramayan, malgudi, raftaar,
     ranbir_alia: ranbirAlia, ranbir_alia_blur: ranbirAliaBlur, virat_anushka: viratAnushka, deepika_ranveer: deepikaRanveer, srk_gauri, amitabh_jaya, sachin, palash, mandhana_palash, mango, pepper, mtrlogo, rama, dhanteras, dhanteras_reveal, durgapuja, durgapuja_reveal,
 };
 
 export type Mode = 'blur' | 'zoom' | 'reveal' | 'clear';
-export type Q = { p: string; a: string; note?: string; img?: string; imgReveal?: string; mode?: Mode; logo?: boolean; origin?: string; clue?: string; lakes?: string[]; paced?: boolean };
+export type Q = { p: string; a: string; note?: string; img?: string; imgReveal?: string; mode?: Mode; logo?: boolean; origin?: string; clue?: string; lakes?: string[]; paced?: boolean; fit?: string; time?: number; video?: { insta: string; yt: string; link: string } };
 export type Round = { id: string; name: string; tag: string; emoji: string; hue: number; qs: Q[] };
 
 export const rounds: Round[] = [
@@ -134,5 +147,21 @@ export const rounds: Round[] = [
   { p: 'Two of these three young leaders were recently arrested at a Delhi protest and spent about a week in jail. Name all three, left to right.', a: 'Saurav Das, Abhijeet Dipke and Ashutosh Ranka (cockroaches)', img: 'trio', note: 'They lead the Cockroach Janta Party (yes, really - founded May 2026, grew out of NEET-UG protests). Das and Ranka were arrested on 13 October 2026 after entering the denotified Jantar Mantar protest site and released about a week later; the party campaigns for the Chief Election Commissioner\'s resignation.' },
   { p: 'Which Indian Navy ship, commissioned in September 2022, is India\'s first home-built aircraft carrier?', a: 'INS Vikrant', img: 'vikrant', mode: 'reveal', note: 'Built at Cochin Shipyard.' },
   { p: 'This Indian motorcycle brand sells an adventure bike named after the world\'s highest mountain range. Which brand?', a: 'Royal Enfield', img: 'enfield', mode: 'reveal', note: 'The bike is the Himalayan. Royal Enfield has been built in India since 1955 - the oldest motorcycle brand in continuous production.' },
+]},
+{ id: 'tv', name: 'TV Tamasha', tag: 'From Doordarshan to daily soaps', emoji: '📺', hue: 285, qs: [
+  { p: 'Name the famous TV show she starred in - and say the title the way it used to be spoken.', a: 'Kyunki Saas Bhi Kabhi Bahu Thi', img: 'smriti', imgReveal: 'tulsi', mode: 'clear', fit: 'contain' },
+  { p: 'Identify this famous kid and name its whole family.', a: 'Shinchan, Mitsy, Harry, Himawari and Shiro', img: 'shinchan', mode: 'clear', time: 20 },
+  { p: '"Daya, darwaza todo!" Name the TV character giving this order, and the show.', a: 'ACP Pradyuman, CID' },
+  { p: 'Which Karnataka village became the main filming location for Malgudi Days?', a: 'Agumbe', img: 'malgudi', mode: 'clear' },
+  { p: 'Which show returned to Doordarshan in 2020 and drew 7.7 crore viewers on 16 April?', a: 'Ramayan', img: 'doordarshan', imgReveal: 'ramayan', mode: 'clear', fit: 'contain' },
+  { p: 'Over the KBC seasons, Amitabh Bachchan has given the clock its own pet names. Name any three.', a: 'Ghadiyal Babu, Shrimati Tiktiki, Sui Mui', img: 'amitabh_kbc', mode: 'clear', time: 20 },
+]},
+{ id: 'bol', name: 'Bol Ke Dikhao', tag: 'Name it, say it, perform it', emoji: '🎤', hue: 160, qs: [
+  { p: 'Name any five Indian dance forms.', a: 'Any five Indian dance forms count', img: 'dance', mode: 'clear', time: 20, lakes: ['Bharatanatyam', 'Kathak', 'Kathakali', 'Kuchipudi', 'Odissi', 'Manipuri', 'Mohiniyattam', 'Sattriya', 'Ghoomar', 'Kalbelia', 'Garba', 'Dandiya Raas', 'Bhangra', 'Giddha', 'Lavani', 'Bihu', 'Chhau', 'Yakshagana', 'Garhwali', 'Rouf'] },
+  { p: 'Name the national language and the national game of India.', a: 'None, none', img: 'indiaflag', mode: 'clear', fit: 'contain' },
+  { p: 'Say "kaccha papad, pakka papad" three times - fast, with no slips!', a: 'Kaccha papad, pakka papad - three times, clean!', img: 'papad', mode: 'clear' },
+  { p: 'Sing one film-song line that has the word diya, deep or roshni in it.', a: 'Any true film line with diya, deep or roshni in it' },
+  { p: 'Deliver this man\'s famous dialogue - in his style.', a: 'Mogambo khush hua', img: 'mogambo', mode: 'clear' },
+  { p: 'Name the famous dialogue from Raftaar in Traitors season one.', a: 'Arjun hota toh astra kamaan mod deta. Ram hota toh Shiv baan tod deta. Yeh satya-asatya ka parakh murkh nahi jaanta. Main Raftaar hoon, maine zubaan di thi, main kaam chhod deta - "Guys, I am an innocent!"', img: 'raftaar', mode: 'reveal', fit: 'contain', time: 30, video: { insta: 'https://www.instagram.com/reel/DcB3D4oPBCw/embed', yt: 'https://www.youtube-nocookie.com/embed/r0zLuYJPR-I', link: 'https://www.instagram.com/reel/DcB3D4oPBCw' } },
 ]},
 ];

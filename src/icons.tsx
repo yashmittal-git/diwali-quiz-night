@@ -57,6 +57,20 @@ export function RoundIcon({ id, size = 84 }: { id: string; size?: number }) {
                 <circle cx="50" cy="33" r="5" fill="none" stroke="#1a3cae" strokeWidth="1.8" />
             </g>
         </svg>;
+        case 'tv': return <svg {...p}>
+            <path d="M30 26l-14-16M70 26l14-16" stroke="#ffd27a" strokeWidth="5" fill="none" {...stroke} />
+            <rect x="10" y="26" width="80" height="56" rx="10" fill="#222" stroke="#ffd27a" strokeWidth="4" />
+            <rect x="18" y="34" width="50" height="40" rx="5" fill="#3a2a5e" stroke="#ff7aa8" strokeWidth="3" />
+            <path className="glow" d="M24 44l10 10-10 10" fill="none" stroke="#ffcf4a" strokeWidth="4" {...stroke} />
+            <path d="M76 38v32" stroke="#ffd27a" strokeWidth="4" {...stroke} />
+            <circle cx="81" cy="42" r="3.5" fill="#ff3d6e" /><circle cx="81" cy="54" r="3.5" fill="#ffb347" />
+        </svg>;
+        case 'bol': return <svg {...p}>
+            <rect x="38" y="10" width="24" height="44" rx="12" fill="#ffd27a" stroke="#7a3b00" strokeWidth="3" />
+            <path d="M26 42c0 16 10 26 24 26s24-10 24-26" fill="none" stroke="#ff7aa8" strokeWidth="5" {...stroke} />
+            <path d="M50 68v16M36 88h28" stroke="#ff7aa8" strokeWidth="5" {...stroke} />
+            <path className="steam" d="M20 20c4-4 8-4 12 0M68 12c4-4 8-4 12 0" fill="none" stroke="#ffcf4a" strokeWidth="4" opacity=".8" {...stroke} />
+        </svg>;
         default: return <svg {...p}><circle cx="50" cy="50" r="30" fill="#ffb347" /></svg>;
     }
 }

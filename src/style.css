@@ -351,3 +351,10 @@ main.qscreen .awarded{font-size:13px}
 .pk-who{display:flex;flex-direction:column;align-items:center;gap:6px}
 .hb-desc { font-size: .85rem; color: #d8b98a; margin: .1rem 0 .25rem; font-style: italic; }
 .pk-cell.free { background: transparent; border: none; box-shadow: none; pointer-events: none; }
+
+/* answer video embed (Raftaar clip) */
+.qvideo-wrap{margin-top:14px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.qvideo{width:min(100%,320px);height:400px;border:0;border-radius:14px;background:#000;display:block}
+.qvideo-btns{display:flex;gap:10px;flex-wrap:wrap}
+.qvideo-btns .ghost.small{text-decoration:none;display:inline-flex;align-items:center}
+@media (max-width:640px){.qvideo{height:360px}}

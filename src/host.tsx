@@ -54,6 +54,30 @@ const HB_DESCS: Record<string, string> = {
     trio: 'Three young men at a press conference, mics in front.',
     vikrant: 'The aircraft carrier INS Vikrant at sea.',
     modi: 'TV frame from the PM\u2019s 8 Nov 2016 national address (NDTV LIVE, courtesy DD News), supplied by the host.',
+    smriti: 'Question photo of Smriti Irani speaking at a 2023 conclave; answer reveal swaps in the Kyunki Saas Bhi Kabhi Bahu Thi title card with her as Tulsi.',
+    tulsi: 'Answer-reveal title card of Kyunki Saas Bhi Kabhi Bahu Thi with Smriti Irani as Tulsi.',
+    shinchan: 'Question image of Shinchan (Crayon Shin-chan volume 1 cover art).',
+    mogambo: 'Question photo of Amrish Puri as Mogambo in the golden coat (Mr India, 1987).',
+    amitabh_kbc: 'Question photo of Amitabh Bachchan.',
+    dance: 'Question photo of a Bharatanatyam performance.',
+    indiaflag: 'The Indian flag, shown with the question and the answer.',
+    papad: 'Question photo of a stack of papadums.',
+    doordarshan: 'Question image of the classic Doordarshan logo; answer reveal swaps in the Ramayan poster.',
+    ramayan: 'Answer-reveal poster of Ramanand Sagar\u2019s Ramayan (Arun Govil and Deepika Chikhalia as Ram and Sita).',
+    malgudi: 'Malgudi Days signature title art (R.K. Laxman style), shown with both question and answer.',
+    raftaar: 'Answer-reveal frame of Raftaar delivering his elimination speech in The Traitors S1 (with the clip below).',
+};
+
+/* Host-only notes that stay out of the player-facing reveal, keyed round:questionIndex */
+const HB_NOTES: Record<string, string> = {
+    'tv:0': 'The title is sung long and drawn out in the title track - a flat reading is the fun argument to have, your call.',
+    'tv:2': 'Shivaji Satam played ACP Pradyuman; CID ran on Sony from 1998.',
+    'tv:5': 'All three coined by KBC writer RD Tailang: Ghadiyal Babu (season 1), his "wife" Shrimati Tiktiki (accept "Tiki Tiki ji"), and their "child" Sui Mui. All three for the full bonus; two is your call.',
+    'bol:0': 'The list on the reveal is a bank, not a checklist - accept any genuine named dance form.',
+    'bol:1': 'Neither exists officially. Hindi in Devanagari is the official language of the Union (Article 343) with English continuing; the Sports Ministry confirmed via RTI that no game is declared the national game. Hindi / hockey / cricket are the traps.',
+    'bol:3': 'Examples if the floor goes quiet: "Jab deep jale aana" (Chitchor, 1976) or "Diye jalte hain" (Namak Haraam, 1973).',
+    'bol:4': 'Mogambo, played by Amrish Puri in Mr India (1987). The delivery is the fun; the line itself is the answer.',
+    'bol:5': 'The beats that matter: the Arjun and Ram couplets, "maine zubaan di thi, main kaam chhod deta", and the "I am an innocent" closer (he adds "Bola tha" at the end). Exactness is your call. The reveal photo is a frame from the clip; the embedded video plays the moment, with a backup clip and an open-link if the embed fails.',
 };
 
 export function HostHandbook() {
@@ -70,6 +94,7 @@ export function HostHandbook() {
                 {q.img && HB_DESCS[q.img] && <p className="hb-desc">🖼️ {HB_DESCS[q.img]}</p>}
                 <p className="hb-a">✅ {q.a}</p>
                 {q.note && <p className="hb-note">💡 {q.note}</p>}
+                {HB_NOTES[r.id + ':' + i] && <p className="hb-note">💡 {HB_NOTES[r.id + ':' + i]}</p>}
             </div>)}
         </section>)}
         <section className="hb-round">

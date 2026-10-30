@@ -1,4 +1,76 @@
 export default {
+ "smriti": {
+  "title": "Smt. Smriti Irani in April 2023",
+  "license": "GODL-India",
+  "author": "Photo Division, Ministry of I&B, Govt. of India",
+  "page": "https://commons.wikimedia.org/wiki/File:Smt._Smriti_Irani_in_April_2023.jpg"
+ },
+ "tulsi": {
+  "title": "Kyunki Saas Bhi Kabhi Bahu Thi title card",
+  "license": "All rights reserved - Star Plus / Balaji Telefilms title card used for a private party quiz",
+  "author": "Star Plus / Balaji Telefilms",
+  "page": "https://en.wikipedia.org/wiki/Kyunki_Saas_Bhi_Kabhi_Bahu_Thi"
+ },
+ "shinchan": {
+  "title": "Crayon Shin-chan volume 1 cover art",
+  "license": "All rights reserved - Yoshito Usui / Futabasha cover art used for a private party quiz",
+  "author": "Yoshito Usui / Futabasha",
+  "page": "https://en.wikipedia.org/wiki/Crayon_Shin-chan"
+ },
+ "mogambo": {
+  "title": "Amrish Puri as Mogambo in Mr India (1987)",
+  "license": "All rights reserved - film still via Rediff used for a private party quiz",
+  "author": "Narsimha Enterprises / Rediff.com",
+  "page": "https://www.rediff.com/movies/special/guess-the-price-of-mogambos-costume/20251118.htm"
+ },
+ "amitabh_kbc": {
+  "title": "Indian actor Amitabh Bachchan",
+  "license": "CC BY-SA 4.0",
+  "author": "Bollywood Hungama",
+  "page": "https://commons.wikimedia.org/wiki/File:Indian_actor_Amitabh_Bachchan.jpg"
+ },
+ "dance": {
+  "title": "Bharata Natyam Performance DS",
+  "license": "CC BY-SA 3.0",
+  "author": "DS",
+  "page": "https://commons.wikimedia.org/wiki/File:Bharata_Natyam_Performance_DS.jpg"
+ },
+ "indiaflag": {
+  "title": "Flag of India",
+  "license": "Public domain",
+  "author": "Government of India",
+  "page": "https://commons.wikimedia.org/wiki/File:Flag_of_India.svg"
+ },
+ "papad": {
+  "title": "Stack of papadums",
+  "license": "CC BY 2.5",
+  "author": "S. Hersh",
+  "page": "https://commons.wikimedia.org/wiki/File:Stack_of_papadums.jpg"
+ },
+ "doordarshan": {
+  "title": "Doordarshan Logo",
+  "license": "CC BY 4.0",
+  "author": "Doordarshan / Prasar Bharati",
+  "page": "https://commons.wikimedia.org/wiki/File:Doordarshan_Logo_(1).png"
+ },
+ "ramayan": {
+  "title": "Ramanand Sagar's Ramayan poster",
+  "license": "All rights reserved - Sagar Arts poster used for a private party quiz",
+  "author": "Sagar Arts",
+  "page": "https://en.wikipedia.org/wiki/Ramayan_(1987_TV_series)"
+ },
+ "malgudi": {
+  "title": "Malgudi Days DVD cover art",
+  "license": "All rights reserved - cover art used for a private party quiz",
+  "author": "R.K. Narayan / Shankar Nag production",
+  "page": "https://en.wikipedia.org/wiki/Malgudi_Days_(TV_series)"
+ },
+ "raftaar": {
+  "title": "Frame from Raftaar's elimination speech, The Traitors S1 (clip: instagram.com/reel/DcB3D4oPBCw)",
+  "license": "All rights reserved - Prime Video clip frame used for a private party quiz",
+  "author": "Prime Video / @littlethingss reel",
+  "page": "https://www.instagram.com/reel/DcB3D4oPBCw"
+ },
  "cadbury": {
   "title": "Cadbury Dairy Milk Silk Pralines Diwali gift pack (product image)",
   "license": "All rights reserved - Cadbury/Mondelez product image used for a private party quiz",
