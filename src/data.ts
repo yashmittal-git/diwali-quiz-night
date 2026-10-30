@@ -155,7 +155,7 @@ export const rounds: Round[] = [
   { p: '"Daya, darwaza todo!" Name the TV character giving this order, and the show.', a: 'ACP Pradyuman, CID', img: 'acp_pradyuman', imgReveal: 'acp_pradyuman', mode: 'reveal' },
   { p: 'Which Karnataka village became the main filming location for Malgudi Days?', a: 'Agumbe', img: 'malgudi', mode: 'clear' },
   { p: 'Which show returned to Doordarshan in 2020 and drew 7.7 crore viewers on 16 April?', a: 'Ramayan', img: 'doordarshan', imgReveal: 'ramayan', mode: 'clear', fit: 'contain' },
-  { p: 'Over the KBC seasons, Amitabh Bachchan has given the clock its own pet names. Name any three.', a: 'Ghadiyal Babu, Shrimati Tiktiki, Sui Mui', img: 'amitabh_kbc', mode: 'clear', fit: 'contain', time: 20 },
+  { p: 'Over the KBC seasons, Amitabh Bachchan has given the clock its own pet names. Name any three.', a: 'Ghadiyal Babu, Shrimati Tiktiki, Sui Mui', img: 'amitabh_kbc', mode: 'clear', time: 20 },
 ]},
 { id: 'bol', name: 'Bol Ke Dikhao', tag: 'Name it, say it, perform it', emoji: '🎤', hue: 160, qs: [
   { p: 'Name any five Indian dance forms.', a: 'Any five Indian dance forms count', img: 'dance', mode: 'clear', fit: 'contain', time: 20, lakes: ['Bharatanatyam', 'Kathak', 'Kathakali', 'Kuchipudi', 'Odissi', 'Manipuri', 'Mohiniyattam', 'Sattriya', 'Ghoomar', 'Kalbelia', 'Garba', 'Dandiya Raas', 'Bhangra', 'Giddha', 'Lavani', 'Bihu', 'Chhau', 'Yakshagana', 'Garhwali', 'Rouf'] },

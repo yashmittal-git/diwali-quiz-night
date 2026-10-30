@@ -58,7 +58,7 @@ const HB_DESCS: Record<string, string> = {
     tulsi: 'Answer-reveal title card of Kyunki Saas Bhi Kabhi Bahu Thi with Smriti Irani as Tulsi.',
     shinchan: 'Question image of Shinchan (Crayon Shin-chan volume 1 cover art).',
     mogambo: 'Question photo of Amrish Puri as Mogambo in the golden coat (Mr India, 1987).',
-    amitabh_kbc: 'Question photo of Amitabh Bachchan on the KBC set (full frame).',
+    amitabh_kbc: 'Question photo of Amitabh Bachchan at the KBC host desk on the set.',
     dance: 'Question photo of a Bharatanatyam performance.',
     indiaflag: 'The Indian flag, shown with the question and the answer.',
     papad: 'Question photo of a stack of papadums.',

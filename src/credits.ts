@@ -24,16 +24,16 @@ export default {
   "page": "https://www.rediff.com/movies/special/guess-the-price-of-mogambos-costume/20251118.htm"
  },
  "amitabh_kbc": {
-  "title": "Amitabh Bachchan at the KBC Season 5 press meet on the KBC set",
-  "license": "CC BY 3.0",
-  "author": "Bollywood Hungama",
-  "page": "https://commons.wikimedia.org/wiki/File:Amitabh_Bachchan_KBC5_Press.jpg"
+  "title": "Amitabh Bachchan at the KBC host desk opposite a contestant in the hot seat",
+  "license": "All rights reserved - show photo via ABP Live used for a private party quiz",
+  "author": "Sony Entertainment Television / ABP Live",
+  "page": "https://news.abplive.com/entertainment/amitabh-bachchan-birthday-inside-kaun-banega-crorepati-iconic-set-1870741"
  },
  "acp_pradyuman": {
-  "title": "Shivaji Satam (ACP Pradyuman in CID)",
-  "license": "CC BY 3.0",
-  "author": "Bollywood Hungama",
-  "page": "https://commons.wikimedia.org/wiki/File:Shivaji_Satam.jpg"
+  "title": "Daya, ACP Pradyuman and Abhijeet in CID (show still)",
+  "license": "All rights reserved - show still via OTTplay used for a private party quiz",
+  "author": "Sony Entertainment Television / OTTplay",
+  "page": "https://www.ottplay.com/news/cid-2-acp-pradyuman-gun-points-daya-in-an-unexpected-situation-are-they-turning-enemies-watch-video/bad464e03d68"
  },
  "dance": {
   "title": "Bharata Natyam Performance DS",
