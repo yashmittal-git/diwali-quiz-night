@@ -44,7 +44,7 @@ function WhoGuessed({ onAward, onNobody, names }: { onAward: (p: number) => void
     return <div className="pk-who">
         <p className="pk-line"><b>Who guessed it right?</b> (+{PATAKHA_POINTS} points)</p>
         <div className="award">
-            {[0, 1, 2, 3].map(p => <button key={p} className="btn ok" onClick={() => onAward(p)}>{names[p]}</button>)}
+            {[0, 1, 2, 3, 4].map(p => <button key={p} className="btn ok" onClick={() => onAward(p)}>{names[p]}</button>)}
             <button className="btn wrongbtn" onClick={onNobody}>✗ Nobody got it</button>
         </div>
     </div>;

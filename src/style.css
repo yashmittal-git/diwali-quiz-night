@@ -28,7 +28,7 @@ kbd{background:rgba(255,255,255,.12);border-radius:6px;padding:2px 7px}
 .tile .em{font-size:36px}.tile .nm{font-family:Georgia,serif;font-size:clamp(18px,1.8vw,26px);font-weight:700}
 .tile .tg{font-size:13px;color:#e8cfae;opacity:.85}.tile .st{margin-top:auto;font-size:13px;color:#ffd27a}
 .tile.is-done{opacity:.45}
-.scoreboard{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:14px 0}
+.scoreboard{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:14px 0}
 .pl{min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,214,150,.2);border-radius:16px;padding:10px 12px;display:flex;flex-direction:column;align-items:center;gap:2px;position:relative}
 .pl.is-picker{border-color:#ffd27a;box-shadow:0 0 0 2px rgba(255,210,122,.35)}
 .pl.is-lead strong{color:#ffd27a}
@@ -87,7 +87,7 @@ kbd{background:rgba(255,255,255,.12);border-radius:6px;padding:2px 7px}
 @keyframes pulse{50%{transform:scale(1.08)}}
 @media (prefers-reduced-motion:reduce){.embers{display:none}.diya,.clock.is-up{animation:none}}
 .is-calm .diya,.is-calm .clock.is-up{animation:none}
-@media (max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}.qbody.has-pic{grid-template-columns:1fr}}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}.qbody.has-pic{grid-template-columns:1fr}.scoreboard{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:520px){.scoreboard{grid-template-columns:repeat(2,1fr)}main{padding:8px 12px}}
 
 .board{text-align:center}
@@ -195,7 +195,7 @@ main{padding-top:0}
 .rc:nth-child(odd){transform:rotate(-1deg)}.rc:nth-child(even){transform:rotate(1deg)}
 .rc b{font-family:'Lilita One',sans-serif;font-weight:400;font-size:clamp(34px,5vh,58px);color:#ffd27a;text-shadow:0 3px 0 #7a2a08;min-width:1.1em}
 .rc em{font-style:normal;color:#ffd27a;font-family:'Lilita One',sans-serif;font-weight:400}
-.names{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.names{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:18px}
 .names input{font:inherit;font-family:'Lilita One',sans-serif;font-size:clamp(18px,2.8vh,30px);text-align:center;color:#fff4e6;background:rgba(0,0,0,.35);border:2px dashed #ffd27a;border-radius:18px;padding:12px;min-width:0}
 .winner{font-family:'Lilita One',sans-serif;color:#ffd27a;font-size:clamp(22px,3.6vh,40px)}
 .wrongbtn{border-color:#ff8a8a!important}
