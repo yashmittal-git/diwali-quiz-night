@@ -67,7 +67,7 @@ export function App() {
     const [picState, setPicState] = useState<'none' | 'loading' | 'ready' | 'error'>('none');
     const [burst, setBurst] = useState(0);
     const [awarded, setAwarded] = useState<string | null>(null);
-    const [vidSrc, setVidSrc] = useState<'insta' | 'yt'>('insta');
+    const [vidSrc, setVidSrc] = useState<'insta' | 'yt'>('yt');
     const [oops, setOops] = useState(0);
     const [confirmReset, setConfirmReset] = useState(false);
 
@@ -100,7 +100,7 @@ export function App() {
 
     const onPicSettled = (ok: boolean) => setPicState(ok ? 'ready' : 'error');
     const openQ = (r: number, i: number) => {
-        stopTimer(); setRi(r); setQi(i); setRevealed(false); setLeft(null); setVidSrc('insta');
+        stopTimer(); setRi(r); setQi(i); setRevealed(false); setLeft(null); setVidSrc('yt');
         const label = (s.aq || {})[`${rounds[r].id}:${i}`] || null;
         awardLock.current = label !== null;
         setAwarded(label); setView('round');
@@ -169,7 +169,7 @@ export function App() {
         const id = rounds[r].id;
         const who = s.picks[id] ?? s.chooser;
         update({ picks: { ...s.picks, [id]: who }, chooser: s.picks[id] === undefined ? (s.chooser + 1) % 5 : s.chooser });
-        const q0 = s.progress[id] && s.progress[id] < 6 ? s.progress[id] : 0; stopTimer(); setRi(r); setQi(q0); setView('round'); setRevealed(false); setLeft(null); setVidSrc('insta'); const lb = (s.aq || {})[`${id}:${q0}`] || null; awardLock.current = lb !== null; setAwarded(lb); const qz = rounds[r].qs[q0]; setPicState(qz.img && (qz.mode || 'clear') !== 'reveal' && photos[qz.img] ? 'loading' : 'none');
+        const q0 = s.progress[id] && s.progress[id] < 6 ? s.progress[id] : 0; stopTimer(); setRi(r); setQi(q0); setView('round'); setRevealed(false); setLeft(null); setVidSrc('yt'); const lb = (s.aq || {})[`${id}:${q0}`] || null; awardLock.current = lb !== null; setAwarded(lb); const qz = rounds[r].qs[q0]; setPicState(qz.img && (qz.mode || 'clear') !== 'reveal' && photos[qz.img] ? 'loading' : 'none');
     };
 
     useEffect(() => {
@@ -292,7 +292,7 @@ export function App() {
             <div className={'qbody' + (q.img && (q.mode !== 'reveal' || revealed) ? ' has-pic' : '') + (revealed ? ' is-rev' : '')}>
                 <div className="qtext">
                     <p className="prompt">{q.p}</p>
-                    {revealed && <div className="answer"><span>Answer</span><strong>{q.a}</strong>{q.lakes && <ul className="lakes">{q.lakes.map(l => <li key={l}>{l}</li>)}</ul>}{q.note && <em>{q.note}</em>}{q.video && <div className="qvideo-wrap"><iframe key={vidSrc} loading="lazy" className="qvideo" src={vidSrc === 'insta' ? q.video.insta : q.video.yt} title="Answer video clip" allow="encrypted-media; picture-in-picture" allowFullScreen /><div className="qvideo-btns">{vidSrc === 'insta' && <button className="ghost small" onClick={() => setVidSrc('yt')}>Video not loading? Try the backup clip</button>}<a className="ghost small" href={q.video.link} target="_blank" rel="noreferrer">Open clip in new tab ↗</a></div></div>}</div>}
+                    {revealed && <div className="answer"><span>Answer</span><strong>{q.a}</strong>{q.lakes && <ul className="lakes">{q.lakes.map(l => <li key={l}>{l}</li>)}</ul>}{q.note && <em>{q.note}</em>}{q.video && <div className="qvideo-wrap"><iframe key={vidSrc} loading="lazy" className={'qvideo' + (vidSrc === 'insta' ? ' insta' : '')} src={vidSrc === 'insta' ? q.video.insta : q.video.yt} title="Answer video clip" allow="encrypted-media; picture-in-picture" allowFullScreen /><div className="qvideo-btns">{vidSrc === 'yt' ? <button className="ghost small" onClick={() => setVidSrc('insta')}>Watch the original Instagram reel instead</button> : <button className="ghost small" onClick={() => setVidSrc('yt')}>Back to the reliable player</button>}<a className="ghost small" href={q.video.link} target="_blank" rel="noreferrer">Open clip in new tab ↗</a></div></div>}</div>}
                 </div>
                 <Pic q={q} revealed={revealed} onReady={onPicSettled} />
             </div>
