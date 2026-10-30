@@ -362,3 +362,10 @@ main.qscreen .awarded{font-size:13px}
 .qbody>.qvideo-wrap .qvideo{width:min(100%,520px);max-height:52vh}
 @media (max-width:900px){.qbody>.qvideo-wrap{margin-top:14px}}
 .qbody>.qvideo-wrap .qvideo.insta{width:320px;max-width:100%;height:560px;max-height:calc(100vh - 320px);aspect-ratio:auto}
+
+/* ---- gen49: phones stack question text above the photo (desktop two-column unchanged) ---- */
+@media (max-width:900px){
+.qbody.has-pic{grid-template-columns:1fr}
+.qbody .pic{height:auto;aspect-ratio:auto}
+.qbody .pic img{width:100%;height:auto;max-height:38vh;object-fit:contain}
+}
