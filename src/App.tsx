@@ -380,7 +380,7 @@ export function App() {
             <button className="ghost small" onClick={() => setView('patakhamenu')}>← Patakha Rounds</button>
         </main>}
         {gateOk && view === 'eyes' && <main className="patakha">
-            <EyesReveal names={rawNames.map((_, i) => nm(i))} awarded={(s.aq || {})['patakha:eyes'] || null} onAward={p => awardPatakha('eyes', p)} onNobody={() => nobodyPatakha('eyes')} onUndo={() => undoPatakha('eyes')} />
+            <EyesReveal eyes={[photos.eyes_yash, photos.eyes_rathish]} full={[photos.yash_full, photos.rathish_full]} names={rawNames.map((_, i) => nm(i))} awarded={(s.aq || {})['patakha:eyes'] || null} onAward={p => awardPatakha('eyes', p)} onNobody={() => nobodyPatakha('eyes')} onUndo={() => undoPatakha('eyes')} />
             {Scoreboard}
             <button className="ghost small" onClick={() => setView('patakhamenu')}>← Patakha Rounds</button>
         </main>}

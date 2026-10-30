@@ -1,3 +1,7 @@
+import eyes_yash from './photos/eyes_yash.jpg';
+import eyes_rathish from './photos/eyes_rathish.jpg';
+import yash_full from './photos/yash_full.jpg';
+import rathish_full from './photos/rathish_full.jpg';
 import hawa from './photos/hawa.jpg';
 import root from './photos/root.jpg';
 import meenakshi from './photos/meenakshi.jpg';
@@ -73,7 +77,7 @@ import enfield from './photos/enfield.jpg';
 
 
 export const photos: Record<string, string> = {
- ambani, upi, flipkart, trio, modi, godiji_avatar,
+ eyes_yash, eyes_rathish, yash_full, rathish_full, ambani, upi, flipkart, trio, modi, godiji_avatar,
     hawa, kurien, dhoni, sindhu, chandrayaan, halairport, ulsoor, patakha_grid, root, meenakshi, hampi, ranikivav, charminar, kapil, neeraj, panipuri, mysorepak, sadya, vidhana, lalbagh, cubbon, diya, pookalam, mom, cadbury, vikrant, enfield,
     filmy_sweater, filmy_sweater_reveal, filmy_glass, filmy_glass_reveal, filmy_rocketry, filmy_maddock, filmy_alone, filmy_blackbuck, filmy_neelam,
     smriti, tulsi, shinchan, mogambo, amitabh_kbc, acp_pradyuman, dance, indiaflag, papad, doordarshan, ramayan, malgudi, raftaar,

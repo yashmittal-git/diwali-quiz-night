@@ -110,7 +110,7 @@ export function HostHandbook() {
             <h2>👀 Patakha - Aankhon Ki Gustakhiyan</h2>
             <p className="hb-tag">Open floor, no timer, first correct pair wins 20</p>
             <div className="hb-q">
-                <p className="hb-p"><span className="hb-n">👀</span> Two world-famous personalities, eyes only. Teams must name BOTH. Placeholder for now - Yash is supplying the eye crops for the clue and the full photos for the reveal; swap them in when they land.</p>
+                <p className="hb-p"><span className="hb-n">👀</span> Two world-famous personalities, eyes only. Teams must name BOTH. The clue shows eyes-only crops; the reveal shows the full photos.</p>
                 <p className="hb-a">✅ Yash & Rathish - your hosts, obviously. Award via "Who guessed it right?", or "Nobody got it" to close with no points.</p>
                 <p className="hb-note">💡 Both names needed for the points. If a team gets one, keep the floor open for the full pair.</p>
             </div>

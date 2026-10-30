@@ -61,8 +61,7 @@ export function EyesIcon({ size = 30 }: { size?: number }) {
 }
 
 /* ---- Patakha: Aankhon Ki Gustakhiyan - name the two personalities from their eyes only.
-   PLACEHOLDER: the host (Yash) is supplying the eye crops and the full photos; swap the
-   placeholder frames for photos.eyes_1/eyes_2 (clues) and photos.eyes_1_full/eyes_2_full (reveal) when they land. ---- */
+   Eyes-only crops as clues; full photos on reveal. Host-approved crops (Yash signed off 30 Oct). ---- */
 export function EyesReveal({ names, awarded, onAward, onNobody, onUndo, eyes, full }: { names: string[]; awarded: string | null; onAward: (p: number) => void; onNobody: () => void; onUndo: () => void; eyes?: [string, string]; full?: [string, string] }) {
     const [revealed, setRevealed] = useState(false);
     const EyeFrame = ({ src, label }: { src?: string; label: string }) => <div className="pk-eye">
