@@ -52,7 +52,7 @@ const cleanNames = (arr: string[] | undefined): string[] => [0, 1, 2, 3, 4].map(
 
 export function App() {
     const [saved, setSaved, status] = useLocalState<Saved>('diwali-quiz.v1', INITIAL);
-    const s: Saved = { ...INITIAL, ...saved };
+    const s: Saved = { ...INITIAL, ...saved, names: [0, 1, 2, 3, 4].map(i => (saved.names || [])[i] ?? INITIAL.names[i]), scores: [0, 1, 2, 3, 4].map(i => (saved.scores || [])[i] ?? 0) };
     const rawNames: string[] = [0, 1, 2, 3, 4].map(i => (saved.names || [])[i] ?? INITIAL.names[i]);
     const nm = (i: number) => (rawNames[i] || '').trim() || 'Player ' + (i + 1);
     const [view, setView] = useState<'home' | 'setup' | 'board' | 'round' | 'credits' | 'end' | 'patakhamenu' | 'patakha' | 'modi' | 'handbook'>(() => window.location.pathname.replace(/\/+$/, '').endsWith('/h') ? 'handbook' : 'home');
