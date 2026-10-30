@@ -358,7 +358,7 @@ main.qscreen .awarded{font-size:13px}
 .qvideo.insta{width:320px;max-width:100%;aspect-ratio:auto;height:560px}
 .qvideo-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .qvideo-btns .ghost.small{text-decoration:none;display:inline-flex;align-items:center}
-.qbody>.qvideo-wrap{margin-top:0;align-self:center;justify-self:center;max-width:100%}
+.qbody>.qvideo-wrap{margin-top:0;align-self:start;justify-self:center;max-width:100%}
 .qbody>.qvideo-wrap .qvideo{width:min(100%,520px);max-height:52vh}
 @media (max-width:900px){.qbody>.qvideo-wrap{margin-top:14px}}
-.qbody>.qvideo-wrap .qvideo.insta{width:320px;max-width:100%;height:560px;max-height:62vh;aspect-ratio:auto}
+.qbody>.qvideo-wrap .qvideo.insta{width:320px;max-width:100%;height:560px;max-height:calc(100vh - 320px);aspect-ratio:auto}
