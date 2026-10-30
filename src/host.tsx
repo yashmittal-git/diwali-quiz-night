@@ -77,7 +77,7 @@ const HB_NOTES: Record<string, string> = {
     'bol:1': 'Neither exists officially. Hindi in Devanagari is the official language of the Union (Article 343) with English continuing; the Sports Ministry confirmed via RTI that no game is declared the national game. Hindi / hockey / cricket are the traps.',
     'bol:3': 'Examples if the floor goes quiet: "Jab deep jale aana" (Chitchor, 1976) or "Diye jalte hain" (Namak Haraam, 1973).',
     'bol:4': 'Mogambo, played by Amrish Puri in Mr India (1987). The delivery is the fun; the line itself is the answer.',
-    'bol:5': 'The beats that matter: the Arjun and Ram couplets, "maine zubaan di thi, main kaam chhod deta", and the "I am an innocent" closer (he adds "Bola tha" at the end). Exactness is your call. The reveal photo is a frame from the clip; the embedded video plays the moment, with a backup clip and an open-link if the embed fails.',
+    'bol:5': 'The beats that matter: the Arjun and Ram couplets, "maine zubaan di thi, main kaam chhod deta", and the "I am an innocent" closer (he adds "Bola tha" at the end). Exactness is your call. The reveal photo is a frame from the clip; the embedded video plays the exact verified reel, with an open-link if the embed is blocked.',
 };
 
 export function HostHandbook() {

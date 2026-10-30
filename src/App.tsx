@@ -67,7 +67,6 @@ export function App() {
     const [picState, setPicState] = useState<'none' | 'loading' | 'ready' | 'error'>('none');
     const [burst, setBurst] = useState(0);
     const [awarded, setAwarded] = useState<string | null>(null);
-    const [vidSrc, setVidSrc] = useState<'insta' | 'yt'>('insta');
     const [oops, setOops] = useState(0);
     const [confirmReset, setConfirmReset] = useState(false);
 
@@ -100,7 +99,7 @@ export function App() {
 
     const onPicSettled = (ok: boolean) => setPicState(ok ? 'ready' : 'error');
     const openQ = (r: number, i: number) => {
-        stopTimer(); setRi(r); setQi(i); setRevealed(false); setLeft(null); setVidSrc('insta');
+        stopTimer(); setRi(r); setQi(i); setRevealed(false); setLeft(null);
         const label = (s.aq || {})[`${rounds[r].id}:${i}`] || null;
         awardLock.current = label !== null;
         setAwarded(label); setView('round');
@@ -169,7 +168,7 @@ export function App() {
         const id = rounds[r].id;
         const who = s.picks[id] ?? s.chooser;
         update({ picks: { ...s.picks, [id]: who }, chooser: s.picks[id] === undefined ? (s.chooser + 1) % 5 : s.chooser });
-        const q0 = s.progress[id] && s.progress[id] < 6 ? s.progress[id] : 0; stopTimer(); setRi(r); setQi(q0); setView('round'); setRevealed(false); setLeft(null); setVidSrc('insta'); const lb = (s.aq || {})[`${id}:${q0}`] || null; awardLock.current = lb !== null; setAwarded(lb); const qz = rounds[r].qs[q0]; setPicState(qz.img && (qz.mode || 'clear') !== 'reveal' && photos[qz.img] ? 'loading' : 'none');
+        const q0 = s.progress[id] && s.progress[id] < 6 ? s.progress[id] : 0; stopTimer(); setRi(r); setQi(q0); setView('round'); setRevealed(false); setLeft(null); const lb = (s.aq || {})[`${id}:${q0}`] || null; awardLock.current = lb !== null; setAwarded(lb); const qz = rounds[r].qs[q0]; setPicState(qz.img && (qz.mode || 'clear') !== 'reveal' && photos[qz.img] ? 'loading' : 'none');
     };
 
     useEffect(() => {
@@ -294,7 +293,7 @@ export function App() {
                     <p className="prompt">{q.p}</p>
                     {revealed && <div className="answer"><span>Answer</span><strong>{q.a}</strong>{q.lakes && <ul className="lakes">{q.lakes.map(l => <li key={l}>{l}</li>)}</ul>}{q.note && <em>{q.note}</em>}</div>}
                 </div>
-                {revealed && q.video ? <div className="qvideo-wrap"><iframe key={vidSrc} loading="lazy" className={'qvideo' + (vidSrc === 'insta' ? ' insta' : '')} src={vidSrc === 'insta' ? q.video.insta : q.video.yt} title="Answer video clip" allow="encrypted-media; picture-in-picture" allowFullScreen /><div className="qvideo-btns">{vidSrc === 'insta' ? <button className="ghost small" onClick={() => setVidSrc('yt')}>Reel not loading? Try the YouTube mirror</button> : <button className="ghost small" onClick={() => setVidSrc('insta')}>Back to the Instagram reel</button>}<a className="ghost small" href={q.video.link} target="_blank" rel="noreferrer">Open clip in new tab ↗</a></div></div> : <Pic q={q} revealed={revealed} onReady={onPicSettled} />}
+                {revealed && q.video ? <div className="qvideo-wrap"><iframe loading="lazy" className="qvideo insta" src={q.video.insta} title="Answer video clip" allow="encrypted-media; picture-in-picture" allowFullScreen /><div className="qvideo-btns"><a className="ghost small" href={q.video.link} target="_blank" rel="noreferrer">Open clip in new tab ↗</a></div></div> : <Pic q={q} revealed={revealed} onReady={onPicSettled} />}
             </div>
             <div className="controls">
                 <button className="btn" onClick={prev} disabled={qi === 0}>← Previous</button>
