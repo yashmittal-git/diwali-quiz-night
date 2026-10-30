@@ -115,6 +115,14 @@ export function App() {
         timer.current = window.setInterval(() => setLeft(v => { if (v === null) return null; if (v <= 1) { stopTimer(); if (!s.mute) playBuzz(); return 0; } return v - 1; }), 1000);
     };
 
+    // Auto-start: 2s pause after the question is ready (photo settled), then the countdown begins by itself.
+    useEffect(() => {
+        if (view !== 'round' || q.paced || revealed || awarded !== null || awardLock.current) return;
+        if (needsPic && picState !== 'ready' && picState !== 'error') return;
+        const id = window.setTimeout(() => { if (!awardLock.current) startTimer(); }, 2000);
+        return () => window.clearTimeout(id);
+    }, [view, ri, qi, picState, revealed]);
+
     const onPicSettled = (ok: boolean) => setPicState(ok ? 'ready' : 'error');
     const openQ = (r: number, i: number) => {
         stopTimer(); setRi(r); setQi(i); setRevealed(false); setLeft(null);
@@ -271,7 +279,7 @@ export function App() {
             <h1 className="wobble">Rules of the Evening</h1>
             <div className="rulecards">
                 <div className="rc"><b>1</b><span>Teams take turns <em>picking rounds</em>, without peeking inside.</span></div>
-                <div className="rc"><b>2</b><span>You get <em>5 seconds</em> to answer. The host starts the clock - a few list and performance questions get a longer one.</span></div>
+                <div className="rc"><b>2</b><span>You get <em>5 seconds</em> to answer. The clock starts by itself - a few list and performance questions get a longer one.</span></div>
                 <div className="rc"><b>3</b><span>Right answer <em>+10</em>. Wrong or silent? Up for grabs. Steal <em>+5</em>.</span></div>
                 <div className="rc"><b>4</b><span>Last question of every round is the <em>20 point BONUS</em>. Bonus steals earn <em>+10</em> unless the host declares otherwise.</span></div>
                 <div className="rc"><b>5</b><span>The winner owes Yash <em>round-trip flights to the Philippines</em>. ✈️</span></div>

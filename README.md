@@ -2,7 +2,7 @@
 
 A host-controlled Diwali party quiz: 10 rounds x 6 questions, a configurable
 team count (2-8 teams, picked on the rules screen before naming teams),
-5-second host-started timer, steal rule, manual host scoring (+10/+5), three
+5-second auto-start timer (2s pause), steal rule, manual host scoring (+10/+5), three
 20-point Patakha extras (Godiji, Aankhon Ki Gustakhiyan, Grid Gains), a host
 handbook with every answer, and a party-code gate (2222) to keep guests from
 peeking at questions and answers.
