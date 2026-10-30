@@ -162,6 +162,6 @@ export const rounds: Round[] = [
   { p: 'Say "kaccha papad, pakka papad" three times - fast, with no slips!', a: 'Kaccha papad, pakka papad - three times, clean!', img: 'papad', mode: 'clear' },
   { p: 'Sing one film-song line that has the word diya, deep or roshni in it.', a: 'Any true film line with diya, deep or roshni in it' },
   { p: 'Deliver this man\'s famous dialogue - in his style.', a: 'Mogambo khush hua', img: 'mogambo', mode: 'clear' },
-  { p: 'Name the famous dialogue from Raftaar in Traitors season one.', a: 'Arjun hota toh astra kamaan mod deta. Ram hota toh Shiv baan tod deta. Yeh satya-asatya ka parakh murkh nahi jaanta. Main Raftaar hoon, maine zubaan di thi, main kaam chhod deta - "Guys, I am an innocent!"', img: 'raftaar', mode: 'reveal', fit: 'contain', time: 30, video: { insta: 'https://www.instagram.com/reel/DcB3D4oPBCw/embed', yt: 'https://www.youtube-nocookie.com/embed/r0zLuYJPR-I?enablejsapi=1&rel=0', link: 'https://www.instagram.com/reel/DcB3D4oPBCw' } },
+  { p: 'Name the famous dialogue from Raftaar in Traitors season one.', a: 'Arjun hota toh astra kamaan mod deta. Ram hota toh Shiv baan tod deta. Yeh satya-asatya ka parakh murkh nahi jaanta. Main Raftaar hoon, maine zubaan di thi, main kaam chhod deta - "Guys, I am an innocent!"', img: 'raftaar', mode: 'reveal', fit: 'contain', time: 30, video: { insta: 'https://www.instagram.com/reel/DcB3D4oPBCw/embed', yt: 'https://www.youtube-nocookie.com/embed/r0zLuYJPR-I?enablejsapi=1&rel=0&start=88', link: 'https://www.instagram.com/reel/DcB3D4oPBCw' } },
 ]},
 ];

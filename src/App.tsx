@@ -289,12 +289,12 @@ export function App() {
                 <span className="who">{nm(picker)}'s round</span>
                 <span className={'badge' + (isBonus ? ' bonus' : '')}>{isBonus ? 'BONUS · 20 points' : `Q${qi + 1} of 6 · ${direct} points`}</span>
             </div>
-            <div className={'qbody' + (q.img && (q.mode !== 'reveal' || revealed) ? ' has-pic' : '') + (revealed ? ' is-rev' : '')}>
+            <div className={'qbody' + ((q.img && (q.mode !== 'reveal' || revealed)) || (revealed && q.video) ? ' has-pic' : '') + (revealed ? ' is-rev' : '')}>
                 <div className="qtext">
                     <p className="prompt">{q.p}</p>
-                    {revealed && <div className="answer"><span>Answer</span><strong>{q.a}</strong>{q.lakes && <ul className="lakes">{q.lakes.map(l => <li key={l}>{l}</li>)}</ul>}{q.note && <em>{q.note}</em>}{q.video && <div className="qvideo-wrap"><iframe key={vidSrc} loading="lazy" className={'qvideo' + (vidSrc === 'insta' ? ' insta' : '')} src={vidSrc === 'insta' ? q.video.insta : q.video.yt} title="Answer video clip" allow="encrypted-media; picture-in-picture" allowFullScreen /><div className="qvideo-btns">{vidSrc === 'yt' ? <button className="ghost small" onClick={() => setVidSrc('insta')}>Watch the original Instagram reel instead</button> : <button className="ghost small" onClick={() => setVidSrc('yt')}>Back to the reliable player</button>}<a className="ghost small" href={q.video.link} target="_blank" rel="noreferrer">Open clip in new tab ↗</a></div></div>}</div>}
+                    {revealed && <div className="answer"><span>Answer</span><strong>{q.a}</strong>{q.lakes && <ul className="lakes">{q.lakes.map(l => <li key={l}>{l}</li>)}</ul>}{q.note && <em>{q.note}</em>}</div>}
                 </div>
-                <Pic q={q} revealed={revealed} onReady={onPicSettled} />
+                {revealed && q.video ? <div className="qvideo-wrap"><iframe key={vidSrc} loading="lazy" className={'qvideo' + (vidSrc === 'insta' ? ' insta' : '')} src={vidSrc === 'insta' ? q.video.insta : q.video.yt} title="Answer video clip" allow="encrypted-media; picture-in-picture" allowFullScreen /><div className="qvideo-btns">{vidSrc === 'yt' ? <button className="ghost small" onClick={() => setVidSrc('insta')}>Watch the original Instagram reel instead</button> : <button className="ghost small" onClick={() => setVidSrc('yt')}>Back to the reliable player</button>}<a className="ghost small" href={q.video.link} target="_blank" rel="noreferrer">Open clip in new tab ↗</a></div></div> : <Pic q={q} revealed={revealed} onReady={onPicSettled} />}
             </div>
             <div className="controls">
                 <button className="btn" onClick={prev} disabled={qi === 0}>← Previous</button>
