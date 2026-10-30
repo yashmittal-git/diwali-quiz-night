@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocalState } from './localstate';
 import { photos, rounds, type Q } from './data';
-import { GridGains, Godiji, PATAKHA_POINTS } from './patakha';
+import { GridGains, Godiji, EyesReveal, PATAKHA_POINTS } from './patakha';
 import { HostHandbook } from './host';
 import credits from './credits';
 import { Sky } from './sky';
@@ -10,6 +10,7 @@ import { RoundIcon } from './icons';
 import './style.css';
 
 type Saved = {
+    teamCount: number;
     names: string[];
     scores: number[];
     chooser: number;
@@ -22,7 +23,9 @@ type Saved = {
     stealBonus: number;
 };
 const PARTY_CODE = '2222';
-const INITIAL: Saved = { names: ['Player 1', 'Player 2', 'Player 3', 'Player 4', 'Player 5'], scores: [0, 0, 0, 0, 0], chooser: 0, picks: {}, progress: {}, log: [], aq: {}, calm: false, mute: false, stealBonus: 10 };
+const MIN_TEAMS = 2, MAX_TEAMS = 8, DEFAULT_TEAMS = 5;
+const teamNames = (n: number) => Array.from({ length: n }, (_, i) => 'Team ' + (i + 1));
+const INITIAL: Saved = { teamCount: DEFAULT_TEAMS, names: teamNames(DEFAULT_TEAMS), scores: Array(DEFAULT_TEAMS).fill(0), chooser: 0, picks: {}, progress: {}, log: [], aq: {}, calm: false, mute: false, stealBonus: 10 };
 
 const EMBERS = Array.from({ length: 26 }, (_, i) => ({ left: (i * 37) % 100, delay: (i * 1.3) % 9, dur: 8 + ((i * 7) % 8), size: 3 + (i % 4) * 2 }));
 function Embers({ calm }: { calm: boolean }) {
@@ -48,14 +51,21 @@ function PicImg({ src, alt, zoom, origin, onReady }: { src: string; alt: string;
     return <img src={src} alt={alt} className={ld ? 'ld' : ''} onLoad={() => { setLd(true); onReady && onReady(true); }} onError={() => { setErr(true); onReady && onReady(false); }} style={zoom ? ({ ['--origin' as string]: origin || '50% 50%' } as React.CSSProperties) : undefined} />;
 }
 
-const cleanNames = (arr: string[] | undefined): string[] => [0, 1, 2, 3, 4].map(i => (((arr || [])[i] || '').trim().slice(0, 14)) || 'Player ' + (i + 1));
+const cleanNames = (arr: string[] | undefined, n: number): string[] => Array.from({ length: n }, (_, i) => (((arr || [])[i] || '').trim().slice(0, 14)) || 'Team ' + (i + 1));
 
 export function App() {
     const [saved, setSaved, status] = useLocalState<Saved>('diwali-quiz.v1', INITIAL);
-    const s: Saved = { ...INITIAL, ...saved, names: [0, 1, 2, 3, 4].map(i => (saved.names || [])[i] ?? INITIAL.names[i]), scores: [0, 1, 2, 3, 4].map(i => (saved.scores || [])[i] ?? 0) };
-    const rawNames: string[] = [0, 1, 2, 3, 4].map(i => (saved.names || [])[i] ?? INITIAL.names[i]);
-    const nm = (i: number) => (rawNames[i] || '').trim() || 'Player ' + (i + 1);
-    const [view, setView] = useState<'home' | 'setup' | 'board' | 'round' | 'credits' | 'end' | 'patakhamenu' | 'patakha' | 'modi' | 'handbook'>(() => window.location.pathname.replace(/\/+$/, '').endsWith('/h') ? 'handbook' : 'home');
+    const count = Math.min(MAX_TEAMS, Math.max(MIN_TEAMS, Math.round((saved.teamCount as number) || DEFAULT_TEAMS)));
+    const rawNames: string[] = Array.from({ length: count }, (_, i) => (saved.names || [])[i] ?? '');
+    const s: Saved = { ...INITIAL, ...saved, teamCount: count, names: rawNames, scores: Array.from({ length: count }, (_, i) => (saved.scores || [])[i] ?? 0) };
+    const nm = (i: number) => (rawNames[i] || '').trim() || 'Team ' + (i + 1);
+    const chooser = ((s.chooser % count) + count) % count;
+    const colsStyle = { ['--cols' as string]: count, ['--cols3' as string]: Math.min(count, 3), ['--cols2' as string]: Math.min(count, 2) } as React.CSSProperties;
+    const setTeamCount = (n: number) => {
+        const c = Math.min(MAX_TEAMS, Math.max(MIN_TEAMS, n));
+        update({ teamCount: c, names: Array.from({ length: c }, (_, i) => rawNames[i] ?? ''), scores: Array.from({ length: c }, (_, i) => s.scores[i] ?? 0), chooser: chooser % c });
+    };
+    const [view, setView] = useState<'home' | 'setup' | 'board' | 'round' | 'credits' | 'end' | 'patakhamenu' | 'patakha' | 'modi' | 'eyes' | 'handbook'>(() => window.location.pathname.replace(/\/+$/, '').endsWith('/h') ? 'handbook' : 'home');
     const [gateOk, setGateOk] = useState(false);
     const [gateCode, setGateCode] = useState('');
     const [gateErr, setGateErr] = useState(false);
@@ -81,7 +91,7 @@ export function App() {
     muteRef.current = s.mute;
 
     const update = useCallback((patch: Partial<Saved>) => { if (status.ready) setSaved({ ...s, ...patch }); }, [s, setSaved, status.ready]);
-    useEffect(() => { if (!status.ready || migratedNames.current) return; migratedNames.current = true; if ((saved.names || []).some(n => !(n || '').trim())) setSaved({ ...s, names: cleanNames(saved.names) }); }, [status.ready]);
+    useEffect(() => { if (!status.ready || migratedNames.current) return; migratedNames.current = true; if ((saved.names || []).some(n => !(n || '').trim())) setSaved({ ...s, names: cleanNames(saved.names, count) }); }, [status.ready]);
     const round = rounds[ri];
     const q = round.qs[qi];
     const needsPic = !!(q.img && (q.mode || 'clear') !== 'reveal' && photos[q.img]);
@@ -158,16 +168,16 @@ export function App() {
     const undoPatakha = (key: string) => {
         const aq = { ...(s.aq || {}) };
         const p = parseInt(aq[`patakha:${key}:p`] || '-1', 10);
-        const scores = s.scores.slice(); if (p >= 0 && p < 5) scores[p] -= PATAKHA_POINTS;
+        const scores = s.scores.slice(); if (p >= 0 && p < scores.length) scores[p] -= PATAKHA_POINTS;
         delete aq[`patakha:${key}`]; delete aq[`patakha:${key}:p`];
         update({ scores, aq });
     };
     const tryGate = () => { if (gateCode.trim() === PARTY_CODE) { setGateOk(true); setGateErr(false); setGateCode(''); } else { setGateErr(true); setGateCode(''); } };
-    const restart = () => { stopTimer(); if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; } setSaved({ ...INITIAL }); setConfirmReset(false); setBurst(0); setRevealed(false); setAwarded(null); setLeft(null); setRi(0); setQi(0); setView('home'); };
+    const restart = () => { stopTimer(); if (pendingT.current) { window.clearTimeout(pendingT.current); pendingT.current = null; } setSaved({ ...INITIAL, teamCount: count, names: teamNames(count), scores: Array(count).fill(0) }); setConfirmReset(false); setBurst(0); setRevealed(false); setAwarded(null); setLeft(null); setRi(0); setQi(0); setView('home'); };
     const pickRound = (r: number) => {
         const id = rounds[r].id;
-        const who = s.picks[id] ?? s.chooser;
-        update({ picks: { ...s.picks, [id]: who }, chooser: s.picks[id] === undefined ? (s.chooser + 1) % 5 : s.chooser });
+        const who = s.picks[id] ?? chooser;
+        update({ picks: { ...s.picks, [id]: who }, chooser: s.picks[id] === undefined ? (chooser + 1) % count : chooser });
         const q0 = s.progress[id] && s.progress[id] < 6 ? s.progress[id] : 0; stopTimer(); setRi(r); setQi(q0); setView('round'); setRevealed(false); setLeft(null); const lb = (s.aq || {})[`${id}:${q0}`] || null; awardLock.current = lb !== null; setAwarded(lb); const qz = rounds[r].qs[q0]; setPicState(qz.img && (qz.mode || 'clear') !== 'reveal' && photos[qz.img] ? 'loading' : 'none');
     };
 
@@ -196,13 +206,13 @@ export function App() {
 
     const Scoreboard = <div className="scoreboard">
         {rawNames.map((n, i) => <div key={i} className={'pl' + (view === 'round' && picker === i ? ' is-picker' : '') + (s.scores[i] === leaderMax && leaderMax > 0 ? ' is-lead' : '')}>
-            <input aria-label={'Name of player ' + (i + 1)} value={n} placeholder={'Player ' + (i + 1)} onChange={e => { const names = rawNames.slice(); names[i] = e.target.value.slice(0, 14); update({ names }); }} onBlur={() => update({ names: cleanNames(rawNames) })} />
+            <input aria-label={'Name of team ' + (i + 1)} value={n} placeholder={'Team ' + (i + 1)} onChange={e => { const names = rawNames.slice(); names[i] = e.target.value.slice(0, 14); update({ names }); }} onBlur={() => update({ names: cleanNames(rawNames, count) })} />
             <strong>{s.scores[i]}</strong>
             <span className="nudge"><button aria-label={'Minus 5 for ' + n} onClick={() => nudge(i, -5)}>-5</button><button aria-label={'Plus 5 for ' + n} onClick={() => nudge(i, 5)}>+5</button></span>
         </div>)}
     </div>;
 
-    return <div className={'quiz' + (s.calm ? ' is-calm' : '')} style={{ ['--hue' as string]: view === 'round' ? round.hue : 30 } as React.CSSProperties}>
+    return <div className={'quiz' + (s.calm ? ' is-calm' : '')} style={{ ...colsStyle, ['--hue' as string]: view === 'round' ? round.hue : 30 } as React.CSSProperties}>
         <Embers calm={s.calm} />
         <Sky burstK={burst} calm={s.calm} onPop={() => { if (!muteRef.current) playPop(); }} />
         <header className="bar">
@@ -215,7 +225,7 @@ export function App() {
             <div className="diya" aria-hidden="true"><RoundIcon id="diwali" size={130} /></div>
             <p className="kicker">Shubh Deepavali</p>
             <h1 className="wobble deva title-line">दिमाग की आतिशबाज़ी <span className="title-en">- Diwali Quiz Night</span></h1>
-            <p className="sub">10 rounds. 60 questions. 5 players. 1 host with the final word.</p>
+            <p className="sub">10 rounds. 60 questions. Your teams, your battle. 1 host with the final word.</p>
             <button className="cta" onClick={() => setView('setup')}>Let's play!</button>
             {(total > 0 || s.scores.some(x => x !== 0)) && <button className="ghost small" onClick={() => setView('board')}>Continue where we left off</button>}
             <button className="ghost small" onClick={() => setView('credits')}>Photo credits</button>
@@ -223,7 +233,7 @@ export function App() {
             <p className="hint">Host keys: <kbd>T</kbd> timer · <kbd>R</kbd> or <kbd>Space</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> previous / next</p>
         </main>}
 
-        {!gateOk && (view === 'board' || view === 'round' || view === 'patakhamenu' || view === 'patakha' || view === 'modi' || view === 'handbook' || view === 'end') && <main className="home gate">
+        {!gateOk && (view === 'board' || view === 'round' || view === 'patakhamenu' || view === 'patakha' || view === 'modi' || view === 'eyes' || view === 'handbook' || view === 'end') && <main className="home gate">
             <div className="diya" aria-hidden="true"><RoundIcon id="diwali" size={110} /></div>
             <h1 className="wobble deva">रुकिए!</h1>
             <p className="latintitle">Secret party code, please</p>
@@ -236,9 +246,13 @@ export function App() {
             {gateErr && <p className="gate-err">Galat code! Nakhre baad mein, sahi code pehle. 😜</p>}
         </main>}
         {view === 'setup' && <main className="setup">
+            <h2 className="wobble2">How many teams?</h2>
+            <div className="teamcount" role="group" aria-label="Number of teams">
+                {[2, 3, 4, 5, 6, 7, 8].map(n => <button key={n} type="button" className={'tc-num' + (n === count ? ' on' : '')} aria-pressed={n === count} onClick={() => setTeamCount(n)}>{n}</button>)}
+            </div>
             <h1 className="wobble">Rules of the Evening</h1>
             <div className="rulecards">
-                <div className="rc"><b>1</b><span>Each player picks <em>two rounds</em>, without peeking inside.</span></div>
+                <div className="rc"><b>1</b><span>Teams take turns <em>picking rounds</em>, without peeking inside.</span></div>
                 <div className="rc"><b>2</b><span>You get <em>5 seconds</em> to answer. The host starts the clock - a few list and performance questions get a longer one.</span></div>
                 <div className="rc"><b>3</b><span>Right answer <em>+10</em>. Wrong or silent? Up for grabs. Steal <em>+5</em>.</span></div>
                 <div className="rc"><b>4</b><span>Last question of every round is the <em>20 point BONUS</em>. Bonus steals earn <em>+10</em> unless the host declares otherwise.</span></div>
@@ -246,17 +260,17 @@ export function App() {
                 <div className="rc"><b>6</b><span><em>Yash ka faisla antim hai.</em> Appeals may be submitted with a dabba of Mysore Pak.</span></div>
                 <div className="rc"><b>7</b><span><em>No phones, please.</em> Caught finding your brain in ChatGPT? <em>-20 points</em>. 📵</span></div>
             </div>
-            <h2 className="wobble2">Who is playing? Pick a fun nickname</h2>
+            <h2 className="wobble2">Name your teams - pick fun nicknames</h2>
             <div className="names">
-                {rawNames.map((n, i) => <input key={i} aria-label={'Nickname for player ' + (i + 1)} value={n} placeholder={'Player ' + (i + 1)} onChange={e => { const names = rawNames.slice(); names[i] = e.target.value.slice(0, 14); update({ names }); }} onBlur={() => update({ names: cleanNames(rawNames) })} />)}
+                {rawNames.map((n, i) => <input key={i} aria-label={'Nickname for team ' + (i + 1)} value={n} placeholder={'Team ' + (i + 1)} onChange={e => { const names = rawNames.slice(); names[i] = e.target.value.slice(0, 14); update({ names }); }} onBlur={() => update({ names: cleanNames(rawNames, count) })} />)}
             </div>
-            <button className="cta" onClick={() => { update({ names: cleanNames(rawNames) }); setView('board'); }}>Start the quiz</button>
+            <button className="cta" onClick={() => { update({ names: cleanNames(rawNames, count) }); setView('board'); }}>Start the quiz</button>
             <button className="ghost small" onClick={() => setView('home')}>← Back</button>
         </main>}
 
         {gateOk && view === 'board' && <main className="board">
             <h1>Pick a round</h1>
-            <p className="sub">Now choosing: <b>{nm(s.chooser)}</b>. Contents stay secret until you open it.</p>
+            <p className="sub">Now choosing: <b>{nm(chooser)}</b>. Contents stay secret until you open it.</p>
             <div className="tiles">
                 {rounds.map((r, i) => {
                     const done = (s.progress[r.id] || 0) >= 6;
@@ -306,7 +320,7 @@ export function App() {
             </div>
             <div className="award">
                 <button className="btn good" disabled={awarded !== null} onClick={() => award(picker, direct, 'direct')}>✓ {nm(picker)} correct +{direct}</button>
-                {s.names.map((n, i) => i === picker ? null : <button key={i} className="btn steal" disabled={awarded !== null} onClick={() => award(i, steal, 'steal')}>Steal: {n} +{steal}</button>)}
+                {rawNames.map((_, i) => i === picker ? null : <button key={i} className="btn steal" disabled={awarded !== null} onClick={() => award(i, steal, 'steal')}>Steal: {nm(i)} +{steal}</button>)}
                 <button className="btn wrongbtn" disabled={awarded !== null} onClick={wrong}>✗ Wrong, up for grabs</button>
                 <button className="btn" disabled={awarded !== null} onClick={nobody}>Nobody</button>
                 <button className="btn" onClick={undo} disabled={!s.log.length && awarded === null}>Undo</button>
@@ -319,7 +333,7 @@ export function App() {
         {gateOk && view === 'end' && <main className="home">
             <div className="diya trophy" aria-hidden="true">🏆</div>
             <h1>Final scores</h1>
-            <p className="sub winner">{leaderMax > 0 ? (() => { const w = [0, 1, 2, 3, 4].filter(i => s.scores[i] === leaderMax).map(nm); return `${w.join(' & ')} won, and ${w.length > 1 ? 'owe' : 'owes'} Yash round-trip flights to the Philippines!`; })() : 'No scores yet.'}</p>
+            <p className="sub winner">{leaderMax > 0 ? (() => { const w = rawNames.map((_, i) => i).filter(i => s.scores[i] === leaderMax).map(nm); return `${w.join(' & ')} won, and ${w.length > 1 ? 'owe' : 'owes'} Yash round-trip flights to the Philippines!`; })() : 'No scores yet.'}</p>
             <p className="sub">The host's ruling applies to all tie-breaks. Appeals may be submitted with a dabba of Mysore Pak.</p>
             {Scoreboard}
             <button className="cta" onClick={() => setView('board')}>Back to rounds</button>
@@ -329,13 +343,19 @@ export function App() {
 
         {gateOk && view === 'patakhamenu' && <main className="board">
             <h1>Patakha Rounds 🧨</h1>
-            <p className="sub">Two open-floor crackers. No timer, no turns - shout first, win {PATAKHA_POINTS} points.</p>
+            <p className="sub">Open-floor crackers. No timer, no turns - shout first, win {PATAKHA_POINTS} points.</p>
             <div className="tiles pk-menu">
                 <button className="tile" onClick={() => setView('modi')}>
                     <span className="em"><img className="godiji-avatar" src={photos.godiji_avatar} alt="Godiji" /></span>
                     <span className="nm">Godiji</span>
                     <span className="tg">Complete the 8 PM announcement</span>
                     <span className="st">{(s.aq || {})['patakha:modi'] ? '✓ ' + (s.aq || {})['patakha:modi'] : 'Open'}</span>
+                </button>
+                <button className="tile" onClick={() => setView('eyes')}>
+                    <span className="em">👀</span>
+                    <span className="nm">Aankhon Ki Gustakhiyan</span>
+                    <span className="tg">Two world-famous personalities. Eyes only.</span>
+                    <span className="st">{(s.aq || {})['patakha:eyes'] ? '✓ ' + (s.aq || {})['patakha:eyes'] : 'Open'}</span>
                 </button>
                 <button className="tile" onClick={() => setView('patakha')}>
                     <span className="em">💪</span>
@@ -347,12 +367,17 @@ export function App() {
             <button className="ghost small" onClick={() => setView('board')}>← Back to rounds</button>
         </main>}
         {gateOk && view === 'patakha' && <main className="patakha">
-            <GridGains photo={photos.patakha_grid} names={[0, 1, 2, 3, 4].map(nm)} awarded={(s.aq || {})['patakha:grid'] || null} onAward={p => awardPatakha('grid', p)} onNobody={() => nobodyPatakha('grid')} onUndo={() => undoPatakha('grid')} />
+            <GridGains photo={photos.patakha_grid} names={rawNames.map((_, i) => nm(i))} awarded={(s.aq || {})['patakha:grid'] || null} onAward={p => awardPatakha('grid', p)} onNobody={() => nobodyPatakha('grid')} onUndo={() => undoPatakha('grid')} />
+            {Scoreboard}
+            <button className="ghost small" onClick={() => setView('patakhamenu')}>← Patakha Rounds</button>
+        </main>}
+        {gateOk && view === 'eyes' && <main className="patakha">
+            <EyesReveal names={rawNames.map((_, i) => nm(i))} awarded={(s.aq || {})['patakha:eyes'] || null} onAward={p => awardPatakha('eyes', p)} onNobody={() => nobodyPatakha('eyes')} onUndo={() => undoPatakha('eyes')} />
             {Scoreboard}
             <button className="ghost small" onClick={() => setView('patakhamenu')}>← Patakha Rounds</button>
         </main>}
         {gateOk && view === 'modi' && <main className="patakha">
-            <Godiji photo={photos.modi} names={[0, 1, 2, 3, 4].map(nm)} awarded={(s.aq || {})['patakha:modi'] || null} onAward={p => awardPatakha('modi', p)} onNobody={() => nobodyPatakha('modi')} onUndo={() => undoPatakha('modi')} />
+            <Godiji photo={photos.modi} names={rawNames.map((_, i) => nm(i))} awarded={(s.aq || {})['patakha:modi'] || null} onAward={p => awardPatakha('modi', p)} onNobody={() => nobodyPatakha('modi')} onUndo={() => undoPatakha('modi')} />
             {Scoreboard}
             <button className="ghost small" onClick={() => setView('patakhamenu')}>← Patakha Rounds</button>
         </main>}
@@ -364,7 +389,7 @@ export function App() {
             <ul>{Object.entries(credits as Record<string, { title: string; license: string; author: string; page: string }>).map(([k, c]) => <li key={k}>{c.page ? <a href={c.page} target="_blank" rel="noreferrer">{c.title.replace(/\.[a-z]+$/i, '')}</a> : <span>{c.title}</span>}<span>{c.author} · {c.license}</span></li>)}</ul>
             <button className="cta" onClick={() => setView('board')}>Back</button>
         </main>}
-        {confirmReset && <div className="modal" role="dialog" aria-modal="true"><div className="box"><h2>Restart the whole quiz?</h2><p>This clears all scores, round picks and progress, and resets names to Player 1-5.</p><div className="row"><button className="btn danger" onClick={restart}>Yes, start over</button><button className="btn" onClick={() => setConfirmReset(false)}>Keep playing</button></div></div></div>}
+        {confirmReset && <div className="modal" role="dialog" aria-modal="true"><div className="box"><h2>Restart the whole quiz?</h2><p>This clears all scores, round picks and progress, and resets team names to Team 1-{count}.</p><div className="row"><button className="btn danger" onClick={restart}>Yes, start over</button><button className="btn" onClick={() => setConfirmReset(false)}>Keep playing</button></div></div></div>}
         {!status.ready && <p className="saving">Loading saved scores…</p>}
     </div>;
 }

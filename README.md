@@ -1,9 +1,11 @@
 # Dimag ki Aatishbaazi - Diwali Quiz Night
 
-A host-controlled Diwali party quiz: 8 rounds x 6 questions, 4 players, 5-second
-auto timer, steal rule, manual host scoring (+10/+5), two 20-point Patakha
-extras, a host handbook with every answer, and a party-code gate (2222) to keep
-guests from peeking at questions and answers.
+A host-controlled Diwali party quiz: 10 rounds x 6 questions, a configurable
+team count (2-8 teams, picked on the rules screen before naming teams),
+5-second host-started timer, steal rule, manual host scoring (+10/+5), three
+20-point Patakha extras (Godiji, Aankhon Ki Gustakhiyan, Grid Gains), a host
+handbook with every answer, and a party-code gate (2222) to keep guests from
+peeking at questions and answers.
 
 ## Run locally
 
@@ -27,7 +29,7 @@ To change it, edit PARTY_CODE in src/App.tsx.
 
 ## Host handbook
 
-All 50 answers (48 base + 2 Patakha), phone-friendly. Open it from the
+All answers (60 base + 3 Patakha), phone-friendly. Open it from the
 "Host handbook" button on the home screen or the "Handbook" button on the
 rounds screen, or press H on the home screen. On a self-hosted copy you can
 also open the URL with #host. The handbook needs the party code too.

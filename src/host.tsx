@@ -84,7 +84,7 @@ export function HostHandbook() {
     return <div className="hb">
         <header className="hb-head">
             <h1>🪔 Host Handbook</h1>
-            <p className="hb-sub">दिमाग की आतिशबाज़ी - every question and answer, text-only for fast phone loading. Keep this on your phone; players never see it.</p>
+            <p className="hb-sub">दिमाग की आतिशबाज़ी - every question and answer, text-only for fast phone loading. Keep this on your phone; teams never see it.</p>
         </header>
         {rounds.map(r => <section className="hb-round" key={r.id}>
             <h2>{r.emoji} {r.name}</h2>
@@ -107,11 +107,20 @@ export function HostHandbook() {
             </div>
         </section>
         <section className="hb-round">
+            <h2>👀 Patakha - Aankhon Ki Gustakhiyan</h2>
+            <p className="hb-tag">Open floor, no timer, first correct pair wins 20</p>
+            <div className="hb-q">
+                <p className="hb-p"><span className="hb-n">👀</span> Two world-famous personalities, eyes only. Teams must name BOTH. Placeholder for now - Yash is supplying the eye crops for the clue and the full photos for the reveal; swap them in when they land.</p>
+                <p className="hb-a">✅ Yash & Rathish - your hosts, obviously. Award via "Who guessed it right?", or "Nobody got it" to close with no points.</p>
+                <p className="hb-note">💡 Both names needed for the points. If a team gets one, keep the floor open for the full pair.</p>
+            </div>
+        </section>
+        <section className="hb-round">
             <h2>🧨 Patakha - Grid Gains</h2>
             <p className="hb-tag">Open floor, no timer, first correct call wins 20</p>
             <div className="hb-q">
-                <p className="hb-p"><span className="hb-n">🧨</span> Only the chest strip is covered: 36 square labelled cells, A1 to L3 (the rest of the photo stays visible). Players shout cells, you tap them. A wrong cell shows a red cross and opens a patch; the right ones show 🎯.</p>
-                <p className="hb-a">✅ The two nipple cells are B2 and J2. First player to call a correct cell wins 20 points - tap their name under "Who guessed it right?", or "Nobody got it" to close it with no points.</p>
+                <p className="hb-p"><span className="hb-n">🧨</span> Only the chest strip is covered: 36 square labelled cells, A1 to L3 (the rest of the photo stays visible). Teams shout cells, you tap them. A wrong cell shows a red cross and opens a patch; the right ones show 🎯.</p>
+                <p className="hb-a">✅ The two nipple cells are B2 and J2. First team to call a correct cell wins 20 points - tap their name under "Who guessed it right?", or "Nobody got it" to close it with no points.</p>
                 <p className="hb-note">💡 Opened cells reveal the chest photo underneath, so it slowly un-censors as the game goes on.</p>
             </div>
         </section>

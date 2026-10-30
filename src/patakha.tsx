@@ -44,9 +44,39 @@ function WhoGuessed({ onAward, onNobody, names }: { onAward: (p: number) => void
     return <div className="pk-who">
         <p className="pk-line"><b>Who guessed it right?</b> (+{PATAKHA_POINTS} points)</p>
         <div className="award">
-            {[0, 1, 2, 3, 4].map(p => <button key={p} className="btn ok" onClick={() => onAward(p)}>{names[p]}</button>)}
+            {names.map((n, p) => <button key={p} className="btn ok" onClick={() => onAward(p)}>{n}</button>)}
             <button className="btn wrongbtn" onClick={onNobody}>✗ Nobody got it</button>
         </div>
+    </div>;
+}
+
+/* ---- Patakha: Aankhon Ki Gustakhiyan - name the two personalities from their eyes only.
+   PLACEHOLDER: the host (Yash) is supplying the eye crops and the full photos; swap the
+   placeholder frames for photos.eyes_1/eyes_2 (clues) and photos.eyes_1_full/eyes_2_full (reveal) when they land. ---- */
+export function EyesReveal({ names, awarded, onAward, onNobody, onUndo, eyes, full }: { names: string[]; awarded: string | null; onAward: (p: number) => void; onNobody: () => void; onUndo: () => void; eyes?: [string, string]; full?: [string, string] }) {
+    const [revealed, setRevealed] = useState(false);
+    const EyeFrame = ({ src, label }: { src?: string; label: string }) => <div className="pk-eye">
+        {src ? <img className="pk-eye-img" src={src} alt={label} /> : <div className="pk-eye-ph" aria-label={label + ' - photo coming soon'}><span className="pk-eye-emoji">👁️</span><span>Photo coming soon</span></div>}
+        <span className="pk-eye-tag">{label}</span>
+    </div>;
+    return <div className="pk-stage">
+        <h2>Aankhon Ki Gustakhiyan 👀</h2>
+        <p className="pk-line">Open floor, no timer - two world-famous personalities, but you only get their eyes. Name BOTH. First correct pair wins {PATAKHA_POINTS} points.</p>
+        <div className="pk-eyes">
+            <EyeFrame src={eyes && eyes[0]} label="Personality 1" />
+            <EyeFrame src={eyes && eyes[1]} label="Personality 2" />
+        </div>
+        {!revealed && <button className="cta" onClick={() => setRevealed(true)}>Reveal the faces</button>}
+        {revealed && <>
+            <p className="pk-answer">Yash & Rathish - your hosts, obviously. 😎</p>
+            <div className="pk-eyes">
+                <EyeFrame src={full && full[0]} label="Yash" />
+                <EyeFrame src={full && full[1]} label="Rathish" />
+            </div>
+            {!awarded && <WhoGuessed onAward={onAward} onNobody={onNobody} names={names} />}
+            {awarded && <p className="pk-line">{awarded === 'No points' ? '❌ Nobody got it - no points.' : '✓ ' + awarded}</p>}
+        </>}
+        {awarded && <button className="ghost small" onClick={onUndo}>Undo Patakha result</button>}
     </div>;
 }
 
