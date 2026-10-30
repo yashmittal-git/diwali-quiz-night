@@ -50,6 +50,16 @@ function WhoGuessed({ onAward, onNobody, names }: { onAward: (p: number) => void
     </div>;
 }
 
+export function EyesIcon({ size = 30 }: { size?: number }) {
+    return <svg width={size} height={Math.round(size * 0.6)} viewBox="0 0 48 29" fill="none" aria-hidden="true" style={{ verticalAlign: '-0.08em' }}>
+        <g stroke="#ffd27a" strokeWidth="2.4">
+            <path d="M2 14.5C5 8.5 9.5 5 13 5s8 3.5 11 9.5C21.5 8.5 26 5 35 5s8 3.5 11 9.5C43 21 38 24.5 35 24.5S26.5 21 24 14.5C21.5 21 16.5 24.5 13 24.5S5 21 2 14.5Z" />
+        </g>
+        <circle cx="13" cy="14.5" r="3.4" fill="#ffd27a" />
+        <circle cx="35" cy="14.5" r="3.4" fill="#ffd27a" />
+    </svg>;
+}
+
 /* ---- Patakha: Aankhon Ki Gustakhiyan - name the two personalities from their eyes only.
    PLACEHOLDER: the host (Yash) is supplying the eye crops and the full photos; swap the
    placeholder frames for photos.eyes_1/eyes_2 (clues) and photos.eyes_1_full/eyes_2_full (reveal) when they land. ---- */
@@ -60,7 +70,7 @@ export function EyesReveal({ names, awarded, onAward, onNobody, onUndo, eyes, fu
         <span className="pk-eye-tag">{label}</span>
     </div>;
     return <div className="pk-stage">
-        <h2>Aankhon Ki Gustakhiyan 👀</h2>
+        <h2>Aankhon Ki Gustakhiyan <EyesIcon size={34} /></h2>
         <p className="pk-line">Open floor, no timer - two world-famous personalities, but you only get their eyes. Name BOTH. First correct pair wins {PATAKHA_POINTS} points.</p>
         <div className="pk-eyes">
             <EyeFrame src={eyes && eyes[0]} label="Personality 1" />

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocalState } from './localstate';
 import { photos, rounds, type Q } from './data';
-import { GridGains, Godiji, EyesReveal, PATAKHA_POINTS } from './patakha';
+import { GridGains, Godiji, EyesReveal, EyesIcon, PATAKHA_POINTS } from './patakha';
 import { HostHandbook } from './host';
 import credits from './credits';
 import { Sky } from './sky';
@@ -360,7 +360,7 @@ export function App() {
                     <span className="st">{(s.aq || {})['patakha:modi'] ? '✓ ' + (s.aq || {})['patakha:modi'] : 'Open'}</span>
                 </button>
                 <button className="tile" onClick={() => setView('eyes')}>
-                    <span className="em">👀</span>
+                    <span className="em"><EyesIcon size={76} /></span>
                     <span className="nm">Aankhon Ki Gustakhiyan</span>
                     <span className="tg">Two world-famous personalities. Eyes only.</span>
                     <span className="st">{(s.aq || {})['patakha:eyes'] ? '✓ ' + (s.aq || {})['patakha:eyes'] : 'Open'}</span>
