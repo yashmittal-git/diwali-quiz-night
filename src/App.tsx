@@ -91,7 +91,15 @@ export function App() {
     muteRef.current = s.mute;
 
     const update = useCallback((patch: Partial<Saved>) => { if (status.ready) setSaved({ ...s, ...patch }); }, [s, setSaved, status.ready]);
-    useEffect(() => { if (!status.ready || migratedNames.current) return; migratedNames.current = true; if ((saved.names || []).some(n => !(n || '').trim())) setSaved({ ...s, names: cleanNames(saved.names, count) }); }, [status.ready]);
+    useEffect(() => {
+        if (!status.ready || migratedNames.current) return; migratedNames.current = true;
+        // Legacy cleanup: only exact auto-defaults "Player N" at their own slot become "Team N";
+        // any name the host typed (even "Player 7" moved to another slot) is left untouched.
+        const old = saved.names || [];
+        const migrated = old.map((n, i) => (n || '').trim() === 'Player ' + (i + 1) ? 'Team ' + (i + 1) : n);
+        const changed = migrated.some((n, i) => n !== old[i]);
+        if (changed || migrated.some(n => !(n || '').trim())) setSaved({ ...s, names: cleanNames(migrated, count) });
+    }, [status.ready]);
     const round = rounds[ri];
     const q = round.qs[qi];
     const needsPic = !!(q.img && (q.mode || 'clear') !== 'reveal' && photos[q.img]);
