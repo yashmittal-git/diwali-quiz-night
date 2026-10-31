@@ -265,7 +265,7 @@ export function App() {
             <div className="gate-menu-side"><img src={menuFood} alt="Food menu - Daawat-e-Diwali" /></div>
             <div className="gate-mid">
                 <h1 className="wobble deva">रुकिए!</h1>
-                <p className="gate-quirky">Glass khali nahi, plate ruki nahi - daawat ki supply uninterrupted rakhni hai! 🥂</p>
+                <p className="gate-quirky">Sawaalon ke jawaab socho, glass aur plate khaali mat chhodo!</p>
                 <p className="latintitle">Secret party code, please</p>
                 <p className="sub">Yash se code maango - no code, no khel. 🪔</p>
             <div className="gate-form">
