@@ -383,3 +383,15 @@ main.qscreen .awarded{font-size:13px}
 .qbody .pic{height:auto;aspect-ratio:auto}
 .qbody .pic img{width:100%;height:auto;max-height:38vh;object-fit:contain}
 }
+
+/* ---- menu-flanked party-code gate (food left, code + quirky line centre, drinks right) ---- */
+.gate.gate-menus{position:relative;z-index:2;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:clamp(14px,2vw,40px);width:100%;min-height:calc(100vh - 170px);padding:0 clamp(10px,1.5vw,28px);text-align:center}
+.gate-menu-side{flex:0 1 auto;display:flex;align-items:center;justify-content:center}
+.gate-menu-side img{height:calc(100vh - 210px);max-height:840px;width:auto;max-width:29vw;object-fit:contain;border-radius:18px;border:1px solid rgba(255,206,130,.4);box-shadow:0 12px 44px rgba(0,0,0,.55)}
+.gate-mid{flex:0 1 560px;min-width:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.gate-quirky{font-weight:700;font-size:clamp(18px,2.6vh,28px);color:#ffd76a;text-shadow:0 2px 16px rgba(255,140,40,.4);line-height:1.4;max-width:30ch;margin:0}
+@media (max-width:900px){
+  .gate.gate-menus{flex-wrap:wrap;min-height:0;gap:14px;padding-top:14px}
+  .gate-mid{order:-1;flex-basis:100%}
+  .gate-menu-side img{height:auto;max-width:42vw;max-height:52vh}
+}

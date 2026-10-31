@@ -4,6 +4,8 @@ import { photos, rounds, type Q } from './data';
 import { GridGains, Godiji, EyesReveal, EyesIcon, PATAKHA_POINTS } from './patakha';
 import { HostHandbook } from './host';
 import credits from './credits';
+import menuFood from './photos/menu_food.jpg';
+import menuDrinks from './photos/menu_drinks.jpg';
 import { Sky } from './sky';
 import { playCheer, playOops, playBuzz, playPop } from './audio';
 import { RoundIcon } from './icons';
@@ -259,17 +261,21 @@ export function App() {
             <p className="hint">Host keys: <kbd>T</kbd> timer · <kbd>R</kbd> or <kbd>Space</kbd> reveal · <kbd>←</kbd> <kbd>→</kbd> previous / next</p>
         </main>}
 
-        {!gateOk && (view === 'board' || view === 'round' || view === 'patakhamenu' || view === 'patakha' || view === 'modi' || view === 'eyes' || view === 'handbook' || view === 'end') && <main className="home gate">
-            <div className="diya" aria-hidden="true"><RoundIcon id="diwali" size={110} /></div>
-            <h1 className="wobble deva">रुकिए!</h1>
-            <p className="latintitle">Secret party code, please</p>
-            <p className="sub">Yash se code maango - no code, no khel. 🪔</p>
+        {!gateOk && (view === 'board' || view === 'round' || view === 'patakhamenu' || view === 'patakha' || view === 'modi' || view === 'eyes' || view === 'handbook' || view === 'end') && <main className="gate gate-menus">
+            <div className="gate-menu-side"><img src={menuFood} alt="Food menu - Daawat-e-Diwali" /></div>
+            <div className="gate-mid">
+                <h1 className="wobble deva">रुकिए!</h1>
+                <p className="gate-quirky">Glass khali nahi, plate ruki nahi - daawat ki supply uninterrupted rakhni hai! 🥂</p>
+                <p className="latintitle">Secret party code, please</p>
+                <p className="sub">Yash se code maango - no code, no khel. 🪔</p>
             <div className="gate-form">
                 <input className="gate-input" type={gateShow ? 'text' : 'password'} value={gateCode} onChange={e => setGateCode(e.target.value.replace(/\D/g, '').slice(0, 4))} onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); tryGate(); } }} inputMode="numeric" autoComplete="off" placeholder="••••" aria-label="Party code" autoFocus />
                 <button className="gate-eye" type="button" onClick={() => setGateShow(v => !v)} aria-label={gateShow ? 'Hide the code' : 'Show the code'} title={gateShow ? 'Hide' : 'Show'}>{gateShow ? '🙈' : '👁️'}</button>
                 <button className="cta" type="button" onClick={tryGate}>Kholo! 🎇</button>
             </div>
             {gateErr && <p className="gate-err">Galat code! Nakhre baad mein, sahi code pehle. 😜</p>}
+            </div>
+            <div className="gate-menu-side"><img src={menuDrinks} alt="Drinks menu - Laxmi Sip Fund" /></div>
         </main>}
         {view === 'setup' && <main className="setup">
             <h2 className="wobble2">How many teams?</h2>
